@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          // const SizedBox(height: 10),
+          const SizedBox(height: 10),
           buildMenuRow(context),
         ],
       ),
@@ -51,8 +51,6 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: kWhite,
         currentIndex: 0,
         onTap: (int index) {
-          // Handle navigation bar item tap
-          // Typically you would navigate to a new screen based on index
         },
       ),
     );

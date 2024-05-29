@@ -12,14 +12,14 @@ Widget buildMenuRow(BuildContext context) {
   ];
 
   List<String> menuNames = [
-    'Go Crispy Original',
+    'Go Crispy\nOriginal',
     'Extreme Meals',
     'Bucket Meal',
     'Kids Meals',
   ];
 
   return Container(
-    height: 120,
+    height: 140, // Adjust height as needed
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: menuImages.length,
@@ -27,20 +27,23 @@ Widget buildMenuRow(BuildContext context) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               buildMenuItem(
                 menuImages[index],
                 getContainerColor(index),
               ),
               SizedBox(height: 8),
-              Flexible(
+              SizedBox(
+                width: 80, // Set a fixed width to ensure consistent layout
                 child: Text(
                   menuNames[index],
                   textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: kblack,
-                    fontSize: 12.0,
+                    fontSize: 11.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
