@@ -28,8 +28,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10),
-          buildMenuRow(),
+          // const SizedBox(height: 10),
+          buildMenuRow(context),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

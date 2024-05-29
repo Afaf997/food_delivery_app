@@ -3,7 +3,7 @@ import 'package:food_delivery_app/functions/build_menu_item.dart';
 import 'package:food_delivery_app/functions/switch_color.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 
-Widget buildMenuRow() {
+Widget buildMenuRow(BuildContext context) {
   List<String> menuImages = [
     'assets/images/product1.png',
     'assets/images/product2.png',
@@ -18,38 +18,37 @@ Widget buildMenuRow() {
     'Kids Meals',
   ];
 
-  return SingleChildScrollView(
-    scrollDirection: Axis.horizontal,
-    padding: EdgeInsets.symmetric(horizontal: 16),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: List.generate(4, (index) {
-        return Container(
-          width: 120, // Adjust width as needed
-          height: 160, // Fixed height for each menu item container
+  return Container(
+    height: 120,
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: menuImages.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 8), // Adjust spacing between image and text
-                child: buildMenuItem(
-                  menuImages[index],
-                  getContainerColor(index),
-                ),
+              buildMenuItem(
+                menuImages[index],
+                getContainerColor(index),
               ),
-              Text(
-                menuNames[index],
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: kblack,
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.bold,
+              SizedBox(height: 8),
+              Flexible(
+                child: Text(
+                  menuNames[index],
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: kblack,
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
           ),
         );
-      }),
+      },
     ),
   );
 }
