@@ -1,80 +1,76 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/build_menu_row.dart';
+import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/functions/reusable_richtext.dart';
+import 'package:food_delivery_app/functions/titles.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 
-class HomeScreen extends StatelessWidget {
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key});
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int selected = 0;
+
+  void onItemTapped(int index) {
+    setState(() {
+      selected = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildTopContainer(),
-          const SizedBox(height: 10),
-          _buildImageContainer(context),
-          const SizedBox(height: 10),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            child: Text(
-              'Menu',
-              style: TextStyle(
-                fontSize: 22.0,
-                fontWeight: FontWeight.bold,
-                color: kblack,
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          buildMenuRow(context),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildTopContainer(),
+            const SizedBox(height: 10),
+            _buildImageContainer(context),
+            const SizedBox(height: 10),
+            buildTitleRow('Menu'),
+            const SizedBox(height: 10),
+            buildMenuRow(context),
+            const SizedBox(height: 10),
+            buildTitleRow('Best Selling', actionText: 'See All'),
+
+            
+            const SizedBox(height: 80), 
+
+            
+          ],
+        ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        selectedItemColor: kOrangeColor,
-        backgroundColor: kWhite,
-        currentIndex: 0,
-        onTap: (int index) {
-        },
+      bottomNavigationBar: CustomBottomNavBar(
+        selectedIndex: selected,
+        onItemTapped: onItemTapped,
       ),
     );
   }
 
   Widget _buildTopContainer() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: kOrangeColor,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30.0),
           bottomRight: Radius.circular(30.0),
         ),
       ),
-      height: kContainerHeight,
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Current Location',
-            style: kLocationTextStyle,
+            style: kLocationTextStyle.copyWith(color: kWhite),
           ),
           Row(
             children: [
@@ -99,20 +95,20 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 18.0),
+          const SizedBox(height: 18.0),
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'What you are looking for?',
-                hintStyle: kSearchHintTextStyle,
+                hintText: 'What are you looking for?',
+                hintStyle: kSearchHintTextStyle.copyWith(color: kTextHintColor),
                 filled: true,
                 fillColor: kWhite,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.0),
                   borderSide: BorderSide.none,
                 ),
-                contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 prefixIcon: Icon(Icons.search, color: kTextHintColor, size: kIconSize),
               ),
             ),
@@ -124,7 +120,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildImageContainer(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 14),
+      margin: const EdgeInsets.symmetric(horizontal: 17),
       decoration: kImageBoxDecoration,
       child: Stack(
         alignment: Alignment.topLeft,

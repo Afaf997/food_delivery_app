@@ -19,13 +19,13 @@ Widget buildMenuRow(BuildContext context) {
   ];
 
   return Container(
-    height: 140, // Adjust height as needed
+    height: 140, 
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: menuImages.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
