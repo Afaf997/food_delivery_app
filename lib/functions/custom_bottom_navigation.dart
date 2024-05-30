@@ -34,7 +34,7 @@ class CustomBottomNavBar extends StatelessWidget {
           label: 'Cart',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
+          icon: Icon(Icons.shopping_bag_outlined),
           label: 'Wish',
         ),
         BottomNavigationBarItem(

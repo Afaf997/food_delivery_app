@@ -48,6 +48,7 @@ class CategoriesScreen extends StatelessWidget {
               ],
             ),
           ),
+         const SizedBox(height: kCustomSizedBoxHeightE,),
           Expanded(
             child: ListView(
               padding:const EdgeInsets.all(10),
@@ -58,32 +59,32 @@ class CategoriesScreen extends StatelessWidget {
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height:kCustomSizedBoxHeight,),
+                ),SizedBox(height:kCustomSizedBoxHeightE,),
                 FoodItemCard(
                   imageUrl: 'assets/images/rowPic1.jpg',
                   title: 'Crispy Chicken',
                   rating: 40,
                   description: 'Crispy fried chicken served with a tangy sauce and a side of coleslaw',
                   price: 'QR 30',
-                ),SizedBox(height:kCustomSizedBoxHeight,),FoodItemCard(
+                ),SizedBox(height:kCustomSizedBoxHeightE,),FoodItemCard(
                   imageUrl: 'assets/images/pic3.jpg',
                   title: 'Tornado Fries',
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height:kCustomSizedBoxHeight,),FoodItemCard(
+                ),SizedBox(height:kCustomSizedBoxHeightE,),FoodItemCard(
                   imageUrl: 'assets/images/pic.jpg',
                   title: 'Tornado Fries',
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height:kCustomSizedBoxHeight,),FoodItemCard(
+                ),SizedBox(height:kCustomSizedBoxHeightE,),FoodItemCard(
                   imageUrl: 'assets/images/firstImage.jpg',
                   title: 'Tornado Fries',
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height:kCustomSizedBoxHeight,),
+                ),SizedBox(height:kCustomSizedBoxHeightE,),
               ],
             ),
           ),
