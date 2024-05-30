@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/functions/bottom_sheet.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -15,8 +16,13 @@ class CustomBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: selectedIndex,
-      onTap: onItemTapped,
-      selectedItemColor: Colors.pink, // Change to desired color
+      onTap: (index) {
+        onItemTapped(index);
+        if (index == 1) {
+          showCustomBottomSheet(context);
+        }
+      },
+      selectedItemColor:kOrangeColor,
       unselectedItemColor: kblack,
       items: const [
         BottomNavigationBarItem(
@@ -42,4 +48,6 @@ class CustomBottomNavBar extends StatelessWidget {
       ],
     );
   }
+
+
 }

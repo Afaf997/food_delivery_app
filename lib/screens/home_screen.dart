@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/build_menu_row.dart';
 import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/functions/locate_container.dart';
+import 'package:food_delivery_app/screens/All_categories.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_richtext.dart';
 import 'package:food_delivery_app/widget/row_image.dart';
 import 'package:food_delivery_app/widget/single_container.dart';
 import 'package:food_delivery_app/widget/title.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key});
@@ -22,7 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       selected = index;
     });
+       if (index == 2) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CategoriesScreen()),
+      );
+    }
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             buildImageRow(),
             const SizedBox(height: 10),
-             buildTitleRow('Top Deals'),
+            buildTitleRow('Top Deals'),
             const SizedBox(height: 10),
             buildImageContainer(
               MenuItem(
@@ -55,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 qrCode: 'QR 23',
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             buildImageContainer(
               MenuItem(
                 imagePath: 'assets/images/rowPic1.jpg',
@@ -65,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 qrCode: 'QR 43',
               ),
             ),
-             SizedBox(height: 10),
+            const SizedBox(height: 10),
             buildImageContainer(
               MenuItem(
                 imagePath: 'assets/images/pic3.jpg',
@@ -75,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 qrCode: 'QR 43',
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10),
             buildLocateContainer(),
           ],
         ),
@@ -191,6 +200,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
-
 }

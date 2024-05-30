@@ -8,6 +8,7 @@ const Color koffwhite=Color.fromARGB(255, 219, 216, 216);
 const Color koffYellow =Color.fromARGB(255, 204, 167, 45);
 const Color koffGreen =Color.fromARGB(255, 18, 148, 27);
 const Color kblack=Colors.black;
+const Color kTextgreyColor =Color.fromARGB(136, 150, 147, 147);
 
 
 const double kDefaultPadding = 25.0;
