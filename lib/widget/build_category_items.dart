@@ -1,5 +1,6 @@
 
   import 'package:flutter/material.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 Widget buildCategoryItem(String categoryName, Color color) {
     return Container(
@@ -11,10 +12,8 @@ Widget buildCategoryItem(String categoryName, Color color) {
         borderRadius: BorderRadius.circular(17),
       ),
       child: Center(
-        child: Text(
-          categoryName,
-          style:const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+        child:ReusableText(text: categoryName,color: Colors.white, fontWeight: FontWeight.bold)
+,
       ),
     );
   }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 Widget buildImageRow() {
   return Container(
@@ -57,22 +59,23 @@ Widget _buildItem({
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 4),
+             const SizedBox(height: kCustomSizedBoxHeightB),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                       Text(itemName, style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+                      ReusableText(text: itemName,fontSize: 11, fontWeight: FontWeight.bold),
                     ],
                   ),
-                  Text(qrCode, style: TextStyle(fontSize: 12,color: Colors.red)),
+                  ReusableText(text: qrCode,fontSize: 12,color:kredcolor)
                 ],
               ),
               Row(
                 children: [
-                    Text(' $rating', style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text(description, style: TextStyle(fontSize: 8)),
+                  ReusableText(text:' $rating',fontWeight: FontWeight.bold ),
+                  ReusableText(text: description,fontSize: 8,),
+
                 ],
               )
             ],

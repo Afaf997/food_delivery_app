@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 class MenuItem {
   final String imagePath;
   final String itemName;
@@ -18,7 +20,7 @@ class MenuItem {
 Widget buildImageContainer(MenuItem menuItem) {
   
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
+      margin:const  EdgeInsets.symmetric(horizontal: 20),
       child: buildItem(menuItem),
     );
   }
@@ -54,27 +56,21 @@ Widget buildImageContainer(MenuItem menuItem) {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          menuItem.itemName,
-                          style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
-                        ),
+                        ReusableText(text: menuItem.itemName,fontSize: 11, fontWeight: FontWeight.bold)
                       ],
                     ),
-                    Text(
-                      menuItem.qrCode,
-                      style: TextStyle(fontSize: 12, color: Colors.red),
-                    ),
+                    ReusableText(text: menuItem.qrCode,fontSize: 12,color: kredcolor, ),
                   ],
                 ),
                 Row(
                   children: [
-                    Icon(
+                   const Icon(
                       Icons.star_rate_rounded,
-                      color: const Color.fromARGB(255, 235, 217, 56),
+                      color:  Color.fromARGB(255, 235, 217, 56),
                     ),
-                    Text(' ${menuItem.rating}', style: TextStyle(fontWeight: FontWeight.bold)),
-                    SizedBox(width: 4),
-                    Text(menuItem.description, style: TextStyle(fontSize: 8)),
+                    ReusableText(text: ' ${menuItem.rating}',fontWeight: FontWeight.bold),
+                    const SizedBox(width:kCustomSizedBoxWidth),
+                    ReusableText(text: menuItem.description,fontSize: 8,)
                   ],
                 ),
               ],

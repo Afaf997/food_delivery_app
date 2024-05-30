@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class FoodItemCard extends StatelessWidget {
   final String imageUrl;
@@ -37,38 +38,24 @@ class FoodItemCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 13),
+           const SizedBox(width: kCustomSizedBoxWidthA),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style:const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  ReusableText(text: title,fontSize: 15,fontWeight: FontWeight.bold,),
                   Row(
                     children: [
                      const  Icon(Icons.star, color: Colors.yellow),
-                      Text(
-                        '$rating',
-                        style:const TextStyle(fontSize: 16),
-                      ),
+                     ReusableText(text: '$rating',fontSize: 16, )
                     ],
                   ),
                   Container(
                     width: double.infinity,
-                    child: Text(
-                      description,
-                      style:const TextStyle(fontSize: 9),
-                    ),
+                    child: ReusableText(text: description,fontSize: 9,),
                   ),
-                  Text(
-                    price,
-                    style:const TextStyle(fontSize: 13, color:kOrangeColor),
-                  ),
+                  ReusableText(text: price,fontSize: 13,color: kOrangeColor,)
+
                 ],
               ),
             ),

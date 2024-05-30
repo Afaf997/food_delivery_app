@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 Widget buildCheckbox(String title, bool isChecked) {
   return Padding(
@@ -7,23 +8,17 @@ Widget buildCheckbox(String title, bool isChecked) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 12.0,
-            color: Color.fromARGB(255, 134, 134, 134),
-          ),
-        ),
+        ReusableText(text: title,fontSize: 12,color:const Color.fromARGB(255, 134, 134, 134) ,),
         Container(
           width: 20,
           height: 20,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(3),
             border: Border.all(color: Colors.grey),
-            color: isChecked ? kOrangeColor : Color.fromARGB(255, 214, 212, 212),
+            color: isChecked ? kOrangeColor :const Color.fromARGB(255, 214, 212, 212),
           ),
           child: isChecked
-              ? Icon(
+              ? const Icon(
                   Icons.check,
                   size: 16,
                   color: Colors.white,

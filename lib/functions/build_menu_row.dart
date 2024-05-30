@@ -33,15 +33,15 @@ Widget buildMenuRow(BuildContext context) {
                 menuImages[index],
                 getContainerColor(index),
               ),
-              SizedBox(height: 8),
+             const SizedBox(height: kCustomSizedBoxHeightD),
               SizedBox(
-                width: 80, // Set a fixed width to ensure consistent layout
+                width: 80, 
                 child: Text(
                   menuNames[index],
                   textAlign: TextAlign.center,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style:const TextStyle(
                     color: kblack,
                     fontSize: 11.0,
                     fontWeight: FontWeight.bold,

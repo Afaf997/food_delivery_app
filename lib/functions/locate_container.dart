@@ -7,7 +7,7 @@ Widget buildLocateContainer() {
     child: Container(
       width: 354,
       height: 151,
-      decoration: BoxDecoration(
+      decoration:const BoxDecoration(
         color: kOrangeColor,
         borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
@@ -24,14 +24,14 @@ Widget buildLocateContainer() {
                   width: 75,
                   height: 75,
                 ),
-                SizedBox(width: 30),
+                const SizedBox(width: kCustomSizedBoxWidthC),
                 Expanded(
                   child: RichText(
                     text:const TextSpan(
                       text: 'Locate\n',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 33, // Adjusted font size
+                        fontSize: 33, 
                         fontWeight: FontWeight.bold,
                       ),
                       children: <TextSpan>[

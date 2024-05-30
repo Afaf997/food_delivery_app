@@ -22,7 +22,7 @@ Widget buildCircularBadge(String mainText, String subText, Color backgroundColor
             ),
             TextSpan(
               text: subText,
-              style: TextStyle(
+              style:const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w900,
                 color: kWhite,
@@ -58,8 +58,8 @@ Widget buildTextSection(String text, Color color, double fontSize, FontWeight fo
 
 Widget buildBuyGetBadge(String mainText, String subText, Color textColor) {
   return Container(
-    padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
-    decoration: BoxDecoration(
+    padding:const EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+    decoration:const BoxDecoration(
       color: kOrangeColor,
       borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(9.0),

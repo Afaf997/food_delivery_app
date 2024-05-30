@@ -3,6 +3,7 @@ import 'package:food_delivery_app/screens/home_screen.dart';
 import 'package:food_delivery_app/widget/build_category_items.dart';
 import 'package:food_delivery_app/widget/food_item_card.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
@@ -26,20 +27,18 @@ class CategoriesScreen extends StatelessWidget {
                   },
                   icon:const Icon(Icons.arrow_back_ios),
                 ),
-                const SizedBox(width: 60), // Adjust spacing between icon and text
-                Text(
-                  'All Categories',
-                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.w900),
-                ),
+                const SizedBox(width: kCustomSizedBoxWidthB),
+                const ReusableText(text: 'All Categories',fontSize: 19,fontWeight: FontWeight.w900,) // Adjust spacing between icon and text
+             
               ],
             ),
           ),
-         const SizedBox(height: 10),
+         const SizedBox(height:kCustomSizedBoxHeight),
           SizedBox(
             height: 50, 
             child: ListView(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding:const EdgeInsets.symmetric(horizontal: 10),
               children: [
                 buildCategoryItem('All', kTextgreyColor),
                 buildCategoryItem('GO crispy Original', kOrangeColor),
@@ -59,32 +58,32 @@ class CategoriesScreen extends StatelessWidget {
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height: 10,),
+                ),SizedBox(height:kCustomSizedBoxHeight,),
                 FoodItemCard(
                   imageUrl: 'assets/images/rowPic1.jpg',
                   title: 'Crispy Chicken',
                   rating: 40,
                   description: 'Crispy fried chicken served with a tangy sauce and a side of coleslaw',
                   price: 'QR 30',
-                ),SizedBox(height: 10,),FoodItemCard(
+                ),SizedBox(height:kCustomSizedBoxHeight,),FoodItemCard(
                   imageUrl: 'assets/images/pic3.jpg',
                   title: 'Tornado Fries',
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height: 10,),FoodItemCard(
+                ),SizedBox(height:kCustomSizedBoxHeight,),FoodItemCard(
                   imageUrl: 'assets/images/pic.jpg',
                   title: 'Tornado Fries',
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height: 10,),FoodItemCard(
+                ),SizedBox(height:kCustomSizedBoxHeight,),FoodItemCard(
                   imageUrl: 'assets/images/firstImage.jpg',
                   title: 'Tornado Fries',
                   rating: 45,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: 'QR 23',
-                ),SizedBox(height: 10,),
+                ),SizedBox(height:kCustomSizedBoxHeight,),
               ],
             ),
           ),
