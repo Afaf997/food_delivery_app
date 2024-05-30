@@ -9,7 +9,7 @@ Widget buildTitleRow(String title, {String actionText = ''}) {
       children: [
         Text(
           title,
-          style: TextStyle(
+          style:const TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.w900,
             color: kblack,
@@ -17,7 +17,7 @@ Widget buildTitleRow(String title, {String actionText = ''}) {
         ),
           Text(
             actionText,
-            style: TextStyle(
+            style:const TextStyle(
               fontSize: 14.0,
               fontWeight: FontWeight.bold,
               color: Colors.red,

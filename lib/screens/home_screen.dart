@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/build_menu_row.dart';
 import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
-import 'package:food_delivery_app/functions/reusable_richtext.dart';
-import 'package:food_delivery_app/functions/row_image.dart';
-import 'package:food_delivery_app/functions/titles.dart';
+import 'package:food_delivery_app/functions/locate_container.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_richtext.dart';
+import 'package:food_delivery_app/widget/row_image.dart';
+import 'package:food_delivery_app/widget/single_container.dart';
+import 'package:food_delivery_app/widget/title.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key});
@@ -41,7 +43,40 @@ class _HomeScreenState extends State<HomeScreen> {
             buildTitleRow('Best Selling', actionText: 'See All'),
             const SizedBox(height: 20),
             buildImageRow(),
-            const SizedBox(height: 80),
+            const SizedBox(height: 10),
+             buildTitleRow('Top Deals'),
+            const SizedBox(height: 10),
+            buildImageContainer(
+              MenuItem(
+                imagePath: 'assets/images/pic.jpg',
+                itemName: 'Tomado Fries',
+                rating: '4.5',
+                description: 'Shrimp burger, French Fries, Drink',
+                qrCode: 'QR 23',
+              ),
+            ),
+            SizedBox(height: 10),
+            buildImageContainer(
+              MenuItem(
+                imagePath: 'assets/images/rowPic1.jpg',
+                itemName: 'Crispy Fried Chicken',
+                rating: '4.5',
+                description: '12 pcs chicken, French Fries, Drink',
+                qrCode: 'QR 43',
+              ),
+            ),
+             SizedBox(height: 10),
+            buildImageContainer(
+              MenuItem(
+                imagePath: 'assets/images/pic3.jpg',
+                itemName: 'Crispy Fried Chicken',
+                rating: '4.5',
+                description: '12 pcs chicken, French Fries, Drink',
+                qrCode: 'QR 43',
+              ),
+            ),
+            SizedBox(height: 10,),
+            buildLocateContainer(),
           ],
         ),
       ),
