@@ -22,7 +22,6 @@ class CustomContainerWidget extends StatelessWidget {
           ReusableText(text: "23 QR",fontSize: 19,fontWeight: FontWeight.w700,color: kWhite,),
           SizedBox(width: kCustomSizedBoxWidthF),
           ReusableText(text: "Add to cart",fontSize: 16,fontWeight: FontWeight.w600,color: kWhite,),
-          SizedBox(width: kCustomSizedBoxWidthF),
         ],
       ),
     );
