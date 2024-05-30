@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/build_menu_row.dart';
 import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/functions/reusable_richtext.dart';
+import 'package:food_delivery_app/functions/row_image.dart';
 import 'package:food_delivery_app/functions/titles.dart';
 import 'package:food_delivery_app/utils/constant.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key});
@@ -39,11 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
             buildMenuRow(context),
             const SizedBox(height: 10),
             buildTitleRow('Best Selling', actionText: 'See All'),
-
-            
-            const SizedBox(height: 80), 
-
-            
+            const SizedBox(height: 20),
+            buildImageRow(),
+            const SizedBox(height: 80),
           ],
         ),
       ),
@@ -63,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           bottomRight: Radius.circular(30.0),
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+      padding: const EdgeInsets.only(top: 60, bottom: 20, right: 20, left: 20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,8 +106,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(15.0),
                   borderSide: BorderSide.none,
                 ),
-                contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                prefixIcon: Icon(Icons.search, color: kTextHintColor, size: kIconSize),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                prefixIcon:
+                    Icon(Icons.search, color: kTextHintColor, size: kIconSize),
               ),
             ),
           ),
@@ -156,4 +156,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+
 }
