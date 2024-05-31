@@ -38,10 +38,17 @@ void showCustomBottomSheet(BuildContext context) {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                     const ReusableText(text: 'Tornado Fries',
-                      fontSize: 15,fontWeight: FontWeight.bold,),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       children: [
+                          ReusableText(text: 'Tornado Fries',
+                          fontSize: 15,fontWeight: FontWeight.bold,),
+                          Icon(Icons.favorite,color:Color.fromARGB(255, 228, 225, 225),size: 13,)
+                       ],
+                     ),
                      const Row(
                         children: [
+                          
                           Icon(Icons.star, color: Colors.yellow),
                       ReusableText(text: '45',
                       fontSize: 16,),
@@ -53,7 +60,7 @@ void showCustomBottomSheet(BuildContext context) {
                       fontSize: 9,),
                       ),
                      const ReusableText(text: 'QR 23',
-                      fontSize: 23,color: kOrangeColor,)
+                      fontSize: 20,color: kOrangeColor,)
               
                     ],
                   ),
@@ -71,20 +78,18 @@ void showCustomBottomSheet(BuildContext context) {
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.grey[300], 
                   ),
-                  padding:const EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
-                    mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
-                        icon:const Icon(Icons.remove),
+                        icon:const Icon(Icons.remove,size: 14,),
                         onPressed: () {
                         },
                       ),
-                     const SizedBox(width: kSizedBoxWidth ), 
-                      const ReusableText(text: '1',fontSize: 16,),
-                     const SizedBox(width: kSizedBoxWidth ),
+                     const SizedBox(width: kCustomSizedBoxWidth ), 
+                      const ReusableText(text: '1',fontSize: 15,),
+                     const SizedBox(width: kCustomSizedBoxWidth ),
                       IconButton(
-                        icon:const Icon(Icons.add),
+                        icon:const Icon(Icons.add,size: 14,),
                         onPressed: () {
                         },
                       ),
