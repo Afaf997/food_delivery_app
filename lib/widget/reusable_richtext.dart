@@ -3,7 +3,7 @@ import 'package:food_delivery_app/utils/constant.dart';
 
 Widget buildCircularBadge(String mainText, String subText, Color backgroundColor) {
   return Container(
-    padding:const EdgeInsets.all(9.0),
+    padding:const EdgeInsets.all(10),
     decoration: BoxDecoration(
       shape: BoxShape.circle,
       color: backgroundColor,
@@ -15,16 +15,16 @@ Widget buildCircularBadge(String mainText, String subText, Color backgroundColor
             TextSpan(
               text: '$mainText\n',
               style:const TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.w900,
+                fontSize: 23,
+                fontWeight: FontWeight.w800,
                 color: kWhite,
               ),
             ),
             TextSpan(
               text: subText,
               style:const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w900,
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
                 color: kWhite,
               ),
             ),
