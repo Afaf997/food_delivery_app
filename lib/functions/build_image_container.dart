@@ -26,7 +26,8 @@ Widget buildImageContainer(BuildContext context) {
           Positioned(
             top: 50,
             left: 220,
-            child: buildTextSection('Chicken\nBurger', kWhite, 30, FontWeight.w700),
+            child: buildTextSection(
+                'Chicken\nBurger', kWhite, 30, FontWeight.w700),
           ),
           Positioned(
             top: 70,
