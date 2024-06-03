@@ -5,13 +5,14 @@ class ReusableText extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final Color? color;
+  final TextDecoration? decoration;
 
   const ReusableText({
     super.key,
     required this.text,
     this.fontSize,
     this.fontWeight,
-    this.color,
+    this.color, this.decoration,
   });
 
   @override

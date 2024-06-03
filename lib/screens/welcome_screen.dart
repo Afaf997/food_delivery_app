@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/screens/login_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -18,26 +20,21 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/images/image_hand.png',
-                // width: screenWidth * 0.6,
               ),
               Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.35, top: screenHeight * 0.05),
+                padding: EdgeInsets.only(left: screenWidth * 0.27, top: screenHeight * 0.05),
                 child: Image.asset(
                   'assets/images/image_burger.png',
-                  width: screenWidth * 0.4,
+                  width: screenWidth * 0.6,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: screenHeight * 0.4, left: screenWidth * 0.04),
-                child: Container(
-                  child: Text(
-                    "Welcome to Qatar's Own Fried Chicken App!",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: screenWidth * 0.11,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
+                child: ReusableText(
+                 text:  "Welcome to Qatar's Own Fried Chicken App!",
+                    color:kWhite,
+                    fontSize: screenWidth * 0.11,
+                    fontWeight: FontWeight.w900,
                 ),
               ),
             ],
@@ -47,12 +44,12 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: screenHeight * 0.02),
-                Text(
-                  "Experience Crispy Satisfaction with Every Bite!",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: screenWidth * 0.04,
+                SizedBox(
+                  width:screenWidth*0.7,
+                  child: ReusableText(
+                   text:  "Experience Crispy Satisfaction with Every Bite!",
+                      color:kWhite,
+                      fontSize: screenWidth * 0.04,
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.05),
@@ -61,20 +58,23 @@ class WelcomeScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Add navigation or action here
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginScreen()),
+                          );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black, // Button color
+                        backgroundColor:kblack,
                         padding: EdgeInsets.symmetric(
                             horizontal: screenWidth * 0.1, vertical: screenHeight * 0.02),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10), // Reduce border radius
+                          borderRadius: BorderRadius.circular(10), 
                         ),
                       ),
                       child: Text(
                         'Get Started',
                         style: TextStyle(
-                          color: Colors.white,
+                          color:kWhite,
                           fontSize: screenWidth * 0.05,
                         ),
                       ),

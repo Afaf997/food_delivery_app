@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color kOrangeColor =  Color(0xFFED5D37);
+const Color kGrayLogo = Color(0xFFEEEEEE);
 const Color kWhite = Colors.white;
 const Color kTextHintColor = Color.fromARGB(137, 88, 86, 86);
 const Color kBackgroundColor = Color(0xFFF2F2F2);
@@ -10,6 +11,7 @@ const Color koffGreen =Color.fromARGB(255, 18, 148, 27);
 const Color kblack=Colors.black;
 const Color kTextgreyColor =Color.fromARGB(136, 150, 147, 147);
 const Color kredcolor =Colors.red;
+const Color korgGrey=Colors.grey;
 
 
 const double kDefaultPadding = 25.0;
@@ -34,6 +36,7 @@ const double kCustomSizedBoxHeightD = 8;
 const double kCustomSizedBoxHeightE = 5;
 const double kCustomSizedBoxHeightF = 7;
 const double kCustomSizedBoxHeightG =15;
+const double kCustomSizedBoxHeightH =150;
 
 
 
