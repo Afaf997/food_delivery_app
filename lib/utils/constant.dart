@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color kOrangeColor = Color.fromARGB(255, 252, 111, 75);
+const Color kOrangeColor =  Color(0xFFED5D37);
 const Color kWhite = Colors.white;
 const Color kTextHintColor = Color.fromARGB(137, 88, 86, 86);
 const Color kBackgroundColor = Color(0xFFF2F2F2);

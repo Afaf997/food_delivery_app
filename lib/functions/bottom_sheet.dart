@@ -102,8 +102,7 @@ void showCustomBottomSheet(BuildContext context) {
                           Icons.remove,
                           size: 14,
                         ),
-                        onPressed: () {},
-                      ),
+                        onPressed: () {},),
                       const SizedBox(width: kCustomSizedBoxWidth),
                       const ReusableText(
                         text: '1',
