@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/screens/otp_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
@@ -20,8 +19,8 @@ class LoginScreen extends StatelessWidget {
             Text(
               "Login or create an account",
               style: TextStyle(
-                fontSize: screenWidth * 0.07,
-                fontWeight: FontWeight.bold,
+                fontSize: screenWidth * 0.08,
+                fontWeight: FontWeight.w900,
               ),
               textAlign: TextAlign.center,
             ),
@@ -57,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
             ),
-              const SizedBox(height: kCustomSizedBoxHeightH , ),
+              const SizedBox(height: kCustomSizedBoxHeightI, ),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -82,7 +81,7 @@ class LoginScreen extends StatelessWidget {
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () {
-                  // Add navigation or action here
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const OtpScreen()));
                 },
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),

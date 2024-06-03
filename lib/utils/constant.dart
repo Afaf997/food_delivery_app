@@ -13,6 +13,8 @@ const Color kTextgreyColor =Color.fromARGB(136, 150, 147, 147);
 const Color kredcolor =Colors.red;
 const Color korgGrey=Colors.grey;
 
+const Icon kbackarrowIcon= Icon(Icons.arrow_circle_left_outlined,size:28,);
+
 
 const double kDefaultPadding = 25.0;
 const double kContainerHeight = 200.0;
@@ -30,13 +32,16 @@ const double kCustomSizedBoxWidthF = 120;
 
 const double kCustomSizedBoxHeight = 10;
 const double kCustomSizedBoxHeightA = 20;
+const double kCustomSizedBoxHeightAa = 30;
 const double kCustomSizedBoxHeightB = 4;
 const double kCustomSizedBoxHeightC = 18;
 const double kCustomSizedBoxHeightD = 8;
 const double kCustomSizedBoxHeightE = 5;
 const double kCustomSizedBoxHeightF = 7;
 const double kCustomSizedBoxHeightG =15;
-const double kCustomSizedBoxHeightH =150;
+const double kCustomSizedBoxHeightH =130;
+const double kCustomSizedBoxHeightI =230;
+
 
 
 

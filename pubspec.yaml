@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   stylish_bottom_bar: ^1.1.0
   flutter_screenutil: ^5.9.3
-  flutter_svg: ^2.0.10+1
+  pin_code_text_field: ^1.8.0
 
 dev_dependencies:
   flutter_test:
