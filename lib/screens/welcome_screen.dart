@@ -1,65 +1,89 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/constant.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      backgroundColor: Color(0xFFED5D37), // Background color ED5D37
+      backgroundColor: kOrangeColor,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start, // Align to the top
-        crossAxisAlignment: CrossAxisAlignment.start, // Center align children horizontally
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 40), // Add spacing from the top
+          SizedBox(height: screenHeight * 0.05),
           Stack(
             alignment: Alignment.topLeft,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(0),
-                child: Image.asset('assets/images/image_hand.png',),
+              Image.asset(
+                'assets/images/image_hand.png',
+                // width: screenWidth * 0.6,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 130,top: 30),
-                child: Image.asset('assets/images/image_burger.png', ),
+                padding: EdgeInsets.only(left: screenWidth * 0.35, top: screenHeight * 0.05),
+                child: Image.asset(
+                  'assets/images/image_burger.png',
+                  width: screenWidth * 0.4,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: screenHeight * 0.4, left: screenWidth * 0.04),
+                child: Container(
+                  child: Text(
+                    "Welcome to Qatar's Own Fried Chicken App!",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: screenWidth * 0.11,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-          SizedBox(height: 20),
-          // Text(
-          //   "Welcome to Qatar's Own Fried Chicken App!",
-          //   textAlign: TextAlign.center,
-          //   style: TextStyle(
-          //     color: Colors.white,
-          //     fontSize: 24,
-          //     fontWeight: FontWeight.bold,
-          //   ),
-          // ),
-          // SizedBox(height: 10),
-          // Text(
-          //   "Experience Crispy Satisfaction with Every Bite!",
-          //   textAlign: TextAlign.center,
-          //   style: TextStyle(
-          //     color: Colors.white,
-          //     fontSize: 16,
-          //   ),
-          // ),
-          // Spacer(), // Push the button to the bottom of the screen
-          // ElevatedButton(
-          //   onPressed: () {
-          //     // Add navigation or action here
-          //   },
-          //   style: ElevatedButton.styleFrom(
-          //     backgroundColor: Colors.black, // Button color
-          //     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-          //   ),
-          //   child: Text(
-          //     'Get Started',
-          //     style: TextStyle(
-          //       color: Colors.white,
-          //       fontSize: 18,
-          //     ),
-          //   ),
-          // ),
-          // SizedBox(height: 20), // Add spacing at the bottom
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: screenHeight * 0.02),
+                Text(
+                  "Experience Crispy Satisfaction with Every Bite!",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenWidth * 0.04,
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.05),
+                Center(
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Add navigation or action here
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black, // Button color
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.1, vertical: screenHeight * 0.02),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10), // Reduce border radius
+                        ),
+                      ),
+                      child: Text(
+                        'Get Started',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: screenWidth * 0.05,
+                        ),
+                      ),
+                    ),
+                  ),
+                ), 
+              ],
+            ),
+          ),
         ],
       ),
     );
