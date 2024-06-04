@@ -54,11 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: kCustomSizedBoxHeight),
             buildTitleRow('Best Selling', actionText: 'See All'),
             const SizedBox(height: kCustomSizedBoxHeightA),
-            buildImageRow(),
+            buildImageRow(context),
             const SizedBox(height: kCustomSizedBoxHeight),
             buildTitleRow('Top Deals'),
             const SizedBox(height: kCustomSizedBoxHeight),
-            buildImageContainer(
+            buildImageContainer(     context,
               MenuItem(
                 imagePath: 'assets/images/pic.jpg',
                 itemName: 'Tomado Fries',
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height:kCustomSizedBoxHeight),
-            buildImageContainer(
+            buildImageContainer(context,
               MenuItem(
                 imagePath: 'assets/images/rowPic1.jpg',
                 itemName: 'Crispy Fried Chicken',
@@ -79,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: kCustomSizedBoxHeight),
             buildImageContainer(
+              context,
               MenuItem(
                 imagePath: 'assets/images/pic3.jpg',
                 itemName: 'Crispy Fried Chicken',

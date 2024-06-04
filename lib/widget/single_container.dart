@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/functions/bottom_sheet.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
@@ -8,6 +9,7 @@ class MenuItem {
   final String rating;
   final String description;
   final String qrCode;
+  
 
   MenuItem({
     required this.imagePath,
@@ -18,10 +20,15 @@ class MenuItem {
   });
 }
 
-Widget buildImageContainer(MenuItem menuItem) {
-  return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 20),
-    child: buildItem(menuItem),
+Widget buildImageContainer(BuildContext context,MenuItem menuItem) {
+  return GestureDetector(
+    onTap: () {
+      showCustomBottomSheet(context);
+    },
+    child: Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      child: buildItem(menuItem),
+    ),
   );
 }
 

@@ -34,7 +34,8 @@ Widget buildMenuRow(BuildContext context) {
               children: [
                 buildMenuItem(
                   menuImages[index],
-                  getContainerColor(index),
+                  getContainerColor(index,),
+                  context
                 ),
                const SizedBox(height: kCustomSizedBoxHeightD),
                 SizedBox(

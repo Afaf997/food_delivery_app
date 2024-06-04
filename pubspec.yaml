@@ -38,6 +38,7 @@ dependencies:
   stylish_bottom_bar: ^1.1.0
   flutter_screenutil: ^5.9.3
   pin_code_text_field: ^1.8.0
+  google_maps_flutter: ^2.6.1
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +80,7 @@ flutter:
     - assets/images/image_hand.png
     - assets/images/image_burger.png
     - assets/images/qatar_logo.png
+    - assets/images/map.png
 
 
 
