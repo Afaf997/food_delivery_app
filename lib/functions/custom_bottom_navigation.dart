@@ -14,8 +14,8 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10),
-      decoration: BoxDecoration(
+      padding:const EdgeInsets.symmetric(vertical: 10),
+      decoration:const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           BoxShadow(
@@ -33,35 +33,39 @@ class CustomBottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _buildNavItem(
-            icon: Icons.sentiment_satisfied_rounded,
+            icon: Icons.perm_identity,
             index: 0,
             isSelected: selectedIndex == 0,
             onTap: onItemTapped,
+            label: 'Go Crispy',
           ),
           _buildNavItem(
             icon: Icons.shopping_cart,
             index: 1,
             isSelected: selectedIndex == 1,
             onTap: onItemTapped,
-            // label: 'Cart',
+            label: 'Cart',
           ),
           _buildNavItem(
             icon: Icons.shopping_bag_outlined,
             index: 2,
             isSelected: selectedIndex == 2,
             onTap: onItemTapped,
+            label: 'my order',
           ),
           _buildNavItem(
-            icon: Icons.favorite_border,
+            icon: Icons.favorite_outline_rounded,
             index: 3,
             isSelected: selectedIndex == 3,
             onTap: onItemTapped,
+            label: 'Favourite',
           ),
           _buildNavItem(
-            icon: Icons.menu,
+            icon: Icons.filter_list_outlined,
             index: 4,
             isSelected: selectedIndex == 4,
             onTap: onItemTapped,
+            label: 'filter',
           ),
         ],
       ),
@@ -73,33 +77,38 @@ class CustomBottomNavBar extends StatelessWidget {
     required int index,
     required bool isSelected,
     required ValueChanged<int> onTap,
-    String? label,
+    required String label,
   }) {
     return GestureDetector(
       onTap: () => onTap(index),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: isSelected ? kOrangeColor : Colors.transparent,
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              icon,
-              color: isSelected ? Colors.white : Colors.grey,
-            ),
-          ),
-          if (label != null)
-            Text(
-              label,
-              style: TextStyle(
-                color: isSelected ? kOrangeColor : Colors.grey,
+      child: isSelected
+          ? Container(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: kOrangeColor,
+                borderRadius: BorderRadius.circular(30),
               ),
+              child: Row(
+                children: [
+                  Icon(
+                    icon,
+                    color: Colors.white,
+                  ),
+                const  SizedBox(width: 8),
+                  Text(
+                    label,
+                    style:const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          : Icon(
+              icon,
+              color: Colors.grey,
             ),
-        ],
-      ),
     );
   }
 }
