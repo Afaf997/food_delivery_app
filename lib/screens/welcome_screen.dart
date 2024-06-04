@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/login_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -53,34 +54,13 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.05),
-                Center(
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => LoginScreen()),
-                          );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:kblack,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.1, vertical: screenHeight * 0.02),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10), 
-                        ),
-                      ),
-                      child: Text(
-                        'Get Started',
-                        style: TextStyle(
-                          color:kWhite,
-                          fontSize: screenWidth * 0.05,
-                        ),
-                      ),
-                    ),
-                  ),
-                ), 
+                ReusableButton(
+                navigationTarget: LoginScreen(),
+                buttonText: 'Get Start',
+                buttonColor:kblack,
+                textColor:kWhite,
+                fontSize: 22,
+              ),
               ],
             ),
           ),

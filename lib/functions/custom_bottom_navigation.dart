@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 
-class CustomBottomNavBar extends StatelessWidget {
+class CustomBottomNavBar extends StatefulWidget {
   final int selectedIndex;
   final ValueChanged<int> onItemTapped;
 
@@ -12,11 +12,16 @@ class CustomBottomNavBar extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
+}
+
+class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding:const EdgeInsets.symmetric(vertical: 10),
       decoration:const BoxDecoration(
-        color: Colors.white,
+        color:kWhite,
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -35,37 +40,37 @@ class CustomBottomNavBar extends StatelessWidget {
           _buildNavItem(
             icon: Icons.perm_identity,
             index: 0,
-            isSelected: selectedIndex == 0,
-            onTap: onItemTapped,
+            isSelected: widget.selectedIndex == 0,
+            onTap: widget.onItemTapped,
             label: 'Go Crispy',
           ),
           _buildNavItem(
             icon: Icons.shopping_cart,
             index: 1,
-            isSelected: selectedIndex == 1,
-            onTap: onItemTapped,
+            isSelected: widget.selectedIndex == 1,
+            onTap: widget.onItemTapped,
             label: 'Cart',
           ),
           _buildNavItem(
             icon: Icons.shopping_bag_outlined,
             index: 2,
-            isSelected: selectedIndex == 2,
-            onTap: onItemTapped,
+            isSelected: widget.selectedIndex == 2,
+            onTap: widget.onItemTapped,
             label: 'my order',
           ),
           _buildNavItem(
             icon: Icons.favorite_outline_rounded,
             index: 3,
-            isSelected: selectedIndex == 3,
-            onTap: onItemTapped,
+            isSelected: widget.selectedIndex == 3,
+            onTap: widget.onItemTapped,
             label: 'Favourite',
           ),
           _buildNavItem(
             icon: Icons.filter_list_outlined,
             index: 4,
-            isSelected: selectedIndex == 4,
-            onTap: onItemTapped,
-            label: 'filter',
+            isSelected: widget.selectedIndex == 4,
+            onTap: widget.onItemTapped,
+            label: 'Menu',
           ),
         ],
       ),

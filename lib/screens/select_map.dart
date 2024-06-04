@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/home_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 void main() {
@@ -78,28 +79,14 @@ class SelectLocationScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 16),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: kOrangeColor,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const ReusableText(
-                        text: 'Continue',
-                        color: kWhite,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
+                 const SizedBox(height: 16),
+                   const ReusableButton(
+                navigationTarget: HomeScreen(),
+                buttonText: 'Continue',
+                buttonColor:kOrangeColor,
+                textColor: Colors.white,
+                fontSize: 16,
+              ),
                 ],
               ),
             ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/contact_details.dart';
 import 'package:food_delivery_app/screens/login_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
@@ -61,24 +62,12 @@ class OtpScreen extends StatelessWidget {
                   // Handle the pin input here
                 },
               ),const SizedBox(height: kCustomSizedBoxHeightJ,),
-                   SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const ContactDetails()));},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kOrangeColor,
-                    padding:const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: const ReusableText(
-                    text: 'Continue',
-                    color:kWhite,
-                    fontSize: 16,
-                  ),
-                ),
+              const ReusableButton(
+                navigationTarget: ContactDetails(),
+                buttonText: 'Continue',
+                buttonColor:kOrangeColor,
+                textColor: Colors.white,
+                fontSize: 16,
               ),
             ],
           ),

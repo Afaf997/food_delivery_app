@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/otp_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -57,25 +58,13 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
               const SizedBox(height: kCustomSizedBoxHeightI, ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const OtpScreen()));},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kOrangeColor,
-                  padding:const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                child: const ReusableText(
-                  text: 'Continue',
-                  color:kWhite,
-                  fontSize: 16,
-                ),
+             const ReusableButton(
+                navigationTarget: OtpScreen(),
+                buttonText: 'Continue',
+                buttonColor:kOrangeColor,
+                textColor: Colors.white,
+                fontSize: 16,
               ),
-            ),
             SizedBox(height: screenHeight * 0.02),
             SizedBox(
               width: double.infinity,
