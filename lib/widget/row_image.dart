@@ -4,28 +4,29 @@ import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 Widget buildImageRow(BuildContext context) {
-  return Container(
-    margin: EdgeInsets.symmetric(horizontal: 20),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        _buildItem(
-          context: context,
-          imagePath: 'assets/images/rowPic.jpg',
-          itemName: 'Tomado Fries',
-          rating: '4.5',
-          description: 'Shrimp burger, French Fries, Drink',
-          qrCode: 'QR 23',
-        ),
-        _buildItem(
-          context: context,
-          imagePath: 'assets/images/rowPic1.jpg',
-          itemName: 'Crispy Fried Chicken',
-          rating: '4.5',
-          description: '12 pcs chicken,French Fries,Drink',
-          qrCode: 'QR 43',
-        ),
-      ],
+  return Center(
+    child: Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _buildItem(
+            context: context,
+            imagePath: 'assets/images/rowPic.jpg',
+            itemName: 'Tomado Fries',
+            rating: '4.5',
+            description: 'Shrimp burger, French Fries, Drink',
+            qrCode: 'QR 23',
+          ),
+          _buildItem(
+            context: context,
+            imagePath: 'assets/images/rowPic1.jpg',
+            itemName: 'Crispy Fried Chicken',
+            rating: '4.5',
+            description: '12 pcs chicken,French Fries,Drink',
+            qrCode: 'QR 43',
+          ),
+        ],
+      ),
     ),
   );
 }

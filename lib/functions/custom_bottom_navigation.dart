@@ -70,7 +70,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             index: 4,
             isSelected: widget.selectedIndex == 4,
             onTap: widget.onItemTapped,
-            label: 'Menu',
+            label: 'menu',
           ),
         ],
       ),

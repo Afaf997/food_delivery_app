@@ -22,17 +22,17 @@ void showCustomBottomSheet(BuildContext context) {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  width: 136,
-                  height: 108,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: const DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images/rowPic.jpg'),
+                  Container(
+                    width: 136,
+                    height: 108,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/rowPic.jpg'),
+                      ),
                     ),
                   ),
-                ),
                 const SizedBox(width: 13),
                 Expanded(
                   child: Column(
