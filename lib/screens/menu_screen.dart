@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/address_screen.dart';
+import 'package:food_delivery_app/screens/coupen_screen.dart';
 import 'package:food_delivery_app/screens/help_support.dart';
 import 'package:food_delivery_app/screens/language_selection.dart';
 import 'package:food_delivery_app/screens/my_profile.dart';
@@ -117,7 +118,10 @@ class MenuScreen extends StatelessWidget {
                 );
               }),
               buildMenuItem(Icons.percent_rounded, 'Coupon', () {
-                // Navigator.push to CouponScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CouponList()),
+                );
               }),
               buildMenuItem(Icons.person_pin_rounded, 'Address', () {
                 Navigator.push(
