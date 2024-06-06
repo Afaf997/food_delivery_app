@@ -12,7 +12,9 @@ const Color kblack=Colors.black;
 const Color kTextgreyColor =Color.fromARGB(136, 150, 147, 147);
 const Color kredcolor =Colors.red;
 const Color korgGrey=Colors.grey;
-
+const Color klistgreyColor =  Color(0xFFDDDDDD);
+const Color klgreyColor =  Color(0xFFE1E1E1);
+const Color kColorgrey =  Color(0xFFF6F6F6);
 const Icon kbackarrowIcon= Icon(Icons.arrow_circle_left_outlined,size:28,);
 
 

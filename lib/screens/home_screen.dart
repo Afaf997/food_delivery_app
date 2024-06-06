@@ -4,6 +4,7 @@ import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/functions/locate_container.dart';
 import 'package:food_delivery_app/functions/mainimage_container.dart';
 import 'package:food_delivery_app/functions/top_container.dart';
+import 'package:food_delivery_app/screens/best_selling.dart'; // Import your BestsellingScreen here
 import 'package:food_delivery_app/screens/cart_screen.dart';
 import 'package:food_delivery_app/screens/favourite_screen.dart';
 import 'package:food_delivery_app/screens/menu_screen.dart';
@@ -11,15 +12,13 @@ import 'package:food_delivery_app/screens/order_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/row_image.dart';
 import 'package:food_delivery_app/widget/single_container.dart';
-import 'package:food_delivery_app/widget/title.dart';
-
+import 'package:food_delivery_app/widget/title.dart'; // Ensure you have this import
 
 class HomeScreen extends StatefulWidget {
   // ignore: use_key_in_widget_constructors
   const HomeScreen({Key? key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -30,18 +29,17 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       selected = index;
     });
-       if (index == 2) {
-      Navigator.push(context,MaterialPageRoute(builder: (context) => MyOrderScreen()),
-      );
-    }else if(index == 1){
-       Navigator.push(context,MaterialPageRoute(builder: (context) =>const CartScreen()));
-    }else if(index == 3){
-       Navigator.push(context,MaterialPageRoute(builder: (context) =>const FavouriteScreen()));
-    }else if(index == 4){
-       Navigator.push(context,MaterialPageRoute(builder: (context) => MenuScreen()));
+
+    if (index == 2) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderScreen()));
+    } else if (index == 1) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreen()));
+    } else if (index == 3) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreen()));
+    } else if (index == 4) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => MenuScreen()));
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +57,16 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: kCustomSizedBoxHeight),
             buildMenuRow(context),
             const SizedBox(height: kCustomSizedBoxHeight),
-            buildTitleRow('Best Selling', actionText: 'See All'),
+            buildTitleRow('Best Selling', actionText: 'See All', onSeeAllPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => BestSelling()));
+            }),
             const SizedBox(height: kCustomSizedBoxHeightA),
             buildImageRow(context),
             const SizedBox(height: kCustomSizedBoxHeight),
             buildTitleRow('Top Deals'),
             const SizedBox(height: kCustomSizedBoxHeight),
-            buildImageContainer(     context,
+            buildImageContainer(
+              context,
               MenuItem(
                 imagePath: 'assets/images/pic.jpg',
                 itemName: 'Tomado Fries',
@@ -75,7 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height:kCustomSizedBoxHeight),
-            buildImageContainer(context,
+            buildImageContainer(
+              context,
               MenuItem(
                 imagePath: 'assets/images/rowPic1.jpg',
                 itemName: 'Crispy Fried Chicken',

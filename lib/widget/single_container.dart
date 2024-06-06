@@ -68,7 +68,7 @@ Widget buildItem(MenuItem menuItem) {
                 color: Color.fromARGB(255, 55, 132, 57),
                 shape: BoxShape.circle,
               ),
-              child:const Center(child: ReusableText(text: '15%',color: kWhite,fontSize: 12,)),
+              child:const Center(child: ReusableText(text: '15%',color: kWhite,fontSize: 13,fontWeight: FontWeight.bold,)),
             ),
           ),
           Positioned(
