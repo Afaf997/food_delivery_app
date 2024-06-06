@@ -11,7 +11,7 @@ class TopDeals extends StatelessWidget {
     return  Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: ReusableText(
+        title:const ReusableText(
           text: 'Top Deals',
           fontWeight: FontWeight.w900,
           fontSize: 20,
