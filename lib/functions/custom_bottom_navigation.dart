@@ -1,7 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/screens/cart_screen.dart';
+import 'package:food_delivery_app/screens/favourite_screen.dart';
+import 'package:food_delivery_app/screens/home_screen.dart';
+import 'package:food_delivery_app/screens/menu_screen.dart';
+import 'package:food_delivery_app/screens/order_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 
-class CustomBottomNavBar extends StatefulWidget {
+
+class MainScreen extends StatefulWidget {
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int _selectedIndex = 0;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    HomeScreen(),
+    CartScreen(),
+    MyOrderScreen(),
+    FavouriteScreen(),
+    MenuScreen(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _widgetOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: CustomBottomNavBar(
+        selectedIndex: _selectedIndex,
+        onItemTapped: _onItemTapped,
+      ),
+    );
+  }
+}
+
+class CustomBottomNavBar extends StatelessWidget {
   final int selectedIndex;
   final ValueChanged<int> onItemTapped;
 
@@ -12,16 +52,11 @@ class CustomBottomNavBar extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
-}
-
-class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
-  @override
   Widget build(BuildContext context) {
     return Container(
-      padding:const EdgeInsets.symmetric(vertical: 10),
-      decoration:const BoxDecoration(
-        color:kWhite,
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      decoration: const BoxDecoration(
+        color: kWhite,
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -40,36 +75,36 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           _buildNavItem(
             icon: Icons.perm_identity,
             index: 0,
-            isSelected: widget.selectedIndex == 0,
-            onTap: widget.onItemTapped,
+            isSelected: selectedIndex == 0,
+            onTap: onItemTapped,
             label: 'Go Crispy',
           ),
           _buildNavItem(
             icon: Icons.shopping_cart,
             index: 1,
-            isSelected: widget.selectedIndex == 1,
-            onTap: widget.onItemTapped,
+            isSelected: selectedIndex == 1,
+            onTap: onItemTapped,
             label: 'Cart',
           ),
           _buildNavItem(
             icon: Icons.shopping_bag_outlined,
             index: 2,
-            isSelected: widget.selectedIndex == 2,
-            onTap: widget.onItemTapped,
+            isSelected: selectedIndex == 2,
+            onTap: onItemTapped,
             label: 'my order',
           ),
           _buildNavItem(
             icon: Icons.favorite_outline_rounded,
             index: 3,
-            isSelected: widget.selectedIndex == 3,
-            onTap: widget.onItemTapped,
+            isSelected: selectedIndex == 3,
+            onTap: onItemTapped,
             label: 'Favourite',
           ),
           _buildNavItem(
             icon: Icons.filter_list_outlined,
             index: 4,
-            isSelected: widget.selectedIndex == 4,
-            onTap: widget.onItemTapped,
+            isSelected: selectedIndex == 4,
+            onTap: onItemTapped,
             label: 'menu',
           ),
         ],
@@ -99,10 +134,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                     icon,
                     color: Colors.white,
                   ),
-                const  SizedBox(width: 8),
+                  SizedBox(width: 8),
                   Text(
                     label,
-                    style:const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -117,3 +152,4 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     );
   }
 }
+

@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/screens/home_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SelectLocationScreen(),
-    );
-  }
-}
 
 class SelectLocationScreen extends StatelessWidget {
   @override
@@ -80,8 +69,8 @@ class SelectLocationScreen extends StatelessWidget {
                     ),
                   ),
                  const SizedBox(height: 16),
-                   const ReusableButton(
-                navigationTarget: HomeScreen(),
+                    ReusableButton(
+                navigationTarget: MainScreen(),
                 buttonText: 'Continue',
                 buttonColor:kOrangeColor,
                 textColor: Colors.white,

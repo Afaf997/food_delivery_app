@@ -5,10 +5,6 @@ import 'package:food_delivery_app/functions/locate_container.dart';
 import 'package:food_delivery_app/functions/mainimage_container.dart';
 import 'package:food_delivery_app/functions/top_container.dart';
 import 'package:food_delivery_app/screens/best_selling.dart'; // Import your BestsellingScreen here
-import 'package:food_delivery_app/screens/cart_screen.dart';
-import 'package:food_delivery_app/screens/favourite_screen.dart';
-import 'package:food_delivery_app/screens/menu_screen.dart';
-import 'package:food_delivery_app/screens/order_screen.dart';
 import 'package:food_delivery_app/screens/top_deals.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/row_image.dart';
@@ -25,22 +21,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selected = 0;
-
-  void onItemTapped(int index) {
-    setState(() {
-      selected = index;
-    });
-
-    if (index == 2) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrderScreen()));
-    } else if (index == 1) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreen()));
-    } else if (index == 3) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreen()));
-    } else if (index == 4) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => MenuScreen()));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,10 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(
-        selectedIndex: selected,
-        onItemTapped: onItemTapped,
-      ),
+
     );
   }
 }
