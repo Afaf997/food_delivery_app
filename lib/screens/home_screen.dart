@@ -9,6 +9,7 @@ import 'package:food_delivery_app/screens/cart_screen.dart';
 import 'package:food_delivery_app/screens/favourite_screen.dart';
 import 'package:food_delivery_app/screens/menu_screen.dart';
 import 'package:food_delivery_app/screens/order_screen.dart';
+import 'package:food_delivery_app/screens/top_deals.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/row_image.dart';
 import 'package:food_delivery_app/widget/single_container.dart';
@@ -63,7 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: kCustomSizedBoxHeightA),
             buildImageRow(context),
             const SizedBox(height: kCustomSizedBoxHeight),
-            buildTitleRow('Top Deals'),
+            buildTitleRow('Top Deals',actionText: 'See All', onSeeAllPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TopDeals()));
+            }),
             const SizedBox(height: kCustomSizedBoxHeight),
             buildImageContainer(
               context,
