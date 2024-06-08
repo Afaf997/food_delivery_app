@@ -120,7 +120,7 @@ class MenuScreen extends StatelessWidget {
               buildMenuItem(Icons.percent_rounded, 'Coupon', () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CouponList()),
+                  MaterialPageRoute(builder: (context) => CouponScreen()),
                 );
               }),
               buildMenuItem(Icons.person_pin_rounded, 'Address', () {
