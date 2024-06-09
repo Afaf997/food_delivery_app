@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/functions/order_confirmation.dart';
+import 'package:food_delivery_app/screens/address_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_button.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({Key? key}) : super(key: key);
@@ -43,7 +46,7 @@ class CheckoutScreen extends StatelessWidget {
             Center(
               child: TextButton.icon(
                 onPressed: () {
-                  // Handle add new address action
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AddressForm()));
                 },
                 icon: Icon(Icons.add_circle_rounded,color: kOrangeColor,),
                 label: Text('Add new address',style: TextStyle(color: kOrangeColor),),
@@ -55,28 +58,26 @@ class CheckoutScreen extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
             ),
             const SizedBox(height: 8),
-      Container(
-
-  child: DropdownButtonFormField<String>(
-    value: 'Debit card ending ***808',
-    items: const [
-      DropdownMenuItem(
+      DropdownButtonFormField<String>(
         value: 'Debit card ending ***808',
-        child: Text('Debit card ending ***808'),
+        items: const [
+          DropdownMenuItem(
+            value: 'Debit card ending ***808',
+            
+            child: Text('Debit card ending ***808'),
+          ),
+          // Add more payment methods here
+        ],
+        onChanged: (value) {
+          // Handle payment method change
+        },
+        decoration: InputDecoration(
+          prefixIcon: Icon(Icons.credit_score_outlined),
+          border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12), 
+          ), // Optional border
+        ),
       ),
-      // Add more payment methods here
-    ],
-    onChanged: (value) {
-      // Handle payment method change
-    },
-    decoration: InputDecoration(
-      prefixIcon: Icon(Icons.credit_score_outlined),
-      border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12), 
-      ), // Optional border
-    ),
-  ),
-),
 
             const SizedBox(height: 16),
          const   Text(
@@ -88,7 +89,10 @@ class CheckoutScreen extends StatelessWidget {
               maxLines: 3,
               decoration: InputDecoration(
                 hintText: 'Add note here...',
-                border: OutlineInputBorder(),
+                 border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12), 
+      ),
+                
               ),
             ),
             const SizedBox(height: 20),
@@ -100,12 +104,13 @@ class CheckoutScreen extends StatelessWidget {
                 Text('42 QR'),
               ],
             ), SizedBox(height: 10),
-          const  Row(
+          const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-              Text('10 QR'),
+                Text('Delivery fee'),
+                Text('10 QR'),
               ],
-            ),
+            ), 
             Divider(),
            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -121,18 +126,29 @@ class CheckoutScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Handle confirm order action
-              },
-              child: Center(
-                child: Text('Confirm Order'),
-              ),
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size.fromHeight(50),
-                backgroundColor: Colors.orange,
-              ),
-            ),
+            SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: kOrangeColor,
+          padding: EdgeInsets.symmetric(vertical: 14),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {
+          showDeliveryFeeDialog(context);
+        },
+        child:const Text(
+          "confirm Order",
+          style: TextStyle(
+            color: kWhite,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+            )
           ],
         ),
       ),

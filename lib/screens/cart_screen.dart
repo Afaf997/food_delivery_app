@@ -358,7 +358,6 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
           ],
         ),
       ),
-      SizedBox(height: 8),
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Row(

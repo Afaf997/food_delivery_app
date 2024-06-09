@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            buildTopContainer(),
+            buildTopContainer(context),
             const SizedBox(height: kCustomSizedBoxHeight),
             buildImageRichContainer(context),
             const SizedBox(height: kCustomSizedBoxHeight),

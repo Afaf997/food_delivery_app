@@ -20,23 +20,28 @@ class WelcomeScreen extends StatelessWidget {
             alignment: Alignment.topLeft,
             children: [
               Image.asset(
-                'assets/images/image_hand.png',
+                'assets/images/hand-burger.png',
               ),
               Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.27, top: screenHeight * 0.05),
-                child: Image.asset(
-                  'assets/images/image_burger.png',
-                  width: screenWidth * 0.6,
+                padding: EdgeInsets.only(top: screenHeight * 0.41, left: screenWidth * 0.04),
+                child: Column(
+                  children: [
+                    SizedBox(
+  width:350,
+  height: 200, 
+  child: Container(
+    child: ReusableText(
+      text: "Welcome to Qatar's Own Fried Chicken App!",
+      color: kWhite,
+      fontSize: 40,
+      fontWeight: FontWeight.w900,
+    ),
+  ),
+),
+
+                  ],
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: screenHeight * 0.4, left: screenWidth * 0.04),
-                child: ReusableText(
-                 text:  "Welcome to Qatar's Own Fried Chicken App!",
-                    color:kWhite,
-                    fontSize: screenWidth * 0.11,
-                    fontWeight: FontWeight.w900,
-                ),
+                
               ),
             ],
           ),
