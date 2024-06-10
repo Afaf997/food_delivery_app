@@ -12,9 +12,9 @@ class ReusableOkeyButton extends StatelessWidget {
     super.key,
     required this.navigationTarget,
     required this.buttonText,
-    this.buttonColor = kOrangeColor, 
-    this.textColor = Colors.white, 
-    this.fontSize = 16.0, 
+    this.buttonColor = kOrangeColor,
+    this.textColor = Colors.white,
+    this.fontSize = 16.0,
   });
 
   @override
@@ -31,7 +31,7 @@ class ReusableOkeyButton extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: buttonColor,
-          padding: const EdgeInsets.symmetric(vertical: 14),
+          padding: const EdgeInsets.symmetric(vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),

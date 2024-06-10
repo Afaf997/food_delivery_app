@@ -15,6 +15,8 @@ const Color korgGrey=Colors.grey;
 const Color klistgreyColor =  Color(0xFFDDDDDD);
 const Color klgreyColor =  Color(0xFFE1E1E1);
 const Color kColorgrey =  Color(0xFFF6F6F6);
+const Color kColoryellow =  Color(0xFFFFBF34);
+const Color kColorgreen =  Color(0xFF4C782D);
 const Icon kbackarrowIcon= Icon(Icons.arrow_circle_left_outlined,size:28,);
 
 
