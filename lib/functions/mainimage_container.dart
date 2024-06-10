@@ -6,17 +6,16 @@ Widget buildImageRichContainer(BuildContext context) {
     child: Container(
       margin: const EdgeInsets.symmetric(horizontal: 17),
       decoration: kImageBoxDecoration,
-      child: Column(
-        children: [
-          Image.asset(
-            'assets/images/Main_image.png',
-            width: MediaQuery.of(context).size.width * kImageWidthRatio,
-            height: MediaQuery.of(context).size.height * kImageHeightRatio,
-            fit: BoxFit.cover,
-          ),
-          SizedBox(height: 9),
-        
-        ],
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/images/Main_image.png',
+              fit: BoxFit.cover,
+            ),
+          ],
+        ),
       ),
     ),
   );

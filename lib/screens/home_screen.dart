@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/build_menu_row.dart';
-import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/functions/locate_container.dart';
 import 'package:food_delivery_app/functions/mainimage_container.dart';
 import 'package:food_delivery_app/functions/top_container.dart';
