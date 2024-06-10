@@ -35,7 +35,7 @@ class CategoriesScreen extends StatelessWidget {
           ),
          const SizedBox(height:kCustomSizedBoxHeight),
           SizedBox(
-            height: 40, 
+            height: 33, 
             child: ListView(
               scrollDirection: Axis.horizontal,
               padding:const EdgeInsets.symmetric(horizontal: 10),
@@ -79,7 +79,7 @@ class CategoriesScreen extends StatelessWidget {
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
                   price: '23 QR',
                 ),SizedBox(height:kCustomSizedBoxHeightE,),FoodItemCard(
-                  imageUrl: 'assets/images/firstImage.jpg',
+                  imageUrl: 'assets/images/Main_image.png',
                   title: 'Tornado Fries',
                   rating: 4.5,
                   description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',

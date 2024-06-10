@@ -40,6 +40,7 @@ dependencies:
   google_maps_flutter: ^2.6.1
   ticket_widget: ^1.0.2
   ticket_material: ^0.3.1
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +88,7 @@ flutter:
     - assets/images/profile.png
     - assets/images/delivery-man .png
     - assets/images/hand-burger.png
+    - assets/vuesax/linear/candle-2.png
 
 
 
