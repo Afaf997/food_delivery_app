@@ -14,16 +14,7 @@ class CustomContainerWidget extends StatelessWidget {
         color: kOrangeColor,
         borderRadius: BorderRadius.circular(15),
       ),
-      child:const Row(
-        children: [
-          SizedBox(width: kCustomSizedBoxWidthD ),
-          ReusableText(text: 'Total',fontSize: 14,color: kWhite,),
-          SizedBox(width: kCustomSizedBoxWidthE ),
-          ReusableText(text: "23 QR",fontSize: 19,fontWeight: FontWeight.w700,color: kWhite,),
-          SizedBox(width: kCustomSizedBoxWidthF),
-          ReusableText(text: "Add to cart",fontSize: 16,fontWeight: FontWeight.w600,color: kWhite,),
-        ],
-      ),
+      child:Center(child: ReusableText(text: "Add to cart",fontSize: 16,fontWeight: FontWeight.w600,color: kWhite,)),
     );
   }
 }

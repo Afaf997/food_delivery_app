@@ -91,7 +91,7 @@ class ReusableCoupon extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.only(left: 40),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,19 +106,32 @@ class ReusableCoupon extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                          width: 130,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 3.0),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(4.0),
+                            border: Border.all(
+                color: Colors.white, 
+                style: BorderStyle.solid,
+              ),
                           ),
-                          child: const Text(
-                            'WELCOME',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: kblack,
-                            ),
+                          child: Row(
+                            children: [
+                              const Text(
+                                'WELCOME',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: kblack,
+                                ),
+                              ), SizedBox(width: 10,),
+                               Image.asset(
+                'assets/images/copy.png',
+              ),
+                            ],
                           ),
+                          
                         ),
                       ],
                     ),

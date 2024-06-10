@@ -41,7 +41,7 @@ Widget _buildItem({
 }) {
   return GestureDetector(
     onTap: () {
-      showCustomBottomSheet(context);
+      showCustomBottomSheet(context,);
     },
     child: Container(
       width: 170,
