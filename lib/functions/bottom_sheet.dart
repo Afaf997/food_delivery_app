@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/costom_container_widget.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/addons.dart';
 import 'package:food_delivery_app/widget/check_box_reusable.dart';
 import 'package:food_delivery_app/widget/reusable_heading.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
-import 'package:food_delivery_app/widget/round_check.dart';
 
 void showCustomBottomSheet(BuildContext context) {
   showModalBottomSheet(
@@ -22,17 +22,17 @@ void showCustomBottomSheet(BuildContext context) {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                  Container(
-                    width: 136,
-                    height: 108,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/images/rowPic.jpg'),
-                      ),
+                Container(
+                  width: 136,
+                  height: 108,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/images/rowPic.jpg'),
                     ),
                   ),
+                ),
                 const SizedBox(width: 13),
                 Expanded(
                   child: Column(
@@ -62,13 +62,10 @@ void showCustomBottomSheet(BuildContext context) {
                           ),
                         ],
                       ),
-                      Container(
-                        width: double.infinity,
-                        child: const ReusableText(
-                          text:
-                              'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
-                          fontSize: 9,
-                        ),
+                      const ReusableText(
+                        text:
+                            'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
+                        fontSize: 9,
                       ),
                       const ReusableText(
                         text: 'QR 23',
@@ -102,7 +99,8 @@ void showCustomBottomSheet(BuildContext context) {
                           Icons.remove,
                           size: 14,
                         ),
-                        onPressed: () {},),
+                        onPressed: () {},
+                      ),
                       const SizedBox(width: kCustomSizedBoxWidth),
                       const ReusableText(
                         text: '1',
@@ -121,49 +119,39 @@ void showCustomBottomSheet(BuildContext context) {
                 ),
               ],
             ),
-            const SizedBox(
-              height: kCustomSizedBoxHeight,
-            ),
+            const SizedBox(height: kCustomSizedBoxHeight),
             buildHeading('Meal Size'),
-            const SizedBox(
-              height: kCustomSizedBoxHeightE,
-            ),
+            const SizedBox(height: kCustomSizedBoxHeightE),
             buildCheckbox('Go Medium (+3 QR)', true),
-            const SizedBox(
-              height: kCustomSizedBoxHeightF,
-            ),
+            const SizedBox(height: kCustomSizedBoxHeightF),
             buildCheckbox('Go Medium (+3 QR)', false),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             buildHeading('Your choices of fries'),
-            const SizedBox(
-              height: kCustomSizedBoxHeightE,
-            ),
+            const SizedBox(height: kCustomSizedBoxHeightE),
             buildCheckbox('Go Medium (+3 QR)', true),
-            const SizedBox(
-              height: kCustomSizedBoxHeightF,
-            ),
+            const SizedBox(height: kCustomSizedBoxHeightF),
             buildCheckbox('Go Medium (+3 QR)', false),
-            const SizedBox(
-              height: kCustomSizedBoxHeightG,
+            const SizedBox(height: kCustomSizedBoxHeightG),
+            buildHeading('Addons'),
+            const SizedBox(height: kCustomSizedBoxHeightF),
+            Expanded(
+              child: ListView(
+                children: const [
+                  AddOnItem(
+                    image: 'assets/images/copy.png',
+                    title: 'Kinza Lemon (250 ml)',
+                    subtitle: '2QR',
+                    initialCount: 2,
+                  ),
+                  AddOnItem(
+                    image: 'assets/images/copy.png',
+                    title: 'Kinza Cola (250 ml)',
+                    subtitle: '2QR',
+                  ),
+                ],
+              ),
             ),
-            buildHeading('Your choices of drink'),
-            const SizedBox(
-              height: kCustomSizedBoxHeightF,
-            ),
-            roundCheckbox('Go Medium (+3 QR)', false),
-            const SizedBox(
-              height: kCustomSizedBoxHeightF,
-            ),
-            roundCheckbox('Go Medium (+3 QR)', false),
-            const SizedBox(
-              height: kCustomSizedBoxHeightF,
-            ),
-            roundCheckbox('Go Medium (+3 QR)', true),
-            const SizedBox(
-              height: kCustomSizedBoxHeightA,
-            ),
+            const SizedBox(height: kCustomSizedBoxHeightA),
             const CustomContainerWidget(),
           ],
         ),
@@ -171,3 +159,11 @@ void showCustomBottomSheet(BuildContext context) {
     },
   );
 }
+
+
+
+
+
+
+
+

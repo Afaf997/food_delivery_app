@@ -91,6 +91,9 @@ flutter:
     - assets/vuesax/linear/candle-2.png
     - assets/images/coupon.png
     - assets/images/copy.png
+    - assets/images/adon1.png
+    - assets/images/adon2.png
+    - assets/images/adon3.png
 
 
 
@@ -106,10 +109,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Aeonik
+      fonts:
+        - asset: assets/fonts/AeonikTRIAL-Regular.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
