@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
+import 'package:food_delivery_app/screens/contact_details.dart';
+import 'package:food_delivery_app/screens/login_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
@@ -24,7 +26,12 @@ class SelectLocationScreen extends StatelessWidget {
                 padding:const EdgeInsets.only(top: 50.0, left: 16.0),
                 child: IconButton(
                   icon:const Icon(Icons.arrow_circle_left_outlined),
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: (){
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContactDetails()),
+                );
+                  }
                 ),
               ),
             ),

@@ -12,24 +12,25 @@ class LoginScreen extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-       backgroundColor: kWhite,
+      backgroundColor: kWhite,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-           const SizedBox(height: kCustomSizedBoxHeightH, ),
-           const Text(
+            const SizedBox(height: kCustomSizedBoxHeightH),
+            const Text(
               "Login or create an account",
               style: TextStyle(
-                fontSize: 36, 
-                fontWeight: FontWeight.bold,
+                fontSize: 36,
+                fontWeight: FontWeight.w900,
+                height: 0.99, 
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: screenHeight * 0.05),
             Container(
-              padding:const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
                 color: kGrayLogo,
                 borderRadius: BorderRadius.circular(10),
@@ -41,7 +42,11 @@ class LoginScreen extends StatelessWidget {
                     width: 24,
                   ),
                   const SizedBox(width: kCustomSizedBoxWidthE),
-                  const ReusableText(text: '+974 |', fontSize: 16,fontWeight: FontWeight.bold,),
+                  const ReusableText(
+                    text: '+974 |',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                   const SizedBox(width: 10),
                   const Expanded(
                     child: TextField(
@@ -59,20 +64,23 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
             ),
-              const SizedBox(height: kCustomSizedBoxHeightI, ),
-             const ReusableNavigationButton(
-                navigationTarget: OtpScreen(),
-                buttonText: 'Continue',
-                buttonColor:kOrangeColor,
-                textColor: Colors.white,
-                fontSize: 16,
-              ),
+            const SizedBox(height: kCustomSizedBoxHeightI),
+            const ReusableNavigationButton(
+              navigationTarget: OtpScreen(),
+              buttonText: 'Continue',
+              buttonColor: kOrangeColor,
+              textColor: Colors.white,
+              fontSize: 16,
+            ),
             SizedBox(height: screenHeight * 0.02),
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () {
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const OtpScreen()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const OtpScreen()));
                 },
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
@@ -92,7 +100,7 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: screenHeight * 0.05),
             const ReusableText(
               text: 'By clicking "continue" you agree with',
-              color:korgGrey,
+              color: korgGrey,
               fontSize: 12,
             ),
             const ReusableText(
