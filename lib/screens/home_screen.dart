@@ -25,66 +25,77 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            buildTopContainer(context),
-            const SizedBox(height: kCustomSizedBoxHeight),
-            buildImageRichContainer(context),
-            const SizedBox(height: kCustomSizedBoxHeight),
-            buildTitleRow('Menu'),
-            const SizedBox(height: kCustomSizedBoxHeight),
-            buildMenuRow(context),
-            const SizedBox(height: kCustomSizedBoxHeight),
-            buildTitleRow('Best Selling', actionText: 'See All', onSeeAllPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => BestSelling()));
-            }),
-            const SizedBox(height: kCustomSizedBoxHeightA),
-            buildImageRow(context),
-            const SizedBox(height: kCustomSizedBoxHeight),
-            buildTitleRow('Top Deals',actionText: 'See All', onSeeAllPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => TopDeals()));
-            }),
-            const SizedBox(height: kCustomSizedBoxHeight),
-            buildImageContainer(
-              context,
-              MenuItem(
-                imagePath: 'assets/images/pic.jpg',
-                itemName: 'Tomado Fries',
-                rating: '4.5',
-                description: 'Shrimp burger, French Fries, Drink',
-                qrCode: 'QR 23',
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.only(top: 200.0), 
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  buildImageRichContainer(context),
+                  const SizedBox(height: kCustomSizedBoxHeight),
+                  buildTitleRow('Menu'),
+                  const SizedBox(height: kCustomSizedBoxHeight),
+                  buildMenuRow(context),
+                  const SizedBox(height: kCustomSizedBoxHeight),
+                  buildTitleRow('Best Selling', actionText: 'See All', onSeeAllPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => BestSelling()));
+                  }),
+                  const SizedBox(height: kCustomSizedBoxHeightA),
+                  buildImageRow(context),
+                  const SizedBox(height: kCustomSizedBoxHeight),
+                  buildTitleRow('Top Deals',actionText: 'See All', onSeeAllPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => TopDeals()));
+                  }),
+                  const SizedBox(height: kCustomSizedBoxHeight),
+                  buildImageContainer(
+                    context,
+                    MenuItem(
+                      imagePath: 'assets/images/pic.jpg',
+                      itemName: 'Tomado Fries',
+                      rating: '4.5',
+                      description: 'Shrimp burger, French Fries, Drink',
+                      qrCode: 'QR 23',
+                    ),
+                  ),
+                  const SizedBox(height:kCustomSizedBoxHeight),
+                  buildImageContainer(
+                    context,
+                    MenuItem(
+                      imagePath: 'assets/images/rowPic1.jpg',
+                      itemName: 'Crispy Fried Chicken',
+                      rating: '4.5',
+                      description: '12 pcs chicken, French Fries, Drink',
+                      qrCode: 'QR 43',
+                    ),
+                  ),
+                  const SizedBox(height: kCustomSizedBoxHeight),
+                  buildImageContainer(
+                    context,
+                    MenuItem(
+                      imagePath: 'assets/images/pic3.jpg',
+                      itemName: 'Crispy Fried Chicken',
+                      rating: '4.5',
+                      description: '12 pcs chicken, French Fries, Drink',
+                      qrCode: 'QR 43',
+                    ),
+                  ),
+                  const SizedBox(height:kCustomSizedBoxHeight),
+                  buildLocateContainer(),
+                ],
               ),
             ),
-            const SizedBox(height:kCustomSizedBoxHeight),
-            buildImageContainer(
-              context,
-              MenuItem(
-                imagePath: 'assets/images/rowPic1.jpg',
-                itemName: 'Crispy Fried Chicken',
-                rating: '4.5',
-                description: '12 pcs chicken, French Fries, Drink',
-                qrCode: 'QR 43',
-              ),
-            ),
-            const SizedBox(height: kCustomSizedBoxHeight),
-            buildImageContainer(
-              context,
-              MenuItem(
-                imagePath: 'assets/images/pic3.jpg',
-                itemName: 'Crispy Fried Chicken',
-                rating: '4.5',
-                description: '12 pcs chicken, French Fries, Drink',
-                qrCode: 'QR 43',
-              ),
-            ),
-            const SizedBox(height:kCustomSizedBoxHeight),
-            buildLocateContainer(),
-          ],
-        ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: buildTopContainer(context),
+          ),
+        ],
       ),
-
     );
   }
 }
+
