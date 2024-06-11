@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/screens/splash_screen.dart';
+import 'package:food_delivery_app/screens/language_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: "Aeonik"),
       debugShowCheckedModeBanner: false,
       title: 'food_delivery',
-      home: const SplashScreen(),
+      home: const LanguageScreen(),
      
     );
   }

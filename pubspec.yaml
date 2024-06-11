@@ -41,6 +41,7 @@ dependencies:
   ticket_widget: ^1.0.2
   ticket_material: ^0.3.1
   flutter_svg: ^2.0.10+1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -78,8 +79,7 @@ flutter:
     - assets/images/pic3.jpg
     - assets/images/pic2.png
     - assets/images/qatar.png
-    - assets/images/crispy.png
-    - assets/images/image_hand.png
+    - assets/images/crispy-logo.png
     - assets/images/image_burger.png
     - assets/images/qatar_logo.png
     - assets/images/map.png

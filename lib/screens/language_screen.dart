@@ -10,10 +10,15 @@ class LanguageScreen extends StatefulWidget {
 }
 
 class _LanguageScreenState extends State<LanguageScreen> {
-  String? _selectedLanguage = 'en'; // Set default selected language
+  String? _selectedLanguage = 'en'; 
 
   void navigateToWelcomeScreen() {
     if (_selectedLanguage == 'en') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => WelcomeScreen()),
+      );
+    }else{
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => WelcomeScreen()),
@@ -27,17 +32,9 @@ class _LanguageScreenState extends State<LanguageScreen> {
     return Scaffold(
       backgroundColor: kOrangeColor,
       body: Center(
-        child: Stack(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 150),
-              child: Image.asset('assets/images/logo.png', width: 100, height: 100),
-            ),
-            Positioned(
-              top: 60,
-              child: Image.asset('assets/images/crispy.png', width: 120, height: 120),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 150),
+          child: Image.asset('assets/images/crispy-logo.png', width: 117, height: 160),
         ),
       ),
       bottomSheet: ClipRRect(
