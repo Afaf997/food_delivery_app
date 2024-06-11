@@ -3,6 +3,7 @@ import 'package:food_delivery_app/screens/cart_screen.dart';
 import 'package:food_delivery_app/screens/favourite_screen.dart';
 import 'package:food_delivery_app/screens/home_screen.dart';
 import 'package:food_delivery_app/screens/menu_screen.dart';
+import 'package:food_delivery_app/screens/order.dart';
 import 'package:food_delivery_app/screens/order_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   static List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     CartScreen(),
-    MyOrderScreen(),
+    OrderScreen(),
     FavouriteScreen(),
     MenuScreen(),
   ];

@@ -20,10 +20,7 @@ class CategoriesScreen extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomeScreen()),
-                    );
+                    Navigator.pop(context);
                   },
                   icon:const Icon(Icons.arrow_back_ios),
                 ),

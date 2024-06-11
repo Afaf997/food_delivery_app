@@ -4,24 +4,18 @@ import 'package:food_delivery_app/functions/running_order.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
-class MyOrderScreen extends StatefulWidget {
+class OrderScreen extends StatefulWidget {
   @override
-  _MyOrderScreenState createState() => _MyOrderScreenState();
+  _OrderScreenState createState() => _OrderScreenState();
 }
 
-class _MyOrderScreenState extends State<MyOrderScreen> {
+class _OrderScreenState extends State<OrderScreen> {
   int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon:const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
         toolbarHeight: 100,
         title: const ReusableText(
           text: 'My Order',

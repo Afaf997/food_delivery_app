@@ -3,6 +3,7 @@ import 'package:food_delivery_app/screens/contact_details.dart';
 import 'package:food_delivery_app/screens/login_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
+import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
@@ -62,7 +63,7 @@ class OtpScreen extends StatelessWidget {
                   // Handle the pin input here
                 },
               ),const SizedBox(height: kCustomSizedBoxHeightJ,),
-              const ReusableButton(
+              const ReusableNavigationButton(
                 navigationTarget: ContactDetails(),
                 buttonText: 'Continue',
                 buttonColor:kOrangeColor,

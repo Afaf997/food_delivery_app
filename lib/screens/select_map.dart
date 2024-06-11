@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
-import 'package:food_delivery_app/screens/home_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
+import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 
@@ -52,8 +52,8 @@ class SelectLocationScreen extends StatelessWidget {
                     height: 45,
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
-                      color: kGrayLogo, // Set background color to white (optional)
-                      borderRadius: BorderRadius.circular(8.0), // Adjust border radius
+                      color: kGrayLogo, 
+                      borderRadius: BorderRadius.circular(8.0), 
                     ),
                     child:const Row(
                       children: [
@@ -69,7 +69,7 @@ class SelectLocationScreen extends StatelessWidget {
                     ),
                   ),
                  const SizedBox(height: 16),
-                    ReusableButton(
+                    ReusableNavigationButton(
                 navigationTarget: MainScreen(),
                 buttonText: 'Continue',
                 buttonColor:kOrangeColor,

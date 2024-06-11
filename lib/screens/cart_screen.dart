@@ -18,14 +18,9 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhite,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: kWhite,
         toolbarHeight: 100,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_ios_new_outlined),
-        ),
         title: const Text(
           "My Cart",
           style: TextStyle(

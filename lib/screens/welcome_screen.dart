@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/login_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
+import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -59,7 +60,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.05),
-                ReusableButton(
+                ReusableNavigationButton(
                 navigationTarget: LoginScreen(),
                 buttonText: 'Get Start',
                 buttonColor:kblack,

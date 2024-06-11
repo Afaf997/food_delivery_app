@@ -3,6 +3,7 @@ import 'package:food_delivery_app/screens/otp_screen.dart';
 import 'package:food_delivery_app/screens/select_map.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
+import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class ContactDetails extends StatelessWidget {
@@ -94,7 +95,7 @@ class ContactDetails extends StatelessWidget {
               ),
             ),
             SizedBox(height: kCustomSizedBoxHeightH,),
-            ReusableButton(
+            ReusableNavigationButton(
                 navigationTarget: SelectLocationScreen(),
                 buttonText: 'Continue',
                 buttonColor:kOrangeColor,

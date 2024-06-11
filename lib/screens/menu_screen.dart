@@ -5,6 +5,7 @@ import 'package:food_delivery_app/screens/help_support.dart';
 import 'package:food_delivery_app/screens/language_selection.dart';
 import 'package:food_delivery_app/screens/my_profile.dart';
 import 'package:food_delivery_app/screens/notification.dart';
+import 'package:food_delivery_app/screens/order.dart';
 import 'package:food_delivery_app/screens/order_screen.dart';
 import 'package:food_delivery_app/screens/privacy_policy.dart';
 import 'package:food_delivery_app/screens/terms_condition.dart';
@@ -96,7 +97,7 @@ class MenuScreen extends StatelessWidget {
               buildMenuItem(Icons.shopping_bag_outlined, 'My Orders', () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyOrderScreen()),
+                  MaterialPageRoute(builder: (context) => OrderScreen()),
                 );
               }),
               buildMenuItem(Icons.notifications_none_outlined, 'Notification', () {

@@ -16,7 +16,7 @@ class CouponScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             ReusableCoupon(color: kOrangeColor),
@@ -86,12 +86,12 @@ class ReusableCoupon extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),SizedBox(width: 17,),
+                ),SizedBox(width: 7,),
                 DottedDivider(), 
                 Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 40),
+                    padding: const EdgeInsets.only(left: 30),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,

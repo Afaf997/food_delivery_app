@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/otp_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
+import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -58,7 +59,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
               const SizedBox(height: kCustomSizedBoxHeightI, ),
-             const ReusableButton(
+             const ReusableNavigationButton(
                 navigationTarget: OtpScreen(),
                 buttonText: 'Continue',
                 buttonColor:kOrangeColor,
@@ -70,7 +71,7 @@ class LoginScreen extends StatelessWidget {
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const OtpScreen()));
+                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const OtpScreen()));
                 },
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),

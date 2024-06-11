@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/order_confirmation.dart';
 import 'package:food_delivery_app/screens/address_screen.dart';
+import 'package:food_delivery_app/screens/cart_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
 
@@ -13,9 +14,9 @@ class CheckoutScreen extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon:const Icon(Icons.arrow_back),
           onPressed: () {
-            // Handle back button action
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
           },
         ),
         title: Text('Checkout'),

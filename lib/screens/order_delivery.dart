@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/screens/cart_screen.dart';
 import 'package:food_delivery_app/screens/track_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
@@ -16,7 +17,7 @@ class OrderDelivery extends StatelessWidget {
         padding: const EdgeInsets.only(left: 18,right: 18,bottom: 50),
         child: Column(
           children: [
-            Expanded(
+           const Expanded(
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +46,7 @@ class OrderDelivery extends StatelessWidget {
             ),
             Column(
               children: [
-                ReusableButton(
+               const ReusableButton(
                   navigationTarget: TrackScreen(),
                   buttonText: 'Continue',
                   buttonColor: kWhite,
@@ -57,14 +58,13 @@ class OrderDelivery extends StatelessWidget {
                   width: double.infinity,
                   child: OutlinedButton(
                     onPressed: () {
-                      // Add your navigation target here, e.g., the cart screen
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CartScreen()), // Replace with your target screen
+                        MaterialPageRoute(builder: (context) => MainScreen()), 
                       );
                     },
                     style: OutlinedButton.styleFrom(
-                      side: BorderSide(color: kWhite, width: 1), // White border
+                      side:const BorderSide(color: kWhite, width: 1), 
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
