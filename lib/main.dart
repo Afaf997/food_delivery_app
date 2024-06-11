@@ -11,11 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: "Aeonik"),
+      theme: ThemeData(
+        fontFamily: "Aeonik",
+        appBarTheme: const AppBarTheme(
+          surfaceTintColor: Colors.transparent,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       title: 'food_delivery',
       home: const LanguageScreen(),
-     
     );
   }
 }

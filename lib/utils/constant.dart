@@ -15,8 +15,12 @@ const Color korgGrey=Colors.grey;
 const Color klistgreyColor =  Color(0xFFDDDDDD);
 const Color klgreyColor =  Color(0xFFE1E1E1);
 const Color kColorgrey =  Color(0xFFF6F6F6);
+const Color kcontainergrey =  Color(0xFFF5F5F5);
+const Color ktextgrey =  Color(0xFFBCBCBC);
 const Color kColoryellow =  Color(0xFFFFBF34);
 const Color kColorgreen =  Color(0xFF4C782D);
+const Color kiconcolor =  Color(0xFF292D32);
+const Color kstarYellow =  Color(0xFFFFBF34);
 const Icon kbackarrowIcon= Icon(Icons.arrow_circle_left_outlined,size:28,);
 
 
@@ -55,11 +59,12 @@ const double kCustomSizedBoxHeightJ =280;
 
 const TextStyle kLocationTextStyle = TextStyle(
   color: Colors.white,
-  fontSize: 13,
+  fontSize: 12,
 );
 
 const TextStyle kSearchHintTextStyle = TextStyle(
   color: kTextHintColor,
+  fontSize: 14
 );
 
  BoxDecoration kSearchBoxDecoration = BoxDecoration(
@@ -71,7 +76,7 @@ const TextStyle kSearchHintTextStyle = TextStyle(
   borderRadius: BorderRadius.circular(15.0),
 );
 
-const double kIconSize = 24.0; 
+const double kIconSize = 22.0; 
 
 const TextStyle kTitleTextStyle = TextStyle(
   fontSize: 20.0,

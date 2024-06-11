@@ -4,14 +4,9 @@ import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: CartScreen(),
-  ));
-}
-
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
+      final double containerWidth = 200.0; 
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +15,12 @@ class CartScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: kWhite,
-        toolbarHeight: 100,
+        toolbarHeight: 80,
         title: const Text(
           "My Cart",
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 23,
+            fontSize: 20,
           ),
         ),
         centerTitle: true,
@@ -58,8 +53,8 @@ class CartScreen extends StatelessWidget {
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           labelText: 'Enter promo code',
-          labelStyle: TextStyle(color: korgGrey),
-          fillColor: kGrayLogo, // Grey background
+          labelStyle: TextStyle(color: korgGrey,fontSize: 14),
+          fillColor: kColorgrey, 
           filled: true,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.0), // Adjust border radius
@@ -80,7 +75,7 @@ class CartScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
       ),
     ),
-    child: const Text("Apply",style: TextStyle(color: kWhite),),
+    child: const Text("Apply",style: TextStyle(color: kWhite,fontSize: 14),),
   ),
 )
 
@@ -142,7 +137,7 @@ class _CartItemState extends State<CartItem> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 240, 240, 240),
+        color: kColorgrey,
         borderRadius: BorderRadius.circular(8),
       ),
       margin: EdgeInsets.only(bottom: 16),
@@ -168,7 +163,7 @@ class _CartItemState extends State<CartItem> {
                 ),
               const  Row(
                   children: [
-                    const Icon(Icons.star, color: Colors.yellow, size: 10),
+                    const Icon(Icons.star, color:kstarYellow, size: 9),
                     ReusableText(
                       text: '45',
                       fontSize: 8,
@@ -197,14 +192,13 @@ class _CartItemState extends State<CartItem> {
   ),
             child: Column(
               children: [
-                IconButton(
-                  icon: const Icon(Icons.add,color: kWhite,),
-                  onPressed: incrementQuantity,
-                ),
-                Text('$quantity',style:const TextStyle(color: kWhite),),
-                IconButton(
-                  icon: const Icon(Icons.remove,color: kWhite,),
+               IconButton(
+                  icon: const Icon(Icons.remove,color: kWhite,size: 14,),
                   onPressed: decrementQuantity,
+                ), Text('$quantity',style:const TextStyle(color: kWhite,fontSize: 18),),
+                 IconButton(
+                  icon: const Icon(Icons.add,color: kWhite,size: 14,),
+                  onPressed: incrementQuantity,
                 ),
               ],
             ),
@@ -239,21 +233,22 @@ class DeliveryOptionButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: isSelected ? kOrangeColor : Colors.transparent, // Border color
-            width: 2.0,
+            width: 1,
           ),
         ),
         child: Row(
           children: [
             Icon(
               icon,
-              color: isSelected ? kOrangeColor : Colors.black,
+              color: isSelected ? kOrangeColor : ktextgrey,
             ),
             const SizedBox(width: 8), 
             Text(
               text,
               style: TextStyle(
-                color: isSelected ? kOrangeColor : Colors.black,
-                fontWeight: FontWeight.bold,
+                color: isSelected ? kOrangeColor : ktextgrey,
+                fontSize: 14,
+                fontWeight: FontWeight.w400
               ),
             ),
           ],
@@ -269,6 +264,7 @@ class DeliveryOptions extends StatefulWidget {
 }
 
 class _DeliveryOptionsState extends State<DeliveryOptions> {
+   final double containerWidth = 200.0; 
   String selectedOption = 'Delivery';
 
   @override
@@ -276,7 +272,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Delivery option',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+       const Text('Delivery option',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
         SizedBox(height: 10,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -289,7 +285,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                   selectedOption = 'Delivery';
                 });
               },
-              icon: Icons.delivery_dining, // Set icon for Delivery
+              icon: Icons.delivery_dining, 
             ),
             DeliveryOptionButton(
               text: 'Take away',
@@ -299,7 +295,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                   selectedOption = 'Take away';
                 });
               },
-              icon: Icons.shopping_bag, // Set icon for Take away
+              icon: Icons.shopping_bag,
             ),
             DeliveryOptionButton(
               text: 'Car hop',
@@ -309,87 +305,100 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                   selectedOption = 'Car hop';
                 });
               },
-              icon: Icons.car_rental, // Set icon for Car hop
+              icon: Icons.car_rental, 
             ),
           ],
         ),
         if (selectedOption == 'Car hop')
           Padding(
-  padding: EdgeInsets.symmetric(vertical: 8.0),
+  padding:const EdgeInsets.symmetric(vertical: 8.0),
   child: Column(
     children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          children: [
-            const Text(
-              "Vehicle Number",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Container( height: 45,
-                padding: EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "324389",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: korgGrey,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+    Padding(
+  padding: const EdgeInsets.symmetric(vertical: 10),
+  child: Row(
+    children: [
+    const  Expanded(
+        flex: 2, 
+        child: Text(
+          "Vehicle Number",
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          children: [
-            const Text(
-              "Select Store",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(width: 35),
-            Expanded(
-              child: Container(
-                height: 45,
-                padding: EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "any location",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: korgGrey,
-                      ),
-                    ),
-                    Icon(Icons.location_on, color: kOrangeColor),
-                  ],
+      const SizedBox(width: 10),
+      Expanded(
+        flex: 3, // Adjust the flex value as needed
+        child: Container(
+          height: 45,
+          padding: EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+            color: kColorgrey,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child:const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                "324389",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
+    ],
+  ),
+),
+
+Padding(
+  padding: const EdgeInsets.symmetric(vertical: 10),
+  child: Row(
+    children: [
+     const Expanded(
+        flex: 2, // Adjust the flex value as needed
+        child: Text(
+          "Select Store",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 12
+          ),
+        ),
+      ),
+      const SizedBox(width: 10),
+      Expanded(
+        flex: 3, // Adjust the flex value as needed
+        child: Container(
+          height: 45,
+          padding: EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+            color: kColorgrey,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child:const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "any location",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                    fontSize: 12
+                ),
+              ),
+              Icon(Icons.location_on, color: kOrangeColor),
+            ],
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+
     ],
   ),
 )
@@ -494,7 +503,7 @@ class SummaryRow extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              fontSize: isTotal ? 18 : 16,
+              fontSize: isTotal ? 16 : 14,
               fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,
               color: isDiscount ? Colors.red : Colors.black,
             ),
@@ -502,7 +511,7 @@ class SummaryRow extends StatelessWidget {
           Text(
             value,
             style: TextStyle(
-              fontSize: isTotal ? 18 : 16,
+              fontSize: isTotal ? 16 : 14,
               fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,
               color: isDiscount ? Colors.red : Colors.black,
             ),

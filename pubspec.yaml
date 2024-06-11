@@ -86,7 +86,6 @@ flutter:
     - assets/images/pic.jpg
     - assets/images/pic3.jpg
     - assets/images/pic2.png
-    - assets/images/qatar.png
     - assets/images/crispy-logo.png
     - assets/images/image_burger.png
     - assets/images/qatar_logo.png
@@ -103,6 +102,7 @@ flutter:
     - assets/images/adon2.png
     - assets/images/adon3.png
     - assets/images/welcome.png
+    - assets/images/end-image.png
   
 
 

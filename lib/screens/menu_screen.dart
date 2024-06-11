@@ -22,12 +22,12 @@ class MenuScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: kOrangeColor,
-        toolbarHeight: 200,
+        toolbarHeight: 230,
         elevation: 0,
         shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(40),
-            bottomRight: Radius.circular(40),
+            bottomLeft: Radius.circular(34),
+            bottomRight: Radius.circular(34),
           ),
         ),
         flexibleSpace: Container(
@@ -66,7 +66,7 @@ class MenuScreen extends StatelessWidget {
                 'QR 250',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -74,7 +74,7 @@ class MenuScreen extends StatelessWidget {
                 'Wallet amount',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 14,
+                  fontSize: 12,
                 ),
               ),
             ],
@@ -130,12 +130,6 @@ class MenuScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => AddressForm()),
                 );
               }),
-              buildMenuItem(Icons.message_outlined, 'Message', () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AddressForm()),
-                );
-              }),
               buildMenuItem(Icons.language, 'Language', () {
                 Navigator.push(
                   context,
@@ -169,7 +163,7 @@ class MenuScreen extends StatelessWidget {
 
   Widget buildMenuItem(IconData icon, String text, VoidCallback onTap) {
     return ListTile(
-      leading: Icon(icon, size: 19),
+      leading: Icon(icon, size: 18,color: kiconcolor,),
       title: Text(text, style: const TextStyle(fontSize: 14)),
       trailing:const Icon(Icons.arrow_forward_ios_rounded, size: 14),
       onTap: onTap,

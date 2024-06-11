@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/screens/menu_screen.dart';
 import 'package:food_delivery_app/screens/select_map.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
@@ -11,7 +12,9 @@ class MyProfile extends StatelessWidget {
   Widget build(BuildContext context) {
       var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+        backgroundColor: kWhite,
         toolbarHeight: 100,
         leading: IconButton(
           onPressed: () {
@@ -22,7 +25,7 @@ class MyProfile extends StatelessWidget {
         title: const ReusableText(
           text: "MyProfile",
           fontWeight: FontWeight.bold,
-          fontSize: 23,
+          fontSize: 20,
         ),
         centerTitle: true,
       ),
@@ -72,28 +75,21 @@ class MyProfile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Center(
-               child: ReusableText(text: 
-                  "Enter your details",
-                    fontSize: screenWidth * 0.07,
-                    fontWeight: FontWeight.w900,
-                  textAlign: TextAlign.center,
-                ),
-             ),
               
             const SizedBox(height: kCustomSizedBoxHeightAb,),
            const ReusableText(
              text:  'First Name', 
+             fontSize: 14,
             ),
-            const SizedBox(height: 15.0), 
+            const SizedBox(height: 8.0), 
             TextField(
               decoration: InputDecoration(
                 labelText: 'Enter your First Name',
-                labelStyle:TextStyle(color: korgGrey), // Remove default label (optional)
+                labelStyle:TextStyle(color: korgGrey,fontSize: 14,), // Remove default label (optional)
                 fillColor:kGrayLogo, // Grey background
                 filled: true,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.0), // Adjust border radius
+                  borderRadius: BorderRadius.circular(15.0), // Adjust border radius
                   borderSide: BorderSide.none, // Remove border
                 ),
               ),
@@ -103,16 +99,17 @@ class MyProfile extends StatelessWidget {
 
            const ReusableText(
              text:  'Last Name', 
+             fontSize: 14,
             ),
-                        const SizedBox(height: 15.0),  // Add horizontal spacing
+                        const SizedBox(height: 8.0),  // Add horizontal spacing
             TextField(
               decoration: InputDecoration(
                 labelText: 'Enter your last name',
-                labelStyle:TextStyle(color: korgGrey),  // Remove default label (optional)
+                labelStyle:TextStyle(color: korgGrey,fontSize: 14,),  // Remove default label (optional)
                 fillColor:kGrayLogo, // Grey background
                 filled: true,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.0), // Adjust border radius
+                  borderRadius: BorderRadius.circular(15.0), // Adjust border radius
                   borderSide: BorderSide.none, // Remove border
                 ),
               ),
@@ -122,24 +119,25 @@ class MyProfile extends StatelessWidget {
 
             const ReusableText(
              text:  'Email', 
+             fontSize: 14,
             ),
-                        const SizedBox(height: 15.0),  // Add horizontal spacing
+                        const SizedBox(height: 8.0),  // Add horizontal spacing
             TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: 'enter email',
-                 labelStyle:TextStyle(color: korgGrey),
+                 labelStyle:TextStyle(color: korgGrey,fontSize: 14,),
                 fillColor:kGrayLogo, // Grey background
                 filled: true,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.0), // Adjust border radius
+                  borderRadius: BorderRadius.circular(15.0), // Adjust border radius
                   borderSide: BorderSide.none, 
                 ),
               ),
             ),
-            SizedBox(height: kCustomSizedBoxHeightAb,),
-            ReusableButton(
-                navigationTarget: SelectLocationScreen(),
+            SizedBox(height: kCustomSizedBoxHeightH,),
+           const ReusableButton(
+                navigationTarget: MenuScreen(),
                 buttonText: 'save',
                 buttonColor:kOrangeColor,
                 textColor: Colors.white,

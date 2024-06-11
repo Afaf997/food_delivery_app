@@ -12,8 +12,8 @@ Widget buildTitleRow(String title, {String actionText = '', OnSeeAllPressed? onS
       children: [
         ReusableText(
           text: title,
-          fontSize: 22.0,
-          fontWeight: FontWeight.w900,
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
           color: kblack,
         ),
         GestureDetector(

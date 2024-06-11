@@ -27,6 +27,8 @@ class OrderCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Card(
+        elevation: 0,
+        color:kColorgrey ,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(15),
@@ -37,7 +39,7 @@ class OrderCard extends StatelessWidget {
           children: [
             Container(
               width: 100,
-              height: 100,
+              height: 125,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
@@ -62,11 +64,11 @@ class OrderCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 6),
-                        const Icon(Icons.star, color: Colors.yellow, size: 16),
+                        const Icon(Icons.star, color:kstarYellow, size: 14),
                         const SizedBox(width: 4),
                         const Text(
                           '4.5',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: 11),
                         ),
                         Spacer(),
                         Text(
@@ -74,6 +76,7 @@ class OrderCard extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kOrangeColor,
+                            fontSize: 14
                           ),
                         ),
                       ],
@@ -81,7 +84,7 @@ class OrderCard extends StatelessWidget {
                     const SizedBox(height: 4),
                     const Text(
                       'Order ID: #004352',
-                      style: TextStyle(fontSize: 13, color: korgGrey),
+                      style: TextStyle(fontSize: 11, color: korgGrey),
                     ),
                     const SizedBox(height: 4),
                     RichText(
@@ -89,7 +92,7 @@ class OrderCard extends StatelessWidget {
                         children: [
                           const TextSpan(
                             text: 'Status: ',
-                            style: TextStyle(color: Colors.black, fontSize: 12),
+                            style: TextStyle(color: Colors.black, fontSize: 11),
                           ),
                           TextSpan(
                             text: status,
@@ -114,7 +117,7 @@ class OrderCard extends StatelessWidget {
                               ),
                             ),
                             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 7),
-                            child: ReusableText(text: buttonText1, fontSize: 13),
+                            child: ReusableText(text: buttonText1, fontSize: 12),
                           ),
                         ),
                         if (buttonText2 != null) ...[

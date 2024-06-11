@@ -3,7 +3,8 @@ import 'package:food_delivery_app/functions/order_confirmation.dart';
 import 'package:food_delivery_app/screens/address_screen.dart';
 import 'package:food_delivery_app/screens/cart_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
-import 'package:food_delivery_app/widget/reusable_button.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
+
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({Key? key}) : super(key: key);
@@ -11,15 +12,17 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+        backgroundColor: kWhite,
         toolbarHeight: 100,
         leading: IconButton(
-          icon:const Icon(Icons.arrow_back),
+          icon:const Icon(Icons.arrow_back_ios_new),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+            Navigator.pop(context);
           },
         ),
-        title: Text('Checkout'),
+        title:const ReusableText(text: 'Checkout',fontSize: 20,fontWeight:FontWeight.bold,),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -37,8 +40,8 @@ class CheckoutScreen extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  buildCategoryItem('Marina Twin Tower, Lusail', Colors.orange, Icons.location_on, true),
-                  buildCategoryItem('Marina Twin Tower, Lusail', Colors.grey, Icons.location_on, false),
+                  buildCategoryItem('Marina Twin Tower, Lusail', kOrangeColor, Icons.location_on, true),
+                  buildCategoryItem('Marina Twin Tower, Lusail', kblack, Icons.location_on, false),
                   // Add more address tiles as needed
                 ],
               ),
@@ -49,8 +52,8 @@ class CheckoutScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>AddressForm()));
                 },
-                icon: Icon(Icons.add_circle_rounded,color: kOrangeColor,),
-                label: Text('Add new address',style: TextStyle(color: kOrangeColor),),
+                icon:const Icon(Icons.add_circle_rounded,color: kOrangeColor,),
+                label:const Text('Add new address',style: TextStyle(color: kOrangeColor,fontSize: 14),),
               ),
             ),
             const SizedBox(height: 16),
@@ -59,57 +62,64 @@ class CheckoutScreen extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
             ),
             const SizedBox(height: 8),
-      DropdownButtonFormField<String>(
-        value: 'Debit card ending ***808',
-        items: const [
-          DropdownMenuItem(
-            value: 'Debit card ending ***808',
-            
-            child: Text('Debit card ending ***808'),
-          ),
-          // Add more payment methods here
-        ],
-        onChanged: (value) {
-          // Handle payment method change
-        },
-        decoration: InputDecoration(
-          prefixIcon: Icon(Icons.credit_score_outlined),
-          border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12), 
-          ), // Optional border
-        ),
-      ),
+     DropdownButtonFormField<String>(
+  value: 'Debit card ending ***808',
+  items: const [
+    DropdownMenuItem(
+      value: 'Debit card ending ***808',
+      child: Text('Debit card ending ***808'),
+    ),
+    // Add more payment methods here
+  ],
+  onChanged: (value) {
+    // Handle payment method change
+  },
+  decoration: InputDecoration(
+    filled: true,
+    fillColor: kColorgrey,
+    prefixIcon: Icon(Icons.credit_score_outlined),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide.none  
+    ),
+  ),
+),
+
+
 
             const SizedBox(height: 16),
          const   Text(
               'Add delivery note',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
             ),
             const SizedBox(height: 8),
-          TextFormField(
-              maxLines: 3,
-              decoration: InputDecoration(
-                hintText: 'Add note here...',
-                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12), 
-      ),
-                
-              ),
-            ),
+         TextFormField(
+  maxLines: 3,
+  decoration: InputDecoration(
+    filled: true,
+    fillColor: kColorgrey,
+    hintText: 'Add note here...',
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide.none 
+    ),
+  ),
+),
+
             const SizedBox(height: 20),
 
           const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Subtotal'),
-                Text('42 QR'),
+                Text('Subtotal',style: TextStyle(fontSize: 14),),
+                Text('42 QR',style: TextStyle(fontSize: 14),),
               ],
             ), SizedBox(height: 10),
           const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Delivery fee'),
-                Text('10 QR'),
+                Text('Delivery fee',style: TextStyle(fontSize: 14),),
+                Text('10 QR',style: TextStyle(fontSize: 14),),
               ],
             ), 
             Divider(),
@@ -118,15 +128,15 @@ class CheckoutScreen extends StatelessWidget {
               children: [
                 Text(
                   'Total',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
                 ),
                 Text(
                   '52 QR',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 30),
             SizedBox(
       width: double.infinity,
       child: ElevatedButton(
@@ -161,7 +171,8 @@ class CheckoutScreen extends StatelessWidget {
       width: width,
       margin: EdgeInsets.only(right: 8),
       decoration: BoxDecoration(
-        border: Border.all(color: isSelected ? kOrangeColor : Colors.grey),
+        color: kColorgrey,
+        border: Border.all(color: isSelected ? kOrangeColor : klgreyColor),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(

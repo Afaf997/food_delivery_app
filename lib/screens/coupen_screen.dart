@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 import 'dart:math' as math;
 
@@ -8,6 +9,7 @@ class CouponScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 80,
         title: const ReusableText(
           text: 'Coupon',
           fontWeight: FontWeight.bold,
@@ -69,7 +71,7 @@ class ReusableCoupon extends StatelessWidget {
                             '50%',
                             style: TextStyle(
                               fontSize: 32,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w900,
                               color: Colors.white,
                             ),
                           ),
@@ -109,10 +111,10 @@ class ReusableCoupon extends StatelessWidget {
                           width: 130,
                           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 3.0),
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color:kWhite,
                             borderRadius: BorderRadius.circular(4.0),
                             border: Border.all(
-                color: Colors.white, 
+                color:kGrayLogo, 
                 style: BorderStyle.solid,
               ),
                           ),

@@ -4,7 +4,6 @@ import 'package:food_delivery_app/screens/favourite_screen.dart';
 import 'package:food_delivery_app/screens/home_screen.dart';
 import 'package:food_delivery_app/screens/menu_screen.dart';
 import 'package:food_delivery_app/screens/order.dart';
-import 'package:food_delivery_app/screens/order_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 
 
@@ -16,12 +15,13 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
+  // ignore: prefer_final_fields
   static List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    CartScreen(),
+   const HomeScreen(),
+   const CartScreen(),
     OrderScreen(),
-    FavouriteScreen(),
-    MenuScreen(),
+   const FavouriteScreen(),
+   const MenuScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -55,12 +55,13 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: const BoxDecoration(
         color: kWhite,
         boxShadow: [
           BoxShadow(
-            color: Colors.black12,
+            color: Color.fromARGB(31, 58, 57, 57),
             blurRadius: 10,
             spreadRadius: 5,
           )
@@ -74,7 +75,7 @@ class CustomBottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _buildNavItem(
-            icon: Icons.perm_identity,
+            icon: Icons.sentiment_satisfied_outlined,
             index: 0,
             isSelected: selectedIndex == 0,
             onTap: onItemTapped,

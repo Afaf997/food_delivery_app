@@ -47,7 +47,7 @@ Widget _buildItem({
       width: 170,
       height: 125,
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color:kcontainergrey,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Stack(
@@ -74,7 +74,7 @@ Widget _buildItem({
                   children: [
                     Row(
                       children: [
-                        ReusableText(text: itemName, fontSize: 11, fontWeight: FontWeight.bold),
+                        ReusableText(text: itemName, fontSize: 12, fontWeight: FontWeight.bold),
                       ],
                     ),
                     ReusableText(text: qrCode, fontSize: 12, color: kredcolor),
@@ -82,7 +82,7 @@ Widget _buildItem({
                 ),
                 Row(
                   children: [
-                    ReusableText(text: ' $rating', fontWeight: FontWeight.bold),
+                    ReusableText(text: ' $rating', fontWeight: FontWeight.bold,fontSize: 8,),const SizedBox(width: kCustomSizedBoxHeightD,),
                     ReusableText(text: description, fontSize: 8),
                   ],
                 ),

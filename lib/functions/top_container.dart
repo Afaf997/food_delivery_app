@@ -8,8 +8,8 @@ Widget buildTopContainer(BuildContext context) {
       decoration: const BoxDecoration(
         color: kOrangeColor,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30.0),
-          bottomRight: Radius.circular(30.0),
+          bottomLeft: Radius.circular(24.0),
+          bottomRight: Radius.circular(24.0),
         ),
       ),
       padding: const EdgeInsets.only(top: 40, bottom: 20, right: 20, left: 20),
@@ -32,7 +32,7 @@ Widget buildTopContainer(BuildContext context) {
                 'Marina Twin Tower, Lusail',
                 style: TextStyle(
                   color: kWhite,
-                  fontSize: 15.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.w800,
                 ),
               ),

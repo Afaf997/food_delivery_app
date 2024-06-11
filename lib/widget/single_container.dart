@@ -9,7 +9,6 @@ class MenuItem {
   final String rating;
   final String description;
   final String qrCode;
-  
 
   MenuItem({
     required this.imagePath,
@@ -20,7 +19,7 @@ class MenuItem {
   });
 }
 
-Widget buildImageContainer(BuildContext context,MenuItem menuItem) {
+Widget buildImageContainer(BuildContext context, MenuItem menuItem) {
   return GestureDetector(
     onTap: () {
       showCustomBottomSheet(context);
@@ -55,45 +54,45 @@ Widget buildItem(MenuItem menuItem) {
           const Positioned(
             top: 8,
             right: 8,
-            child: Icon(Icons.favorite,color: kWhite,size: 15,
+            child: Icon(
+              Icons.favorite,
+              color: kWhite,
+              size: 15,
             ),
           ),
           Positioned(
-            top: 110, 
-            left: 3, 
+            top: 110,
+            left: 3,
             child: Container(
               width: 30,
-              height: 30, 
-              decoration:const BoxDecoration(
+              height: 30,
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 55, 132, 57),
                 shape: BoxShape.circle,
               ),
-              child:const Center(child: ReusableText(text: '15%',color: kWhite,fontSize: 13,fontWeight: FontWeight.bold,)),
+              child: const Center(
+                child: ReusableText(
+                  text: '15%',
+                  color: kWhite,
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
           Positioned(
-            bottom: 5,
+            bottom: 1,
             left: 8,
             right: 8,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        ReusableText(
-                          text: menuItem.itemName,
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ],
-                    ),
                     ReusableText(
-                      text: menuItem.qrCode,
-                      fontSize: 12,
-                      color: kredcolor,
+                      text: menuItem.itemName,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
                     ),
                   ],
                 ),
@@ -101,16 +100,25 @@ Widget buildItem(MenuItem menuItem) {
                   children: [
                     const Icon(
                       Icons.star_rate_rounded,
-                      color: Color.fromARGB(255, 235, 217, 56),
+                      color:kstarYellow,
+                      size: 12,
                     ),
                     ReusableText(
                       text: ' ${menuItem.rating}',
                       fontWeight: FontWeight.bold,
+                      fontSize: 8,
                     ),
                     const SizedBox(width: kCustomSizedBoxWidth),
                     ReusableText(
                       text: menuItem.description,
                       fontSize: 8,
+                    ),
+                    Expanded(child: Container()), // Empty expanded widget to push the qrCode text to the end
+                    ReusableText(
+                      text: menuItem.qrCode,
+                      fontSize: 16,
+                      color: kredcolor,
+                      fontWeight: FontWeight.bold,
                     ),
                   ],
                 ),

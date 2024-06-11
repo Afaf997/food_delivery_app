@@ -15,7 +15,9 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+         backgroundColor: kWhite,
         leading: IconButton(
           icon:const Icon(Icons.arrow_back_ios),
           onPressed: () {
@@ -25,8 +27,8 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         toolbarHeight: 100,
         title: const ReusableText(
           text: 'My Order',
-          fontSize: 23,
-          fontWeight: FontWeight.w500,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
         ),
         centerTitle: true,
       ),

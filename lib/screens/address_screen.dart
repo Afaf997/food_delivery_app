@@ -33,9 +33,10 @@ class _AddressFormState extends State<AddressForm> {
     return Scaffold(
       backgroundColor: kWhite,
       appBar: AppBar(
+        toolbarHeight: 80,
         backgroundColor: kWhite,
         elevation: 0,
-        title:const Text('Address'),
+        title:const Text('Add New Address',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         centerTitle: true,
         leading: IconButton(
           icon:const Icon(Icons.arrow_back),
@@ -57,7 +58,7 @@ class _AddressFormState extends State<AddressForm> {
                   children: [
                     Image.asset(
                       'assets/images/map2.png', 
-                      width: MediaQuery.of(context).size.width * 0.87, // Increase width
+                      width: MediaQuery.of(context).size.width * 0.89, 
                       fit: BoxFit.cover,
                     ),
                   ],
@@ -73,9 +74,9 @@ class _AddressFormState extends State<AddressForm> {
                   ],
                 ),
                 SizedBox(height: 16),
-                ReusableText(text: 'Delivery Address', fontSize: 17, fontWeight: FontWeight.w900),
+                ReusableText(text: 'Delivery Address', fontSize: 16, fontWeight: FontWeight.w900),
                 SizedBox(height: 8),
-                ReusableText(text: 'Address Line'),
+                ReusableText(text: 'Address Line',fontSize: 14,),
                 SizedBox(height: 8),
                 _buildTextFormField(
                   controller: addressController,
@@ -144,7 +145,7 @@ class _AddressFormState extends State<AddressForm> {
                 Center(
                   child: ReusableButton(
                     navigationTarget: LoginScreen(),
-                    buttonText: 'Save',
+                    buttonText: 'confirm',
                     buttonColor: kOrangeColor,
                     textColor: kWhite,
                     fontSize: 19,
@@ -174,7 +175,7 @@ class _AddressFormState extends State<AddressForm> {
           label,
           style: TextStyle(
             color: _selectedContainerIndex == index ? Colors.white : Colors.black,
-            fontWeight: FontWeight.bold,
+            fontSize: 14
           ),
         ),
       ),
@@ -191,8 +192,9 @@ class _AddressFormState extends State<AddressForm> {
       controller: controller,
       decoration: InputDecoration(
         labelText: label,
+        hintStyle: TextStyle(fontSize: 14),
         hintText: hint,
-        labelStyle: TextStyle(color: Colors.grey),
+        labelStyle: TextStyle(color: Colors.grey,fontSize: 14),
         fillColor:kColorgrey,
         filled: true,
         prefixIcon: prefixIcon,

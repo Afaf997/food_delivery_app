@@ -34,7 +34,7 @@ class _SelectLanguageState extends State<SelectLanguage> {
         children: <Widget>[
           RadioListTile<String>(
             activeColor:kOrangeColor, 
-            title: Text('AR (عربي)'),
+            title: Text('AR (عربي)',style: TextStyle(fontSize: 16),),
             value: 'ar',
             groupValue: _selectedLanguage,
             onChanged: (String? value) {
@@ -45,8 +45,8 @@ class _SelectLanguageState extends State<SelectLanguage> {
           ),
           Divider(),
           RadioListTile<String>(
-            activeColor: kOrangeColor, // Set the active color to orange
-            title: Text('English (EN)'),
+            activeColor: kOrangeColor,
+            title: Text('English (EN)',style: TextStyle(fontSize: 16)),
             value: 'en',
             groupValue: _selectedLanguage,
             onChanged: (String? value) {

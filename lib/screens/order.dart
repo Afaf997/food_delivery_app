@@ -15,12 +15,17 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon:const Icon(Icons.arrow_back_ios_new)),
+        backgroundColor: kWhite,
         toolbarHeight: 100,
         title: const ReusableText(
           text: 'My Order',
-          fontSize: 23,
-          fontWeight: FontWeight.w500,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
         ),
         centerTitle: true,
       ),
@@ -42,7 +47,7 @@ class _OrderScreenState extends State<OrderScreen> {
                       Text(
                         'Running',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: _selectedIndex == 0 ? Colors.black : Colors.grey,
                         ),
@@ -51,7 +56,7 @@ class _OrderScreenState extends State<OrderScreen> {
                         Container(
                           height: 2,
                           width: 100,
-                          color: Colors.orange,
+                          color:kOrangeColor,
                         ),
                     ],
                   ),
@@ -68,7 +73,7 @@ class _OrderScreenState extends State<OrderScreen> {
                       Text(
                         'History',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: _selectedIndex == 1 ? Colors.black : Colors.grey,
                         ),

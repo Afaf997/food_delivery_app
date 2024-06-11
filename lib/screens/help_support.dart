@@ -25,7 +25,7 @@ class HelpSupport extends StatelessWidget {
         title: const ReusableText(
           text: "Help & Support",
           fontWeight: FontWeight.bold,
-          fontSize: 23,
+          fontSize: 20,
           color: Colors.black,
         ),
         centerTitle: true,
@@ -37,57 +37,57 @@ class HelpSupport extends StatelessWidget {
           children: [
             const ReusableText(
               text: "Welcome to Go Crispy Chicken Company's Help & Support page. We're here to assist you with any questions, concerns, or issues you may have.",
-              fontSize: 14,
+             fontSize: 11,
             ),
             const SizedBox(height: 20),
             const ReusableText(
               text: "Contact Us",
-              fontSize: 16,
+              fontSize: 13,
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 10),
             const ReusableText(
               text: "If you need assistance or have any inquiries, please feel free to contact our customer support team at:",
-              fontSize: 14,
+             fontSize: 11,
             ),
             const ReusableText(
               text: "Email: support@gocrispychicken.com",
-              fontSize: 14,
+             fontSize: 11,
             ),
             const ReusableText(
               text: "Phone: [+XX-XXX-XXXXXXX]",
-              fontSize: 14,
+             fontSize: 11,
             ),
             const ReusableText(
               text: "Our team is available [days of the week] from [hours of operation] to provide you with prompt assistance.",
-              fontSize: 14,
+             fontSize: 11,
             ),
             const SizedBox(height: 20),
             const ReusableText(
               text: "Frequently Asked Questions (FAQs)",
-              fontSize: 16,
+              fontSize: 13,
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 10),
             const ReusableText(
               text: "Browse our FAQs for answers to common questions about our products, services, ordering process, and more. If you don't find what you're looking for, don't hesitate to reach out to us directly.",
-              fontSize: 14,
+             fontSize: 11,
             ),
             const SizedBox(height: 20),
             const ReusableText(
               text: "Feedback",
-              fontSize: 16,
+              fontSize: 13,
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 10),
             const ReusableText(
               text: "We value your feedback! Let us know about your experience with Go Crispy Chicken Company. Your input helps us improve our products and services to better serve you.",
-              fontSize: 14,
+             fontSize: 11,
             ),
             const SizedBox(height: 20),
             const ReusableText(
               text: "Terms & Conditions",
-              fontSize: 16,
+              fontSize: 13,
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 10),
@@ -98,7 +98,7 @@ class HelpSupport extends StatelessWidget {
               },
               child: const ReusableText(
                 text: "For information about our terms of service, please refer to our Terms & Conditions page.",
-                fontSize: 14,
+               fontSize: 11,
                 color: kblack, // Example of adding a clickable link color
                 decoration: TextDecoration.underline,
               ),

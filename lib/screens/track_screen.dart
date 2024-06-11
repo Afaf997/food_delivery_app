@@ -71,7 +71,7 @@ class TrackScreen extends StatelessWidget {
         ),
         title: const Text(
           'Track Order',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -91,7 +91,7 @@ class TrackScreen extends StatelessWidget {
                     const SizedBox(height: 10),
                     const Text(
                       'Be prepared! Your food is arriving any moment now',
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyle(color: Colors.grey,fontSize: 10),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 10),

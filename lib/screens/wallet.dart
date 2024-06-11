@@ -45,21 +45,21 @@ class WalletScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20),
-                Text(
+               const Text(
                   'QR 250',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 34,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 22),
                 Icon(Icons.add_circle, color: kWhite, size: 30),
                 Text(
                   'Top up wallet',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 14,
+                    fontSize: 12,
                   ),
                 ),
               ],
@@ -76,7 +76,7 @@ class WalletScreen extends StatelessWidget {
               Text(
                 'Wallet history',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -156,22 +156,23 @@ class WalletScreen extends StatelessWidget {
                   style: TextStyle(
                     color: amountColor,
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: 24,
                   ),
                 ),
-                Text('$date $time',style: TextStyle(color: korgGrey)),
+                Text('$date $time',style: TextStyle(color: korgGrey,fontSize: 12)),
               ],
             ),
             SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(description,style: TextStyle(color: korgGrey),),
+                Text(description,style: TextStyle(color: korgGrey,fontSize: 14),),
                 Text(
                   type,
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
+                    fontSize: 14
                   ),
                 ),
               ],

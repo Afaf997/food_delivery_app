@@ -7,6 +7,7 @@ void showDeliveryFeeDialog(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return Dialog(
+        backgroundColor: kWhite,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
         ),
@@ -26,7 +27,7 @@ void showDeliveryFeeDialog(BuildContext context) {
               Text(
                 '10 QR',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: kOrangeColor,
                 ),
@@ -53,11 +54,11 @@ void showDeliveryFeeDialog(BuildContext context) {
                 children: [
                   Text(
                     'Total',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
                   ),
                   Text(
                     '52 QR',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
                   ),
                 ],
               ),
