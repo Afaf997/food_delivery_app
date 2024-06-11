@@ -138,15 +138,16 @@ void showCustomBottomSheet(BuildContext context) {
               child: ListView(
                 children: const [
                   AddOnItem(
-                    image: 'assets/images/copy.png',
+                    image: 'assets/images/adon3.png',
                     title: 'Kinza Lemon (250 ml)',
                     subtitle: '2QR',
                     initialCount: 2,
+                     overlayImage: 'assets/images/adon2.png',
                   ),
                   AddOnItem(
-                    image: 'assets/images/copy.png',
+                    image: 'assets/images/adon3.png',
                     title: 'Kinza Cola (250 ml)',
-                    subtitle: '2QR',
+                    subtitle: '2QR', overlayImage: 'assets/images/adon1.png',
                   ),
                 ],
               ),

@@ -3,7 +3,8 @@ import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class AddOnItem extends StatefulWidget {
-  final String image;
+  final String image; // Background image
+  final String overlayImage; // Image to overlay
   final String title;
   final String subtitle;
   final int initialCount;
@@ -11,6 +12,7 @@ class AddOnItem extends StatefulWidget {
   const AddOnItem({
     Key? key,
     required this.image,
+    required this.overlayImage,
     required this.title,
     required this.subtitle,
     this.initialCount = 0,
@@ -51,13 +53,22 @@ class _AddOnItemState extends State<AddOnItem> {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Row(
         children: [
-          Image.asset(widget.image, width: 40, height: 40),
+          Stack(
+            children: [
+              Image.asset(widget.image, width: 40, height: 40),
+              Positioned(
+                top: 0,
+                left: 0,
+                child: Image.asset(widget.overlayImage, width: 40, height: 40),
+              ),
+            ],
+          ),
           SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(widget.title, style: TextStyle(fontSize: 14)),
-              Text(widget.subtitle, style: TextStyle(color: Colors.grey,fontSize: 14)),
+              Text(widget.subtitle, style: TextStyle(color: Colors.grey, fontSize: 14)),
             ],
           ),
           Spacer(),
@@ -77,8 +88,8 @@ class _AddOnItemState extends State<AddOnItem> {
                   onPressed: _decrement,
                 ),
                 const SizedBox(width: kCustomSizedBoxWidth),
-                ReusableText( // You can use const here if ReusableText is a const constructor
-                  text: _count.toString(), // Show current count
+                ReusableText(
+                  text: _count.toString(),
                   fontSize: 15,
                 ),
                 const SizedBox(width: kCustomSizedBoxWidth),
@@ -87,7 +98,7 @@ class _AddOnItemState extends State<AddOnItem> {
                     Icons.add,
                     size: 14,
                   ),
-                  onPressed: _increment, 
+                  onPressed: _increment,
                 ),
               ],
             ),
