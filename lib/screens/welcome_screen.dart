@@ -24,25 +24,24 @@ class WelcomeScreen extends StatelessWidget {
                 'assets/images/hand-burger.png',
               ),
               Padding(
-                padding: EdgeInsets.only(top: screenHeight * 0.41, left: screenWidth * 0.04),
+                padding: EdgeInsets.only(top: screenHeight * 0.44, left: screenWidth * 0.04),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, // Align children to the start of the column
                   children: [
+                    Image.asset(
+                      'assets/images/welcome.png',
+                    ),
+                    SizedBox(height: 30),
                     SizedBox(
-  width:350,
-  height: 200, 
-  child: Container(
-    child: ReusableText(
-      text: "Welcome to Qatar's Own Fried Chicken App!",
-      color: kWhite,
-      fontSize: 40,
-      fontWeight: FontWeight.w900,
-    ),
-  ),
-),
-
+                      width: screenWidth * 0.7,
+                      child: ReusableText(
+                        text: "Experience Crispy Satisfaction with Every Bite!",
+                        color: kWhite,
+                        fontSize: screenWidth * 0.04,
+                      ),
+                    ),
                   ],
                 ),
-                
               ),
             ],
           ),
@@ -51,22 +50,14 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width:screenWidth*0.7,
-                  child: ReusableText(
-                   text:  "Experience Crispy Satisfaction with Every Bite!",
-                      color:kWhite,
-                      fontSize: screenWidth * 0.04,
-                  ),
-                ),
                 SizedBox(height: screenHeight * 0.05),
                 ReusableNavigationButton(
-                navigationTarget: LoginScreen(),
-                buttonText: 'Get Start',
-                buttonColor:kblack,
-                textColor:kWhite,
-                fontSize: 22,
-              ),
+                  navigationTarget: LoginScreen(),
+                  buttonText: 'Get Started',
+                  buttonColor: kblack,
+                  textColor: kWhite,
+                  fontSize: 16,
+                ),
               ],
             ),
           ),

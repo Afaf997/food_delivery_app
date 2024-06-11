@@ -51,7 +51,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
             children: [
               buildLanguageRow('English', 'en'),
               Divider(),
-              buildLanguageRow('العربية', 'ar'),
+              buildLanguageRow('العربي', 'ar'),
             ],
           ),
         ),

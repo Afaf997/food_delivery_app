@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/otp_screen.dart';
 import 'package:food_delivery_app/screens/select_map.dart';
 import 'package:food_delivery_app/utils/constant.dart';
-import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
@@ -11,11 +10,12 @@ class ContactDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+         backgroundColor: kWhite,
         leading: IconButton(
           icon: kbackarrowIcon,
           onPressed: () {
@@ -29,24 +29,24 @@ class ContactDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Center(
+            const Center(
                child: ReusableText(text: 
                   "Enter your details",
-                    fontSize: screenWidth * 0.07,
-                    fontWeight: FontWeight.w900,
+                    fontSize:36,
+                    fontWeight: FontWeight.bold,
                   textAlign: TextAlign.center,
                 ),
              ),
               
             const SizedBox(height: kCustomSizedBoxHeightAb,),
            const ReusableText(
-             text:  'First Name', 
+             text:  'First Name', fontSize: 14
             ),
             const SizedBox(height: 15.0), 
             TextField(
               decoration: InputDecoration(
                 labelText: 'Enter your First Name',
-                labelStyle:TextStyle(color: korgGrey), // Remove default label (optional)
+                labelStyle:TextStyle(color: korgGrey,fontSize: 14), // Remove default label (optional)
                 fillColor:kGrayLogo, // Grey background
                 filled: true,
                 border: OutlineInputBorder(
@@ -59,13 +59,13 @@ class ContactDetails extends StatelessWidget {
             const SizedBox(height: kCustomSizedBoxHeightG), // Adjust spacing
 
            const ReusableText(
-             text:  'Last Name', 
+             text:  'Last Name',fontSize: 14 
             ),
                         const SizedBox(height: 15.0),  // Add horizontal spacing
             TextField(
               decoration: InputDecoration(
                 labelText: 'Enter your last name',
-                labelStyle:TextStyle(color: korgGrey),  // Remove default label (optional)
+                labelStyle:TextStyle(color: korgGrey,fontSize: 14),  // Remove default label (optional)
                 fillColor:kGrayLogo, // Grey background
                 filled: true,
                 border: OutlineInputBorder(
@@ -78,14 +78,14 @@ class ContactDetails extends StatelessWidget {
             const SizedBox(height: kCustomSizedBoxHeightG), // Adjust spacing
 
             const ReusableText(
-             text:  'Email', 
+             text:  'Email', fontSize: 14
             ),
                         const SizedBox(height: 15.0),  // Add horizontal spacing
             TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: 'enter email',
-                 labelStyle:TextStyle(color: korgGrey),
+                 labelStyle:TextStyle(color: korgGrey,fontSize: 14),
                 fillColor:kGrayLogo, // Grey background
                 filled: true,
                 border: OutlineInputBorder(

@@ -12,17 +12,18 @@ class LoginScreen extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+       backgroundColor: kWhite,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-           const SizedBox(height: kCustomSizedBoxHeightH , ),
-            Text(
+           const SizedBox(height: kCustomSizedBoxHeightH, ),
+           const Text(
               "Login or create an account",
               style: TextStyle(
-                fontSize: screenWidth * 0.08,
-                fontWeight: FontWeight.w900,
+                fontSize: 36, 
+                fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
@@ -40,7 +41,7 @@ class LoginScreen extends StatelessWidget {
                     width: 24,
                   ),
                   const SizedBox(width: kCustomSizedBoxWidthE),
-                  const ReusableText(text: '+974 |', fontSize: 15),
+                  const ReusableText(text: '+974 |', fontSize: 16,fontWeight: FontWeight.bold,),
                   const SizedBox(width: 10),
                   const Expanded(
                     child: TextField(
@@ -78,12 +79,13 @@ class LoginScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  side: const BorderSide(color: Colors.black, width: 2),
+                  side: const BorderSide(color: Colors.black, width: 1),
                 ),
                 child: const ReusableText(
                   text: 'Continue as guest',
                   color: Colors.black,
                   fontSize: 16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),

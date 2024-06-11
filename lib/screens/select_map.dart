@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/custom_bottom_navigation.dart';
 import 'package:food_delivery_app/utils/constant.dart';
-import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
@@ -22,7 +21,7 @@ class SelectLocationScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.topLeft,
               child: Padding(
-                padding:const EdgeInsets.only(top: 20.0, left: 16.0),
+                padding:const EdgeInsets.only(top: 50.0, left: 16.0),
                 child: IconButton(
                   icon:const Icon(Icons.arrow_circle_left_outlined),
                   onPressed: () => Navigator.pop(context),
@@ -44,7 +43,7 @@ class SelectLocationScreen extends StatelessWidget {
                 children: [
                 const  ReusableText(text: 
                     'Select current location',
-                      fontSize: 20,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   const SizedBox(height: 16),

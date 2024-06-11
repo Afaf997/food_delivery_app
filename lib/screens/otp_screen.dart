@@ -15,7 +15,9 @@ class OtpScreen extends StatelessWidget {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+       backgroundColor: kWhite,
       appBar: AppBar(
+         backgroundColor: kWhite,
         leading: IconButton(
           icon: kbackarrowIcon,
           onPressed: () {
@@ -30,30 +32,30 @@ class OtpScreen extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: kCustomSizedBoxHeightA),
-              Text(
+             const Text(
                 "Verification your mobile number",
                 style: TextStyle(
-                  fontSize: screenWidth * 0.07,
-                  fontWeight: FontWeight.w900,
+                  fontSize:36,
+                  fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: kCustomSizedBoxHeightA),
               const ReusableText(
                 text: 'We have sent you a 4 digit code.',
-                fontSize: 11,
+                fontSize: 12,
               ),
               const ReusableText(
                 text: 'Please enter it here to verify your number',
-                fontSize: 11,
+                fontSize: 12,
               ),
               const SizedBox(height: kCustomSizedBoxHeightA),
               PinCodeTextField(
                 maxLength: 4,
                 autofocus: true,
                 wrapAlignment: WrapAlignment.center,
-                pinBoxWidth: screenWidth * 0.12,
-                pinBoxHeight: screenWidth * 0.12,
+                pinBoxWidth: 61,
+                pinBoxHeight:56,
                 pinBoxRadius: screenWidth * 0.03,
                 pinTextStyle: TextStyle(fontSize: screenWidth * 0.05),
                 pinBoxColor: kGrayLogo,
