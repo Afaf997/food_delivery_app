@@ -8,6 +8,7 @@ import 'package:food_delivery_app/widget/reusable_text.dart';
 
 void showCustomBottomSheet(BuildContext context) {
   showModalBottomSheet(
+    backgroundColor: kWhite,
     context: context,
     isScrollControlled: true,
     builder: (context) {
@@ -34,7 +35,7 @@ void showCustomBottomSheet(BuildContext context) {
                   ),
                 ),
                 const SizedBox(width: 13),
-                Expanded(
+              const  Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -43,7 +44,7 @@ void showCustomBottomSheet(BuildContext context) {
                         children: [
                           ReusableText(
                             text: 'Tornado Fries',
-                            fontSize: 15,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                           Icon(
@@ -55,21 +56,22 @@ void showCustomBottomSheet(BuildContext context) {
                       ),
                       const Row(
                         children: [
-                          Icon(Icons.star, color: Colors.yellow),
+                          Icon(Icons.star, color:kstarYellow,size: 10,),
                           ReusableText(
                             text: '45',
-                            fontSize: 16,
+                            fontSize: 9,
                           ),
                         ],
                       ),
                       const ReusableText(
                         text:
                             'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
-                        fontSize: 9,
+                        fontSize: 8,
+                        color: ktextgrey,
                       ),
                       const ReusableText(
                         text: 'QR 23',
-                        fontSize: 20,
+                        fontSize: 16,
                         color: kOrangeColor,
                       )
                     ],
@@ -83,14 +85,14 @@ void showCustomBottomSheet(BuildContext context) {
               children: [
                 const ReusableText(
                   text: 'Quantity',
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
                 Container(
-                  height: 40,
+                  height: 35,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
-                    color: Colors.grey[300],
+                    color: kradiuscolor,
                   ),
                   child: Row(
                     children: [
@@ -124,13 +126,13 @@ void showCustomBottomSheet(BuildContext context) {
             const SizedBox(height: kCustomSizedBoxHeightE),
             buildCheckbox('Go Medium (+3 QR)', true),
             const SizedBox(height: kCustomSizedBoxHeightF),
-            buildCheckbox('Go Medium (+3 QR)', false),
+            buildCheckbox('Go large (+3 QR)', false),
             const SizedBox(height: 15),
             buildHeading('Your choices of fries'),
             const SizedBox(height: kCustomSizedBoxHeightE),
-            buildCheckbox('Go Medium (+3 QR)', true),
+            buildCheckbox('Add herbs to fries (+3 QR)', true),
             const SizedBox(height: kCustomSizedBoxHeightF),
-            buildCheckbox('Go Medium (+3 QR)', false),
+            buildCheckbox('Add more cheese to fries (+2 QR)', false),
             const SizedBox(height: kCustomSizedBoxHeightG),
             buildHeading('Addons'),
             const SizedBox(height: kCustomSizedBoxHeightF),

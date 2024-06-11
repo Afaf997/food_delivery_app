@@ -50,7 +50,7 @@ class _AddOnItemState extends State<AddOnItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric( vertical: 5),
       child: Row(
         children: [
           Stack(
@@ -73,10 +73,10 @@ class _AddOnItemState extends State<AddOnItem> {
           ),
           Spacer(),
           Container(
-            height: 40,
+            height: 35,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
-              color: Colors.grey[300],
+              color: kradiuscolor
             ),
             child: Row(
               children: [

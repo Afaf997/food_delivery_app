@@ -8,13 +8,12 @@ Widget buildCheckbox(String title, bool isChecked) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ReusableText(text: title,fontSize: 12,color:const Color.fromARGB(255, 134, 134, 134) ,),
+        ReusableText(text: title,fontSize: 12,),
         Container(
           width: 20,
           height: 20,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(3),
-            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(7),
             color: isChecked ? kOrangeColor :const Color.fromARGB(255, 214, 212, 212),
           ),
           child: isChecked

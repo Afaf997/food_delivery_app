@@ -8,7 +8,7 @@ Widget buildHeading(String title,) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ReusableText(text: title,fontSize: 15,fontWeight: FontWeight.w500,color:kblack,)
+        ReusableText(text: title,fontSize: 14,fontWeight: FontWeight.w800,color:kblack,)
       ],
     ),
   );
