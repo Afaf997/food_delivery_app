@@ -8,7 +8,9 @@ class HelpSupport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+       backgroundColor: kWhite,
         toolbarHeight: 100,
         leading: IconButton(
           onPressed: () {

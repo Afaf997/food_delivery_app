@@ -96,7 +96,7 @@ class ReusableCoupon extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                      const Text(
                           'Get Flat 50% off for your first order',
                           style: TextStyle(
                             fontSize: 16,

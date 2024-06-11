@@ -13,7 +13,9 @@ class _SelectLanguageState extends State<SelectLanguage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+        backgroundColor: kWhite,
         toolbarHeight: 100,
         title: const ReusableText(
           text: 'Language',

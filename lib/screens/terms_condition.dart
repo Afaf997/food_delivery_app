@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class TermsCondition extends StatelessWidget {
@@ -7,7 +8,9 @@ class TermsCondition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+       backgroundColor: kWhite,
         toolbarHeight: 100,
         leading: IconButton(
           onPressed: () {
