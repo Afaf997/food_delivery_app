@@ -11,6 +11,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

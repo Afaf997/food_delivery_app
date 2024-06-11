@@ -15,6 +15,7 @@ class ReusableOkeyButton extends StatelessWidget {
     this.buttonColor = kOrangeColor,
     this.textColor = Colors.white,
     this.fontSize = 16.0,
+    
   });
 
   @override
@@ -41,6 +42,7 @@ class ReusableOkeyButton extends StatelessWidget {
           style: TextStyle(
             color: textColor,
             fontSize: fontSize,
+            fontWeight: FontWeight.w600
           ),
         ),
       ),

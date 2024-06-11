@@ -25,7 +25,7 @@ class FoodItemCard extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(250, 250, 250, 252),
+          color: kallcontainer,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(

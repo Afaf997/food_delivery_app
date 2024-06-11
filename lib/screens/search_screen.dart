@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/food_item_card.dart';
-import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_okay_button.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -23,7 +22,7 @@ class SearchScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 20.0),
                     decoration: BoxDecoration(
-                      color: klgreyColor,
+                      color: kSEARCHColor,
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     child: Row(
@@ -43,10 +42,12 @@ class SearchScreen extends StatelessWidget {
                               context: context,
                               builder: (BuildContext context) {
                                 return Dialog(
+                                  backgroundColor: kWhite,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   child: Container(
+                                    
                                     width: MediaQuery.of(context).size.width * 0.9, // Adjusted width to 90%
                                     padding: const EdgeInsets.all(15),
                                     child: Column(
@@ -76,7 +77,7 @@ class SearchScreen extends StatelessWidget {
                                               },
                                               child: const Text(
                                                 'Reset',
-                                                style: TextStyle(color: kredcolor),
+                                                style: TextStyle(color: kredcolor,fontSize: 14),
                                               ),
                                             ),
                                           ],
@@ -84,13 +85,13 @@ class SearchScreen extends StatelessWidget {
                                         const SizedBox(height: 10),
                                         const Align(
                                           alignment: Alignment.centerLeft,
-                                          child: Text('Price'),
+                                          child: Text('Price',style: TextStyle(fontSize: 14),),
                                         ),
                                         const Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            Text('QR 50'),
-                                            Text('QR 100'),
+                                            Text('QR 50',style: TextStyle(fontSize: 14),),
+                                            Text('QR 100',style: TextStyle(fontSize: 14),),
                                           ],
                                         ),
                                         Slider(
@@ -143,7 +144,7 @@ class SearchScreen extends StatelessWidget {
                                           buttonText: 'Apply',
                                           buttonColor: kOrangeColor,
                                           textColor: kWhite,
-                                          fontSize: 15,
+                                          fontSize: 16,
                                         ),
                                       ],
                                     ),
@@ -273,7 +274,8 @@ class SearchScreen extends StatelessWidget {
         label,
         style: TextStyle(
           color: color == kOrangeColor ? kWhite : kblack,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w300,
+          fontSize: 14
         ),
       ),
     );
