@@ -39,8 +39,8 @@ Widget buildTopContainer(BuildContext context) {
               const Spacer(),
               Image.asset(
                 'assets/images/logo.png',
-                width: 40.0,
-                height: 40.0,
+                width: 50.0,
+                height: 50.0,
               ),
             ],
           ),
