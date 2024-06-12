@@ -23,6 +23,8 @@ const Color kColoryellow =  Color(0xFFFFBF34);
 const Color kColorgreen =  Color(0xFF4C782D);
 const Color kiconcolor =  Color(0xFF292D32);
 const Color kradiuscolor =  Color(0xFFEDEDED);
+const Color kOriginalColor = Color(0xFFDDDDDD);
+ Color kIncreasedColor = Color(0xFFB3B3B3);
 const Color kstarYellow =  Color(0xFFFFBF34);
 const Icon kbackarrowIcon= Icon(Icons.arrow_circle_left_outlined,size:28,);
 

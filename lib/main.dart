@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      title: 'food_delivery',
+      title: 'go crispy',
       home: const LanguageScreen(),
     );
   }

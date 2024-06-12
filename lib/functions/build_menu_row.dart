@@ -28,7 +28,7 @@ Widget buildMenuRow(BuildContext context) {
         itemCount: menuImages.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -47,7 +47,7 @@ Widget buildMenuRow(BuildContext context) {
                     overflow: TextOverflow.ellipsis,
                     style:const TextStyle(
                       color: kblack,
-                      fontSize: 11.0,
+                      fontSize: 12.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

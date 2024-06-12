@@ -7,7 +7,7 @@ Widget buildImageRow(BuildContext context) {
   return Center(
     child: Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _buildItem(
             context: context,
@@ -44,7 +44,7 @@ Widget _buildItem({
       showCustomBottomSheet(context,);
     },
     child: Container(
-      width: 170,
+      width: 175,
       height: 125,
       decoration: BoxDecoration(
         color:kcontainergrey,
@@ -62,7 +62,7 @@ Widget _buildItem({
             ),
           ),
           Positioned(
-            bottom: 1,
+            bottom: 5,
             left: 8,
             right: 8,
             child: Column(
@@ -77,7 +77,7 @@ Widget _buildItem({
                         ReusableText(text: itemName, fontSize: 12, fontWeight: FontWeight.bold),
                       ],
                     ),
-                    ReusableText(text: qrCode, fontSize: 12, color: kredcolor),
+                    ReusableText(text: qrCode, fontSize: 12, color: kredcolor,fontWeight: FontWeight.bold),
                   ],
                 ),
                 Row(

@@ -9,7 +9,9 @@ class FavouriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: klistgreyColor,
       appBar: AppBar(
+        backgroundColor: klistgreyColor,
         automaticallyImplyLeading: false,
         toolbarHeight: 100,
         title: ReusableText(

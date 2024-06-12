@@ -12,7 +12,7 @@ Widget buildTitleRow(String title, {String actionText = '', OnSeeAllPressed? onS
       children: [
         ReusableText(
           text: title,
-          fontSize: 20.0,
+          fontSize: 22.0,
           fontWeight: FontWeight.bold,
           color: kblack,
         ),
