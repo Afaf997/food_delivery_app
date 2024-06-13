@@ -13,6 +13,7 @@ const Color kTextgreyColor =Color.fromARGB(136, 150, 147, 147);
 const Color kredcolor =Colors.red;
 const Color korgGrey=Colors.grey;
 const Color klistgreyColor =  Color(0xFFDDDDDD);
+const Color kfavouriteColor =  Color(0xFFD9D9D9);
 const Color klgreyColor =  Color(0xFFE1E1E1);
 const Color kSEARCHColor =  Color(0xFFEAEAEA);
 const Color kColorgrey =  Color(0xFFF6F6F6);

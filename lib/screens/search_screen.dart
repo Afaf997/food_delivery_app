@@ -153,27 +153,14 @@ class SearchScreen extends StatelessWidget {
                               },
                             );
                           },
-                          child: Transform.rotate(
-                            angle: 3.141592653589793 / 2,
-                            child: const Icon(
-                              Icons.candlestick_chart_outlined,
-                              size: kIconSize,
-                            ),
-                          ),
+                          child:Image.asset('assets/icons/filter.png')
                         ),
                       ],
                     ),
                   ),
                 ),
                 const SizedBox(width: 10),
-                Transform.rotate(
-                  angle: 15,
-                  child: const Icon(
-                    Icons.add_circle_rounded,
-                    size: 18,
-                    color: kredcolor,
-                  ),
-                ),
+                Image.asset('assets/icons/close-icon.png')
               ],
             ),
           ),

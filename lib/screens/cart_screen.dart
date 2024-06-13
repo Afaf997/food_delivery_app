@@ -15,7 +15,7 @@ class CartScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: kWhite,
-        toolbarHeight: 80,
+        toolbarHeight: 60,
         title: const Text(
           "My Cart",
           style: TextStyle(
@@ -177,7 +177,7 @@ class _CartItemState extends State<CartItem> {
                 const SizedBox(height: 10),
                 Text(
                   '${widget.price} QR',
-                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color:kredcolor),
                 ),
               ],
             ),

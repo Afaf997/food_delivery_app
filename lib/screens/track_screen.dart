@@ -5,7 +5,7 @@ import 'package:food_delivery_app/utils/constant.dart';
 class TrackScreen extends StatelessWidget {
   const TrackScreen({super.key});
 
-  Widget buildStep(BuildContext context, String label, String dateTime, IconData icon, bool isActive, {bool navigateToErrorOrder = false}) {
+  Widget buildStep(BuildContext context, String label, String dateTime, String iconPath, bool isActive, {bool navigateToErrorOrder = false}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: InkWell(
@@ -20,15 +20,16 @@ class TrackScreen extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: 45,
-              height: 45,
+              width: 61,
+              height: 58,
               decoration: BoxDecoration(
-                color: isActive ? kOrangeColor : Colors.grey[300],
-                borderRadius: BorderRadius.circular(8),
+                color:kColorgrey,
+                border: Border.all(color: isActive ? kOrangeColor : klgreyColor, width: 2),
+                borderRadius: BorderRadius.circular(12),
               ),
-              child: Icon(
-                icon,
-                color: isActive ? Colors.white : Colors.grey,
+              child: Image.asset(
+                iconPath,
+                color: isActive ? kOrangeColor : Colors.grey,
               ),
             ),
             const SizedBox(width: 20),
@@ -40,13 +41,13 @@ class TrackScreen extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
-                    color: isActive ? kOrangeColor : Colors.grey,
+                    color: isActive ? kOrangeColor : kIncreasedColor,
                   ),
                 ),
                 Text(
                   dateTime,
                   style: TextStyle(
-                    color: isActive ? kOrangeColor : Colors.grey,
+                    color: kIncreasedColor,
                     fontSize: 10,
                   ),
                 ),
@@ -61,8 +62,10 @@ class TrackScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
-        toolbarHeight: 100,
+        backgroundColor: kWhite,
+        toolbarHeight: 60,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -71,7 +74,7 @@ class TrackScreen extends StatelessWidget {
         ),
         title: const Text(
           'Track Order',
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -88,10 +91,9 @@ class TrackScreen extends StatelessWidget {
                       'assets/images/delivery-man .png',
                       height: 100,
                     ),
-                    const SizedBox(height: 10),
                     const Text(
                       'Be prepared! Your food is arriving any moment now',
-                      style: TextStyle(color: Colors.grey,fontSize: 10),
+                      style: TextStyle(color: Colors.grey, fontSize: 10),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 10),
@@ -113,18 +115,18 @@ class TrackScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
-              ),
-              buildStep(context, 'Order Placed', '14 May 2024 · 10:24 am', Icons.check_box, true, navigateToErrorOrder: true),
+              ),SizedBox(height: 10,),
+              buildStep(context, 'Order Placed', '14 May 2024 · 10:24 am', 'assets/icons/icon1.png', true, navigateToErrorOrder: true),
               const SizedBox(height: 15),
-              buildStep(context, 'Confirmed', '14 May 2024 · 10:24 am', Icons.check_box, false),
+              buildStep(context, 'Confirmed', '14 May 2024 · 10:24 am', 'assets/icons/icon2.png', false),
               const SizedBox(height: 15),
-              buildStep(context, 'Cooking', '14 May 2024 · 10:24 am', Icons.kitchen, false),
+              buildStep(context, 'Cooking', '14 May 2024 · 10:24 am', 'assets/icons/icon3.png', false),
               const SizedBox(height: 15),
-              buildStep(context, 'Preparing', '14 May 2024 · 10:24 am', Icons.restaurant, false),
+              buildStep(context, 'Preparing', '14 May 2024 · 10:24 am', 'assets/icons/icon4.png', false),
               const SizedBox(height: 15),
-              buildStep(context, 'Order is on the way', '14 May 2024 · 10:24 am', Icons.delivery_dining, false),
+              buildStep(context, 'Order is on the way', '14 May 2024 · 10:24 am', 'assets/icons/icon5.png', false),
               const SizedBox(height: 15),
-              buildStep(context, 'Delivery Completed', '14 May 2024 · 10:24 am', Icons.check_circle, false),
+              buildStep(context, 'Delivery Completed', '14 May 2024 · 10:24 am', 'assets/icons/icon6.png', false),
               const SizedBox(height: 15),
             ],
           ),

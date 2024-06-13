@@ -11,13 +11,13 @@ Widget buildCategoryItem(String categoryName, Color color, [double width = 136])
       color: color,
       borderRadius: BorderRadius.circular(12),
       border: Border.all(
-        color: color == kTextgreyColor ? Colors.grey : kOrangeColor,
+        color: color == kTextgreyColor ? korgGrey : klgreyColor,
       ),
     ),
     child: Center(
       child: ReusableText(
         text: categoryName,
-        color: Colors.white,
+        color: color == kOrangeColor ? kWhite : korgGrey,
         fontWeight: FontWeight.w400,
         fontSize: 14,
       ),

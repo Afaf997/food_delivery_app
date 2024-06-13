@@ -104,6 +104,14 @@ flutter:
     - assets/images/adon3.png
     - assets/images/welcome.png
     - assets/images/end-image.png
+    - assets/icons/icon1.png
+    - assets/icons/icon2.png
+    - assets/icons/icon3.png
+    - assets/icons/icon4.png
+    - assets/icons/icon5.png
+    - assets/icons/icon6.png
+    - assets/icons/filter.png
+    - assets/icons/close-icon.png
   
 
 
@@ -124,11 +132,12 @@ flutter:
     - family: Aeonik
       fonts:
         - asset: assets/fonts/AeonikTRIAL-Regular.otf
+          weight: 800
         - asset: assets/fonts/AeonikTRIAL-Bold.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
-      # fonts:
+  #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700

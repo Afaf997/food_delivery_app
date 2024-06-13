@@ -34,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   buildImageRichContainer(context),
-                  const SizedBox(height: kCustomSizedBoxHeight),
                   buildTitleRow('Menu'),
                   const SizedBox(height: kCustomSizedBoxHeight),
                   buildMenuRow(context),

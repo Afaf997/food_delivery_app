@@ -5,9 +5,11 @@ class OrderDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
-        toolbarHeight: 100,
-        title: Text('Order Details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+         backgroundColor: kWhite,
+        toolbarHeight: 80,
+        title: Text('Order Details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -17,25 +19,26 @@ class OrderDetailsScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(26.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Order ID : #0054324'),
+                Text('Order ID : #0054324',style: TextStyle(fontSize: 14,)),
                 Icon(Icons.access_time_filled_outlined),
-                Text('16 May 2024 . 04:26 PM')
+                Text('16 May 2024 . 04:26 PM',style: TextStyle(fontSize: 14,))
               ],
             ),
             SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("item:1"),
+                Text("item:1",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700)),
              ElevatedButton(
   style: ElevatedButton.styleFrom(
+    backgroundColor: kColorgrey,
     side: BorderSide(color: kOrangeColor),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8), // Adjust the radius as needed
@@ -57,24 +60,24 @@ class OrderDetailsScreen extends StatelessWidget {
 
               ],
             ),
-            SizedBox(height: 8,),
-            Divider(),
-            Center(child: Text('Payment Info', style: TextStyle(fontWeight: FontWeight.bold))),
-            SizedBox(height: 8),
-            Row(
+           const SizedBox(height: 8,),
+           const Divider(),
+           const Center(child: Text('Payment Info', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16))),
+           const SizedBox(height: 8),
+           const Row(
               children: [
                 Text('Status : '),
                 Text('Paid', style: TextStyle(color: Colors.green)),
               ],
             ),
-            Row(
+           const Row(
               children: [
-                Text('Method : '),
-                Text('Debit Card'),
+                Text('Method : ',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14),),
+                Text('Debit Card',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14),),
               ],
             ),
-            SizedBox(height:8,),
-            Divider(),
+           const SizedBox(height:8,),
+           const Divider(),
             Row(
               children: [
                 Image.asset(
@@ -83,40 +86,41 @@ class OrderDetailsScreen extends StatelessWidget {
                   height: 70,
                 ),
                 SizedBox(width: 16),
-                Expanded(
+               const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Tornado Fries', style: TextStyle(fontWeight: FontWeight.bold)),
-                      Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit'),
-                      Text('33 QR', style: TextStyle(color: kOrangeColor)),
+                      Text('Tornado Fries', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16)),
+                      Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit',style: TextStyle(color: korgGrey,fontSize: 12),),
+                      Text('33 QR', style: TextStyle(color: kOrangeColor,fontWeight: FontWeight.bold,)),
                     ],
                   ),
                 ),
               ],
             ),
-            Divider(),
+          Divider(color :klgreyColor),
             buildPriceRow('Item Price', '66 QR'),
             buildPriceRow('Add ons', '6 QR'),
             buildPriceRow('Discount', '-20 QR', isDiscount: true),
-            Divider(),
+          Divider(color :klgreyColor),
             buildPriceRow('Subtotal', '42 QR'),
             buildPriceRow('Delivery Fee', '10 QR'),
-            Divider(),
-            buildPriceRow('Total', '52 QR', isTotal: true),
+          Divider(color :klgreyColor),
+            buildPriceRow('Total', '52 QR', isTotal: true,),
             SizedBox(height: 20),
            ElevatedButton(
   onPressed: () {
     // Add your cancel order functionality here
   },
   style: ElevatedButton.styleFrom(
+    backgroundColor: kWhite,
     minimumSize: Size(double.infinity, 48), // Full width and fixed height
     side: BorderSide(color: Colors.black),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8), // Adjust the radius as needed
     ),
   ),
-  child: Text('Cancel Order',style: TextStyle(color: kblack,fontWeight: FontWeight.w900),),
+  child: Text('Cancel Order',style: TextStyle(color: kblack,fontWeight: FontWeight.w600,fontSize: 16),),
 )
 
           ],
@@ -136,7 +140,7 @@ class OrderDetailsScreen extends StatelessWidget {
             value,
             style: TextStyle(
               color: isDiscount ? Colors.red : (isTotal ? Colors.black : Colors.grey[700]),
-              fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,
+              fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,fontSize: isTotal ? 16 : 14 
             ),
           ),
         ],
