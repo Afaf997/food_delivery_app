@@ -1,268 +1,102 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/functions/build_category_item.dart';
+import 'package:food_delivery_app/screens/search_bar.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/food_item_card.dart';
-import 'package:food_delivery_app/widget/reusable_okay_button.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
-  static const double kIconSize = 25;
 
   @override
   Widget build(BuildContext context) {
+    // Get screen dimensions
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double horizontalPadding = screenWidth * 0.02;
+    final double verticalPadding = screenHeight * 0.02; 
+    final double searchBarHeight = screenHeight * 0.15; 
+    final double categoryItemHeight = screenHeight * 0.05; // 5% of screen height
+
     return Scaffold(
       backgroundColor: kWhite,
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 40, top: 50, left: 20),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 20.0),
-                    decoration: BoxDecoration(
-                      color: kSEARCHColor,
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.search,
-                            color: kblack, size: kIconSize),
-                        const SizedBox(width: 10),
-                        Text(
-                          'What are you looking for?',
-                          style: kSearchHintTextStyle.copyWith(
-                              color: kTextHintColor),
-                        ),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return Dialog(
-                                  backgroundColor: kWhite,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: Container(
-                                    
-                                    width: MediaQuery.of(context).size.width * 0.9, // Adjusted width to 90%
-                                    padding: const EdgeInsets.all(15),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Transform.rotate(
-                                              angle: 15,
-                                              child: const Icon(
-                                                Icons.add_circle_rounded,
-                                                size: 18,
-                                                color: kredcolor,
-                                              ),
-                                            ),
-                                            const Text(
-                                              'Filter',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20,
-                                              ),
-                                            ),
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text(
-                                                'Reset',
-                                                style: TextStyle(color: kredcolor,fontSize: 14),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 10),
-                                        const Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text('Price',style: TextStyle(fontSize: 14),),
-                                        ),
-                                        const Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Text('QR 50',style: TextStyle(fontSize: 14),),
-                                            Text('QR 100',style: TextStyle(fontSize: 14),),
-                                          ],
-                                        ),
-                                        Slider(
-                                          value: 50,
-                                          min: 0,
-                                          max: 80,
-                                          activeColor: kOrangeColor,
-                                          onChanged: (value) {},
-                                        ),
-                                        const Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text('Rating'),
-                                        ),
-                                        SizedBox(height: 10,),
-                                        Row(
-                                          children: List.generate(5, (index) {
-                                            return const Icon(
-                                              Icons.star,
-                                              color: korgGrey,
-                                            );
-                                          }),
-                                        ),
-                                        const SizedBox(height: 10),
-                                        const Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text('Category'),
-                                        ),
-                                        SizedBox(height: 7,),
-                                        Wrap(
-                                          spacing: 3.0,
-                                          runSpacing: 5.0,
-                                          children: [
-                                            buildCategoryItem('Go crispy original', kOrangeColor),
-                                            buildCategoryItem('Value meal', kColorgrey),
-                                            buildCategoryItem('Extreme meal', kColorgrey),
-                                            buildCategoryItem('Bucket meal', kColorgrey),
-                                            buildCategoryItem('Combos', kColorgrey),
-                                            buildCategoryItem('Sandwich', kColorgrey),
-                                            buildCategoryItem('Salad', kColorgrey),
-                                            buildCategoryItem('Sauces', kColorgrey),
-                                            buildCategoryItem('Kids meal', kColorgrey),
-                                            buildCategoryItem('Dessert', kColorgrey),
-                                            buildCategoryItem('Sides & Condiments', kColorgrey),
-                                            buildCategoryItem('Beverages', kColorgrey),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 20),
-                                        const ReusableOkeyButton(
-                                          navigationTarget: SearchScreen(),
-                                          buttonText: 'Apply',
-                                          buttonColor: kOrangeColor,
-                                          textColor: kWhite,
-                                          fontSize: 16,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          child:Image.asset('assets/icons/filter.png')
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Image.asset('assets/icons/close-icon.png')
-              ],
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding),
+        child: Column(
+          children: [
+            SizedBox(
+              height: searchBarHeight,
+              child: const Searchbar(),
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: SizedBox(
-              height: 37,
+            SizedBox(
+              height: categoryItemHeight,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  buildCategoryItem('All', kColorgrey, 70),
-                  buildCategoryItem('Go crispy original', kOrangeColor),
-                  buildCategoryItem('Value meal', kColorgrey),
-                  buildCategoryItem('Extreme meal', kColorgrey),
-                  buildCategoryItem('Bucket meal', kColorgrey),
-                  buildCategoryItem('Combos', kColorgrey),
-                  buildCategoryItem('Sandwich', kColorgrey),
-                  buildCategoryItem('Kids meal', kColorgrey),
-                  buildCategoryItem('Salad', kColorgrey),
-                  buildCategoryItem('Sides & Condiments', kColorgrey),
-                  buildCategoryItem('Sauces', kColorgrey),
-                  buildCategoryItem('Dessert', kColorgrey),
-                  buildCategoryItem('Beverages', kColorgrey),
+                children: const [
+                  CategoryItem(label: 'All', color: kColorgrey, width: 70),
+                  CategoryItem(label: 'Go crispy original', color: kOrangeColor),
+                  CategoryItem(label: 'Value meal', color: kColorgrey),
+                  CategoryItem(label: 'Extreme meal', color: kColorgrey),
+                  CategoryItem(label: 'Bucket meal', color: kColorgrey),
+                  CategoryItem(label: 'Combos', color: kColorgrey),
+                  CategoryItem(label: 'Sandwich', color: kColorgrey),
+                  CategoryItem(label: 'Kids meal', color: kColorgrey),
+                  CategoryItem(label: 'Salad', color: kColorgrey),
+                  CategoryItem(label: 'Sides & Condiments', color: kColorgrey),
+                  CategoryItem(label: 'Sauces', color: kColorgrey),
+                  CategoryItem(label: 'Dessert', color: kColorgrey),
+                  CategoryItem(label: 'Beverages', color: kColorgrey),
                 ],
               ),
             ),
-          ),
-          const SizedBox(height: 25),
-          Expanded(
-            child: ListView(
-              padding: const EdgeInsets.all(10),
-              children: const [
-                FoodItemCard(
-                  imageUrl: 'assets/images/rowPic.jpg',
-                  title: 'Tornado Fries',
-                  rating: 4.5,
-                  description:
-                      'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
-                  price: 'QR 23',
-                ),
-                SizedBox(height: kCustomSizedBoxHeightE),
-                FoodItemCard(
-                  imageUrl: 'assets/images/rowPic1.jpg',
-                  title: 'Crispy Chicken',
-                  rating: 4.0,
-                  description:
-                      'Crispy fried chicken served with a tangy sauce and a side of coleslaw',
-                  price: '30 QR',
-                ),
-                SizedBox(height: kCustomSizedBoxHeightE),
-                FoodItemCard(
-                  imageUrl: 'assets/images/pic3.jpg',
-                  title: 'Tornado Fries',
-                  rating: 4.5,
-                  description:
-                      'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
-                  price: '23 QR',
-                ),
-                SizedBox(height: kCustomSizedBoxHeightE),
-                FoodItemCard(
-                  imageUrl: 'assets/images/pic.jpg',
-                  title: 'Tornado Fries',
-                  rating: 4.5,
-                  description:
-                      'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
-                  price: '23 QR',
-                ),
-                SizedBox(height: kCustomSizedBoxHeightE),
-                FoodItemCard(
-                  imageUrl: 'assets/images/Main_image.png',
-                  title: 'Tornado Fries',
-                  rating: 4.5,
-                  description:
-                      'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
-                  price: '23 QR',
-                ),
-                SizedBox(height: kCustomSizedBoxHeightE),
-              ],
+            SizedBox(height: verticalPadding),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.all(horizontalPadding),
+                children: const [
+                  FoodItemCard(
+                    imageUrl: 'assets/images/rowPic.jpg',
+                    title: 'Tornado Fries',
+                    rating: 4.5,
+                    description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
+                    price: 'QR 23',
+                  ),
+                  SizedBox(height: kCustomSizedBoxHeightE),
+                  FoodItemCard(
+                    imageUrl: 'assets/images/rowPic1.jpg',
+                    title: 'Crispy Chicken',
+                    rating: 4.0,
+                    description: 'Crispy fried chicken served with a tangy sauce and a side of coleslaw',
+                    price: '30 QR',
+                  ),
+                  SizedBox(height: kCustomSizedBoxHeightE),
+                  FoodItemCard(
+                    imageUrl: 'assets/images/pic3.jpg',
+                    title: 'Tornado Fries',
+                    rating: 4.5,
+                    description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
+                    price: '23 QR',
+                  ),
+                  SizedBox(height: kCustomSizedBoxHeightE),
+                  FoodItemCard(
+                    imageUrl: 'assets/images/pic.jpg',
+                    title: 'Tornado Fries',
+                    rating: 4.5,
+                    description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
+                    price: '23 QR',
+                  ),
+                  SizedBox(height: kCustomSizedBoxHeightE),
+                  FoodItemCard(
+                    imageUrl: 'assets/images/Main_image.png',
+                    title: 'Tornado Fries',
+                    rating: 4.5,
+                    description: 'French Fries Covered With Cheese Sauce And Bbq Sauce With Chicken Pieces And Jalapeno And Mix Herbs',
+                    price: '23 QR',
+                  ),
+                  SizedBox(height: kCustomSizedBoxHeightE),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildCategoryItem(String label, Color color, [double width = 100]) {
-    return Container(
-      height: 33,
-      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
-      margin: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 2),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12.0),
-        border: Border.all(color: klgreyColor),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          color: color == kOrangeColor ? kWhite : kblack,
-          fontWeight: FontWeight.w300,
-          fontSize: 14
+          ],
         ),
       ),
     );
