@@ -76,7 +76,7 @@ class _AddressFormState extends State<AddressForm> {
                 SizedBox(height: 16),
                 ReusableText(text: 'Delivery Address', fontSize: 16, fontWeight: FontWeight.w900),
                 SizedBox(height: 8),
-                ReusableText(text: 'Address Line',fontSize: 14,),
+                ReusableText(text: 'Address Line',fontSize: 15,fontWeight: FontWeight.w500,),
                 SizedBox(height: 8),
                 _buildTextFormField(
                   controller: addressController,
@@ -84,7 +84,7 @@ class _AddressFormState extends State<AddressForm> {
                   hint: 'Marina Twin Tower, Lusail',
                 ),
                 SizedBox(height: 8),
-                ReusableText(text: 'Street Number'),
+                ReusableText(text: 'Street Number',fontSize: 15,fontWeight: FontWeight.w500,),
                 SizedBox(height: 8),
                 _buildTextFormField(
                   controller: streetNumberController,
@@ -92,7 +92,7 @@ class _AddressFormState extends State<AddressForm> {
                   hint: 'Ex: 10th street',
                 ),
                 SizedBox(height: 8),
-                ReusableText(text: 'House/Floor Number'),
+                ReusableText(text: 'House/Floor Number',fontSize: 15,fontWeight: FontWeight.w500,),
                 SizedBox(height: 8),
                 Row(
                   children: <Widget>[
@@ -114,7 +114,7 @@ class _AddressFormState extends State<AddressForm> {
                   ],
                 ),
                 SizedBox(height: 8),
-                ReusableText(text: 'Contact Person Name'),
+                ReusableText(text: 'Contact Person Name',fontSize: 15,fontWeight: FontWeight.w500,),
                 SizedBox(height: 8),
                 _buildTextFormField(
                   controller: contactNameController,
@@ -122,7 +122,7 @@ class _AddressFormState extends State<AddressForm> {
                   hint: 'Muhammed Sheharin',
                 ),
                 SizedBox(height: 8),
-                ReusableText(text: 'Contact Number'),
+                ReusableText(text: 'Contact Number',fontSize: 15,fontWeight: FontWeight.w500,),
                 SizedBox(height: 8),
                 _buildTextFormField(
                   controller: contactNumberController,
@@ -134,7 +134,7 @@ class _AddressFormState extends State<AddressForm> {
                   ),
                 ),
                 SizedBox(height: 10),
-                ReusableText(text: 'Alternative Phone Number (Optional)'),
+                ReusableText(text: 'Alternative Phone Number (Optional)',fontSize: 15,fontWeight: FontWeight.w500,),
                 SizedBox(height: 8),
                 _buildTextFormField(
                   controller: altContactNumberController,
@@ -145,7 +145,7 @@ class _AddressFormState extends State<AddressForm> {
                 Center(
                   child: ReusableButton(
                     navigationTarget: LoginScreen(),
-                    buttonText: 'confirm',
+                    buttonText: 'save',
                     buttonColor: kOrangeColor,
                     textColor: kWhite,
                     fontSize: 19,
@@ -175,7 +175,8 @@ class _AddressFormState extends State<AddressForm> {
           label,
           style: TextStyle(
             color: _selectedContainerIndex == index ? Colors.white : Colors.black,
-            fontSize: 14
+            fontSize: 14,
+            fontWeight: FontWeight.w600
           ),
         ),
       ),

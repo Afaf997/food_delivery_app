@@ -9,13 +9,12 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get screen dimensions
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     final double horizontalPadding = screenWidth * 0.02;
     final double verticalPadding = screenHeight * 0.02; 
     final double searchBarHeight = screenHeight * 0.15; 
-    final double categoryItemHeight = screenHeight * 0.05; // 5% of screen height
+    final double categoryItemHeight = screenHeight * 0.05; 
 
     return Scaffold(
       backgroundColor: kWhite,

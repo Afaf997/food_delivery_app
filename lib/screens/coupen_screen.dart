@@ -1,30 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
-import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 import 'dart:math' as math;
 
 class CouponScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double padding = screenWidth * 0.04;
+
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: screenHeight * 0.1,
+        leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back_ios_new_outlined)),
         title: const ReusableText(
           text: 'Coupon',
           fontWeight: FontWeight.bold,
-          fontSize: 18,
+          fontSize: 20,
         ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(padding),
         child: Column(
           children: [
             ReusableCoupon(color: kOrangeColor),
-            SizedBox(height: 10),
+            SizedBox(height: screenHeight * 0.02),
             ReusableCoupon(color: kColoryellow),
-            SizedBox(height: 10),
+            SizedBox(height: screenHeight * 0.02),
             ReusableCoupon(color: kColorgreen),
           ],
         ),
@@ -40,8 +44,16 @@ class ReusableCoupon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double containerHeight = screenHeight * 0.15;
+    final double fontSizeLarge = screenWidth * 0.08;
+    final double fontSizeMedium = screenWidth * 0.04;
+    final double fontSizeSmall = screenWidth * 0.035;
+    final double padding = screenWidth * 0.05;
+
     return Container(
-      height: 120,
+      height: containerHeight,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
@@ -58,82 +70,83 @@ class ReusableCoupon extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20,),
+            padding: EdgeInsets.only(left: padding),
             child: Row(
               children: [
-                    Transform.rotate(
-                      angle:-math.pi / 2,
-                  child:const Center(
+                Transform.rotate(
+                  angle: -math.pi / 2,
+                  child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                         Text(
-                            '50%',
-                            style: TextStyle(
-                              fontSize: 32,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                            ),
-                          ),
-                        // ),
-                      Text(
-                            'Off',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        
-                      ],
-                    ),
-                  ),
-                ),SizedBox(width: 7,),
-                DottedDivider(), 
-                Expanded(
-                  flex: 2,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 30),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                      const Text(
-                          'Get Flat 50% off for your first order',
+                        Text(
+                          '50%',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: fontSizeLarge,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          'Off',
+                          style: TextStyle(
+                            fontSize: fontSizeMedium,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(height: 10),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: screenWidth * 0.02),
+                DottedDivider(),
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: screenWidth * 0.08),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Get Flat 50% off for your first order',
+                          style: TextStyle(
+                            fontSize: fontSizeMedium,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: screenHeight * 0.01),
                         Container(
-                          width: 130,
-                          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 3.0),
+                          width: screenWidth * 0.35,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.02,
+                              vertical: screenHeight * 0.005),
                           decoration: BoxDecoration(
-                            color:kWhite,
+                            color: kWhite,
                             borderRadius: BorderRadius.circular(4.0),
                             border: Border.all(
-                color:kGrayLogo, 
-                style: BorderStyle.solid,
-              ),
+                              color: kGrayLogo,
+                              style: BorderStyle.solid,
+                            ),
                           ),
                           child: Row(
                             children: [
-                              const Text(
+                              Text(
                                 'WELCOME',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: fontSizeSmall,
                                   fontWeight: FontWeight.bold,
                                   color: kblack,
                                 ),
-                              ), SizedBox(width: 10,),
-                               Image.asset(
-                'assets/images/copy.png',
-              ),
+                              ),
+                              SizedBox(width: screenWidth * 0.02),
+                              Image.asset(
+                                'assets/images/copy.png',
+                              ),
                             ],
                           ),
-                          
                         ),
                       ],
                     ),
@@ -151,9 +164,10 @@ class ReusableCoupon extends StatelessWidget {
 class DottedDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: 1,
-      height: 120,
+      height: screenHeight * 0.15,
       child: CustomPaint(
         painter: DottedLinePainter(),
       ),
@@ -164,7 +178,7 @@ class DottedDivider extends StatelessWidget {
 class DottedLinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    double dashHeight = 5, dashSpace = 3, startY = 0;
+    double dashHeight = 4, dashSpace = 3, startY = 0;
     final paint = Paint()
       ..color = Colors.white
       ..strokeWidth = 1;
