@@ -26,7 +26,7 @@ class CategoriesScreen extends StatelessWidget {
                   icon:const Icon(Icons.arrow_back_ios),
                 ),
                 const SizedBox(width: kCustomSizedBoxWidthB),
-                const ReusableText(text: 'All Categories',fontSize: 19,fontWeight: FontWeight.w900,) // Adjust spacing between icon and text
+                const ReusableText(text: 'All Categories',fontSize: 20,fontWeight: FontWeight.bold,) // Adjust spacing between icon and text
              
               ],
             ),

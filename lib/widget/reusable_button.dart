@@ -25,7 +25,7 @@ class ReusableButton extends StatelessWidget {
     // Adjust button height and padding based on screen size
     final double buttonHeight = screenHeight * 0.07;  // Example: 7% of screen height
     final double buttonPadding = screenHeight * 0.02; // Example: 2% of screen height
-    final double adjustedFontSize = screenWidth * 0.04; // Example: 4% of screen width
+    final double adjustedFontSize = screenWidth * 0.04; 
 
     return SizedBox(
       height: buttonHeight,
@@ -48,7 +48,7 @@ class ReusableButton extends StatelessWidget {
           buttonText,
           style: TextStyle(
             color: textColor,
-            fontSize: adjustedFontSize,
+            fontSize: 16,
           ),
         ),
       ),

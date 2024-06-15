@@ -12,35 +12,41 @@ class ReusableNavigationButton extends StatelessWidget {
     super.key,
     required this.navigationTarget,
     required this.buttonText,
-    this.buttonColor = kOrangeColor, 
-    this.textColor = Colors.white, 
-    this.fontSize = 16.0, 
+    this.buttonColor = kOrangeColor,
+    this.textColor = Colors.white,
+    this.fontSize = 16.0,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => navigationTarget),
-          );
-        },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: buttonColor,
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+    final screenWidth = MediaQuery.of(context).size.width;
+    final buttonWidth = screenWidth * 0.9; // Button takes 90% of screen width
+    final buttonHeight = screenWidth * 0.12; // Button height based on screen width
+
+    return Center(
+      child: SizedBox(
+        width: buttonWidth,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => navigationTarget),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: buttonColor,
+            padding: EdgeInsets.symmetric(vertical: buttonHeight * 0.3),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
-        ),
-        child: Text(
-          buttonText,
-          style: TextStyle(
-            color: textColor,
-            fontSize: fontSize,
-            fontWeight: FontWeight.bold,
+          child: Text(
+            buttonText,
+            style: TextStyle(
+              color: textColor,
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),

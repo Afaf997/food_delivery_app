@@ -92,7 +92,7 @@ Widget buildItem(MenuItem menuItem) {
                     ReusableText(
                       text: menuItem.itemName,
                       fontSize: 14,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                     ),
                   ],
                 ),
@@ -106,7 +106,7 @@ Widget buildItem(MenuItem menuItem) {
                     ReusableText(
                       text: ' ${menuItem.rating}',
                       fontWeight: FontWeight.bold,
-                      fontSize: 8,
+                      fontSize: 9,
                     ),
                     const SizedBox(width: kCustomSizedBoxWidth),
                     ReusableText(

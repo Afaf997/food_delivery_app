@@ -74,7 +74,7 @@ Widget _buildItem({
                   children: [
                     Row(
                       children: [
-                        ReusableText(text: itemName, fontSize: 12, fontWeight: FontWeight.bold),
+                        ReusableText(text: itemName, fontSize: 12, fontWeight: FontWeight.w900),
                       ],
                     ),
                     ReusableText(text: qrCode, fontSize: 12, color: kredcolor,fontWeight: FontWeight.bold),
@@ -82,7 +82,7 @@ Widget _buildItem({
                 ),
                 Row(
                   children: [
-                    ReusableText(text: ' $rating', fontWeight: FontWeight.bold,fontSize: 8,),const SizedBox(width: kCustomSizedBoxHeightD,),
+                    ReusableText(text: ' $rating', fontWeight: FontWeight.bold,fontSize: 9,),const SizedBox(width: kCustomSizedBoxHeightD,),
                     ReusableText(text: description, fontSize: 8),
                   ],
                 ),

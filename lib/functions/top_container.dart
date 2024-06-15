@@ -12,9 +12,8 @@ Widget buildTopContainer(BuildContext context) {
           bottomRight: Radius.circular(24.0),
         ),
       ),
-      padding: const EdgeInsets.only(top: 40, bottom: 20, right: 20, left: 20),
+      padding: const EdgeInsets.only(top: 50, bottom: 20, right: 20, left: 20),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(

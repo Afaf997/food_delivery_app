@@ -47,7 +47,7 @@ class ReusableCoupon extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     final double containerHeight = screenHeight * 0.15;
-    final double fontSizeLarge = screenWidth * 0.08;
+    final double fontSizeLarge = screenWidth * 0.07;
     final double fontSizeMedium = screenWidth * 0.04;
     final double fontSizeSmall = screenWidth * 0.035;
     final double padding = screenWidth * 0.05;
@@ -83,7 +83,7 @@ class ReusableCoupon extends StatelessWidget {
                           '50%',
                           style: TextStyle(
                             fontSize: fontSizeLarge,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w800,
                             color: Colors.white,
                           ),
                         ),
@@ -99,7 +99,7 @@ class ReusableCoupon extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: screenWidth * 0.02),
+                SizedBox(width: screenWidth * 0.04),
                 DottedDivider(),
                 Expanded(
                   flex: 2,
@@ -119,7 +119,7 @@ class ReusableCoupon extends StatelessWidget {
                         ),
                         SizedBox(height: screenHeight * 0.01),
                         Container(
-                          width: screenWidth * 0.35,
+                          width: screenWidth * 0.32,
                           padding: EdgeInsets.symmetric(
                               horizontal: screenWidth * 0.02,
                               vertical: screenHeight * 0.005),
@@ -136,12 +136,12 @@ class ReusableCoupon extends StatelessWidget {
                               Text(
                                 'WELCOME',
                                 style: TextStyle(
-                                  fontSize: fontSizeSmall,
+                                  fontSize: fontSizeMedium,
                                   fontWeight: FontWeight.bold,
                                   color: kblack,
                                 ),
                               ),
-                              SizedBox(width: screenWidth * 0.02),
+                              SizedBox(width: screenWidth * 0.03),
                               Image.asset(
                                 'assets/images/copy.png',
                               ),

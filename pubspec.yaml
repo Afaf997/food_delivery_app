@@ -132,7 +132,7 @@ flutter:
     - family: Aeonik
       fonts:
         - asset: assets/fonts/AeonikTRIAL-Regular.otf
-          weight: 800
+          weight: 900
         - asset: assets/fonts/AeonikTRIAL-Bold.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

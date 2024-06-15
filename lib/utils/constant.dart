@@ -17,6 +17,7 @@ const Color kfavouriteColor =  Color(0xFFD9D9D9);
 const Color klgreyColor =  Color(0xFFE1E1E1);
 const Color kSEARCHColor =  Color(0xFFEAEAEA);
 const Color kColorgrey =  Color(0xFFF6F6F6);
+const Color kmaincontainergrey =  Color(0xFFF7F7F7);
 const Color kcontainergrey =  Color(0xFFF5F5F5);
 const Color ktextgrey =  Color(0xFFBCBCBC);
 const Color kallcontainer =  Color(0xFFFAFAFA);

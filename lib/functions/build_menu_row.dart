@@ -48,7 +48,7 @@ Widget buildMenuRow(BuildContext context) {
                     style:const TextStyle(
                       color: kblack,
                       fontSize: 12.0,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w800,
                     ),
                   ),
                 ),

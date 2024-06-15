@@ -28,7 +28,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         title: const ReusableText(
           text: 'My Order',
           fontSize: 20,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w900,
         ),
         centerTitle: true,
       ),
@@ -59,7 +59,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                         Container(
                           height: 2,
                           width: 100,
-                          color: Colors.orange,
+                          color:kOrangeColor,
                         ),
                     ],
                   ),

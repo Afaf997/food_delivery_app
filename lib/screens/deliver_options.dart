@@ -14,7 +14,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
-    final double horizontalPadding = screenWidth * 0.02;
+    final double horizontalPadding = screenWidth * 0.01;
     final double verticalPadding = screenHeight * 0.02;
     final double containerHeight = screenHeight * 0.06;
 
@@ -61,6 +61,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                 },
                 icon: Icons.car_rental,
               ),
+              SizedBox(height: 60,),
             ],
           ),
           if (selectedOption == 'Car hop')
@@ -160,6 +161,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                     "Select Store",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: 12
                     ),
                   ),
                   SizedBox(width: horizontalPadding),
@@ -179,6 +181,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: korgGrey,
+                              fontSize: 14
                             ),
                           ),
                           Icon(Icons.location_on, color: kOrangeColor),
