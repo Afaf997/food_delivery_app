@@ -80,7 +80,7 @@ class _CustomBottomSheetContentState extends State<CustomBottomSheetContent> {
                         Icon(
                           Icons.favorite,
                           color: kfavouriteColor,
-                          size: 16,
+                          size: 17,
                         )
                       ],
                     ),

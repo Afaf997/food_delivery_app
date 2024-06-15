@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.only(top: 200.0), 
+              padding: EdgeInsets.only(top: 220.0), 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

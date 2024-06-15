@@ -15,6 +15,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     final double horizontalPadding = screenWidth * 0.01;
+    final double storePadding = screenWidth * 0.05;
     final double verticalPadding = screenHeight * 0.02;
     final double containerHeight = screenHeight * 0.06;
 
@@ -108,7 +109,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: verticalPadding / 2),
+                    padding: EdgeInsets.symmetric(vertical: verticalPadding / 3),
                     child: Row(
                       children: [
                         const Expanded(
@@ -139,6 +140,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12,
+                                    color: korgGrey
                                   ),
                                 ),
                                 Icon(Icons.location_on, color: kOrangeColor),
@@ -164,7 +166,7 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                       fontSize: 12
                     ),
                   ),
-                  SizedBox(width: horizontalPadding),
+                  SizedBox(width: storePadding),
                   Expanded(
                     child: Container(
                       height: containerHeight,
