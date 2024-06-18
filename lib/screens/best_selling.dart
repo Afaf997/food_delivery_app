@@ -12,7 +12,7 @@ class BestSelling extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kWhite,
         toolbarHeight: 80,
-        title: ReusableText(
+        title:const ReusableText(
           text: 'Best selling',
           fontWeight: FontWeight.w900,
           fontSize: 20,

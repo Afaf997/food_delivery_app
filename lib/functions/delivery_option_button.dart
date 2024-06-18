@@ -5,13 +5,12 @@ class DeliveryOptionButton extends StatelessWidget {
   final String text;
   final bool isSelected;
   final VoidCallback onTap;
-  final IconData icon; // Add icon parameter
-
+  final IconData icon; 
   const DeliveryOptionButton({
     required this.text,
     required this.isSelected,
     required this.onTap,
-    required this.icon, // Add icon parameter
+    required this.icon, 
   });
 
   @override
@@ -24,7 +23,7 @@ class DeliveryOptionButton extends StatelessWidget {
           color: Colors.grey[200], 
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: isSelected ? kOrangeColor : Colors.transparent, // Border color
+            color: isSelected ? kOrangeColor : Colors.transparent,
             width: 1,
           ),
         ),

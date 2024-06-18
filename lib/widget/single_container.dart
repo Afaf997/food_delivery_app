@@ -113,7 +113,7 @@ Widget buildItem(MenuItem menuItem) {
                       text: menuItem.description,
                       fontSize: 8,
                     ),
-                    Expanded(child: Container()), // Empty expanded widget to push the qrCode text to the end
+                    Expanded(child: Container()),
                     ReusableText(
                       text: menuItem.qrCode,
                       fontSize: 16,

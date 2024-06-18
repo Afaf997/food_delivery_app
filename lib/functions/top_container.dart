@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/search_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 Widget buildTopContainer(BuildContext context) {
   return Container(
@@ -27,19 +28,18 @@ Widget buildTopContainer(BuildContext context) {
                 ),
                const Row(
                   children: [
-                    const Icon(
+                     Icon(
               Icons.location_on,
               color: kWhite,
               size: kIconSize,
             ),
-                    Text(
+                    ReusableText(
+                      text: 
                       'Marina Twin Tower, Lusail',
-                      style: const TextStyle(
                         color: kWhite,
                         fontSize: 14.0,
                         fontWeight: FontWeight.w800,
                       ),
-                    ),
                   ],
                 ),
               ],

@@ -22,9 +22,8 @@ class ReusableButton extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
-    // Adjust button height and padding based on screen size
-    final double buttonHeight = screenHeight * 0.07;  // Example: 7% of screen height
-    final double buttonPadding = screenHeight * 0.02; // Example: 2% of screen height
+    final double buttonHeight = screenHeight * 0.07;  //  7% of screen height
+    final double buttonPadding = screenHeight * 0.02; 
     final double adjustedFontSize = screenWidth * 0.04; 
 
     return SizedBox(

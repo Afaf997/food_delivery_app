@@ -24,7 +24,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
         MaterialPageRoute(builder: (context) => WelcomeScreen()),
       );
     }
-    // Add logic for Arabic if needed
   }
 
   @override

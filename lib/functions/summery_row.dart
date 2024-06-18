@@ -1,4 +1,5 @@
   import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/constant.dart';
 
   class SummaryRow extends StatelessWidget {
     final String label;
@@ -25,7 +26,7 @@
               style: TextStyle(
                 fontSize: isTotal ? 16 : 14,
                 fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,
-                color: isDiscount ? Colors.red : Colors.black,
+                color: isDiscount ? kredcolor : kblack,
               ),
             ),
             Text(
@@ -33,7 +34,7 @@
               style: TextStyle(
                 fontSize: isTotal ? 16 : 14,
                 fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,
-                color: isDiscount ? Colors.red : Colors.black,
+                color: isDiscount ? kredcolor : kblack,
               ),
             ),
           ],

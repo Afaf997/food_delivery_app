@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/order_confirmation.dart';
 import 'package:food_delivery_app/screens/address_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/build_category.dart';
 import 'package:food_delivery_app/widget/custom_appbar.dart';
-import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({Key? key}) : super(key: key);
@@ -33,9 +33,9 @@ class CheckoutScreen extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  buildCategoryItem(
+                  buildCategoryItems(
                       'Marina Twin Tower, Lusail', kOrangeColor, Icons.location_on, true),
-                  buildCategoryItem(
+                  buildCategoryItems(
                       'Marina Twin Tower, Lusail', kblack, Icons.location_on, false),
                   // Add more address tiles as needed
                 ],
@@ -183,32 +183,32 @@ class CheckoutScreen extends StatelessWidget {
     );
   }
 
-  Widget buildCategoryItem(
-      String categoryName, Color color, IconData icon, bool isSelected,
-      {double width = 210}) {
-    return Container(
-      width: width,
-      margin: EdgeInsets.only(right: 8),
-      decoration: BoxDecoration(
-        color: kColorgrey,
-        border: Border.all(color: isSelected ? kOrangeColor : klgreyColor),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        children: [
-          Icon(
-            icon,
-            color: isSelected ? kOrangeColor : Colors.grey,
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              categoryName,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // Widget buildCategoryItem(
+  //     String categoryName, Color color, IconData icon, bool isSelected,
+  //     {double width = 210}) {
+  //   return Container(
+  //     width: width,
+  //     margin: EdgeInsets.only(right: 8),
+  //     decoration: BoxDecoration(
+  //       color: kColorgrey,
+  //       border: Border.all(color: isSelected ? kOrangeColor : klgreyColor),
+  //       borderRadius: BorderRadius.circular(12),
+  //     ),
+  //     child: Row(
+  //       children: [
+  //         Icon(
+  //           icon,
+  //           color: isSelected ? kOrangeColor : Colors.grey,
+  //         ),
+  //         const SizedBox(width: 8),
+  //         Expanded(
+  //           child: Text(
+  //             categoryName,
+  //             overflow: TextOverflow.ellipsis,
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }

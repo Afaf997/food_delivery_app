@@ -14,7 +14,7 @@ class CustomContainerWidget extends StatelessWidget {
         color: kOrangeColor,
         borderRadius: BorderRadius.circular(15),
       ),
-      child:Center(child: ReusableText(text: "Add to cart",fontSize: 16,fontWeight: FontWeight.w600,color: kWhite,)),
+      child:const Center(child: ReusableText(text: "Add to cart",fontSize: 16,fontWeight: FontWeight.w600,color: kWhite,)),
     );
   }
 }

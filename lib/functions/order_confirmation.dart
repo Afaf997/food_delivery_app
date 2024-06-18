@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/order_delivery.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/reusable_text.dart';
 
 void showDeliveryFeeDialog(BuildContext context) {
   showDialog(
@@ -17,31 +18,30 @@ void showDeliveryFeeDialog(BuildContext context) {
             mainAxisSize: MainAxisSize.min,
             children: [
              Image.asset('assets/images/delivery-man .png'),
-             const SizedBox(height: 16),
+             const  SizedBox(height: 16),
               const Text(
                 'Delivery Fee from your selected address to the branch',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 14),
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+             const ReusableText(
+                text: 
                 '10 QR',
-                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: kOrangeColor,
                 ),
-              ),
-              SizedBox(height: 16),
-              Row(
+              const SizedBox(height: 16),
+             const  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Subtotal'),
                   Text('42 QR'),
                 ],
               ),
-              SizedBox(height: 10),
-              Row(
+              const SizedBox(height: 10),
+             const  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Delivery fee'),
@@ -49,7 +49,7 @@ void showDeliveryFeeDialog(BuildContext context) {
                 ],
               ),
               Divider(),
-              Row(
+             const  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -62,10 +62,10 @@ void showDeliveryFeeDialog(BuildContext context) {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              SizedBox(
+              const SizedBox(height: 16),
+               SizedBox(
                 width: double.infinity,
-                height: 40, // Reduce the height of the "Okay" button
+                height: 40,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderDelivery()));
@@ -76,9 +76,8 @@ void showDeliveryFeeDialog(BuildContext context) {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: Text(
-                    'Okay',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  child:const ReusableText(text: 
+                    'Okay',color: Colors.white, fontSize: 16
                   ),
                 ),
               ),
