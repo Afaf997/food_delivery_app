@@ -33,7 +33,7 @@ class OtpScreen extends StatelessWidget {
             children: [
               const SizedBox(height: kCustomSizedBoxHeightA),
              const Text(
-                "Verification your mobile number",
+                "Verify your mobile number",
                 style: TextStyle(
                   fontSize:36,
                   fontWeight: FontWeight.bold,

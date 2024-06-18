@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/error_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 
 class TrackScreen extends StatelessWidget {
   const TrackScreen({super.key});
@@ -63,20 +64,11 @@ class TrackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-        backgroundColor: kWhite,
-        toolbarHeight: 60,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const Text(
-          'Track Order',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        centerTitle: true,
+       appBar: CustomAppBar(
+        title: 'Track Order',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),

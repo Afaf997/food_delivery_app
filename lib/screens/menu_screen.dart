@@ -97,7 +97,7 @@ class MenuScreen extends StatelessWidget {
               buildMenuItem(Icons.shopping_bag_outlined, 'My Orders', () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => OrderScreen()),
+                  MaterialPageRoute(builder: (context) => MyOrderScreen()),
                 );
               }),
               buildMenuItem(Icons.notifications_none_outlined, 'Notification', () {

@@ -22,7 +22,7 @@ Widget buildTopContainer(BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Deliver to',
+                  'Current Location',
                   style: kLocationTextStyle.copyWith(color: kWhite),
                 ),
                const Row(

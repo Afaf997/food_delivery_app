@@ -17,9 +17,7 @@ class _OrderScreenState extends State<OrderScreen> {
     return Scaffold(
       backgroundColor: kWhite,
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.pop(context);
-        }, icon:const Icon(Icons.arrow_back_ios_new)),
+        automaticallyImplyLeading: false,
         backgroundColor: kWhite,
         toolbarHeight: 100,
         title: const ReusableText(

@@ -47,8 +47,8 @@ Widget buildMenuRow(BuildContext context) {
                     overflow: TextOverflow.ellipsis,
                     style:const TextStyle(
                       color: kblack,
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 11.0,
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),

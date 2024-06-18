@@ -3,7 +3,6 @@ import 'package:food_delivery_app/functions/history_order.dart';
 import 'package:food_delivery_app/functions/running_order.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/custom_appbar.dart';
-import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class MyOrderScreen extends StatefulWidget {
   @override

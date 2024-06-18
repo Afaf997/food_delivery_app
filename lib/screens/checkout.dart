@@ -153,7 +153,7 @@ class CheckoutScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 60),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

@@ -5,15 +5,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double toolbarHeight;
   final Color backgroundColor;
   final IconData leadingIcon;
-  final VoidCallback onLeadingPressed;
+  final VoidCallback? onLeadingPressed;
 
   const CustomAppBar({
     Key? key,
     required this.title,
     this.toolbarHeight = 80.0,
     this.backgroundColor = Colors.white,
-    this.leadingIcon = Icons.arrow_back_ios_new_outlined,
-    required this.onLeadingPressed,
+    this.leadingIcon = Icons.arrow_back_ios,
+    this.onLeadingPressed,
   }) : super(key: key);
 
   @override
