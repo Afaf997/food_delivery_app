@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:food_delivery_app/screens/language_screen.dart';
+import 'package:food_delivery_app/utils/constant.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           surfaceTintColor: Colors.transparent,
         ),
-         scaffoldBackgroundColor:Colors.white,
+         scaffoldBackgroundColor:kWhite,
       ),
       debugShowCheckedModeBanner: false,
-      title: 'go crispy',
+      title: 'Go Crispy',
       home: const LanguageScreen(),
     );
   }

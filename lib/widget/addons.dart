@@ -3,8 +3,8 @@ import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class AddOnItem extends StatefulWidget {
-  final String image; // Background image
-  final String overlayImage; // Image to overlay
+  final String image;
+  final String overlayImage; 
   final String title;
   final String subtitle;
   final int initialCount;
@@ -63,12 +63,12 @@ class _AddOnItemState extends State<AddOnItem> {
               ),
             ],
           ),
-          SizedBox(width: 10),
+         const SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.title, style: TextStyle(fontSize: 14)),
-              Text(widget.subtitle, style: TextStyle(color: Colors.grey, fontSize: 14)),
+              Text(widget.title, style: const TextStyle(fontSize: 14)),
+              Text(widget.subtitle, style: const TextStyle(color:korgGrey, fontSize: 14)),
             ],
           ),
           Spacer(),

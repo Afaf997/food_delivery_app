@@ -26,7 +26,7 @@ class CheckoutSummary extends StatelessWidget {
                 navigationTarget:CheckoutScreen(),
                 buttonText: 'Continue Checkout',
                 buttonColor:kOrangeColor,
-                textColor: Colors.white,
+                textColor:kWhite,
                 fontSize: 16,
               ),
         ],
