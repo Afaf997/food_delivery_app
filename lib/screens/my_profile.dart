@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/menu_screen.dart';
 import 'package:food_delivery_app/screens/select_map.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
@@ -13,21 +14,11 @@ class MyProfile extends StatelessWidget {
       var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-        backgroundColor: kWhite,
-        toolbarHeight: 100,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios_new_outlined),
-        ),
-        title: const ReusableText(
-          text: "MyProfile",
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-        ),
-        centerTitle: true,
+        appBar: CustomAppBar(
+        title: 'My Profile',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: Center(
         child: Column(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/history_order.dart';
 import 'package:food_delivery_app/functions/running_order.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class MyOrderScreen extends StatefulWidget {
@@ -16,21 +17,11 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-         backgroundColor: kWhite,
-        leading: IconButton(
-          icon:const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        toolbarHeight: 100,
-        title: const ReusableText(
-          text: 'My Order',
-          fontSize: 20,
-          fontWeight: FontWeight.w900,
-        ),
-        centerTitle: true,
+        appBar: CustomAppBar(
+        title: 'My Order',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: Column(
         children: [

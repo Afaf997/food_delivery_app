@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
  // Import your reusable content widget
 
@@ -10,23 +11,13 @@ class PrivacyPolicy extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-          backgroundColor: kWhite,
-        toolbarHeight: 80,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios_new_outlined),
-        ),
-        title: const ReusableText(
-          text: "Privacy Policy",
-         fontWeight: FontWeight.w500,
-          fontSize: 23,
-        ),
-        centerTitle: true,
+       appBar: CustomAppBar(
+        title: 'Privacy Policy',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
-      body: PrivacyPolicyContent(), // Display your reusable content widget
+      body: PrivacyPolicyContent(), 
     );
   }
 }

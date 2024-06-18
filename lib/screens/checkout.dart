@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/functions/order_confirmation.dart';
 import 'package:food_delivery_app/screens/address_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -11,21 +12,11 @@ class CheckoutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-        backgroundColor: kWhite,
-        toolbarHeight: 100,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const ReusableText(
-          text: 'Checkout',
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-        centerTitle: true,
+         appBar: CustomAppBar(
+        title: 'Checkout',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(left: 20, right: 20),

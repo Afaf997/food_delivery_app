@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/login_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
@@ -32,18 +33,11 @@ class _AddressFormState extends State<AddressForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-        toolbarHeight: 80,
-        backgroundColor: kWhite,
-        elevation: 0,
-        title:const Text('Add New Address',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        centerTitle: true,
-        leading: IconButton(
-          icon:const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+       appBar: CustomAppBar(
+        title: 'Add New Address',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

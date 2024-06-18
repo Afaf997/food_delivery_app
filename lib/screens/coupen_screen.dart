@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 import 'dart:math' as math;
 
@@ -11,15 +12,11 @@ class CouponScreen extends StatelessWidget {
     final double padding = screenWidth * 0.04;
 
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: screenHeight * 0.1,
-        leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back_ios_new_outlined)),
-        title: const ReusableText(
-          text: 'Coupon',
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-        ),
-        centerTitle: true,
+       appBar: CustomAppBar(
+        title: 'Coupon',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: Padding(
         padding: EdgeInsets.all(padding),

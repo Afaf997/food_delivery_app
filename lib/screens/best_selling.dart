@@ -10,6 +10,7 @@ class BestSelling extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+        backgroundColor: kWhite,
         toolbarHeight: 80,
         title: ReusableText(
           text: 'Best selling',

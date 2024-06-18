@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class HelpSupport extends StatelessWidget {
@@ -9,26 +10,11 @@ class HelpSupport extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-        backgroundColor: kWhite,
-        elevation: 0, 
-        toolbarHeight: 100,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios_new_outlined,
-            color: Colors.black, 
-          ),
-        ),
-        title: const ReusableText(
-          text: "Help & Support",
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-          color: Colors.black,
-        ),
-        centerTitle: true,
+       appBar: CustomAppBar(
+        title: 'Help & Support',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),

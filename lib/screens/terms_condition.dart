@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class TermsCondition extends StatelessWidget {
@@ -9,21 +10,11 @@ class TermsCondition extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-       backgroundColor: kWhite,
-        toolbarHeight: 80,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios_new_outlined),
-        ),
-        title: const ReusableText(
-          text: "Terms & Conditions",
-         fontWeight: FontWeight.w500,
-          fontSize: 20,
-        ),
-        centerTitle: true,
+       appBar: CustomAppBar(
+        title: 'Terms & Conditions',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body:const SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),

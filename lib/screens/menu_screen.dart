@@ -6,7 +6,7 @@ import 'package:food_delivery_app/screens/language_selection.dart';
 import 'package:food_delivery_app/screens/my_profile.dart';
 import 'package:food_delivery_app/screens/notification.dart';
 import 'package:food_delivery_app/screens/order.dart';
-import 'package:food_delivery_app/screens/order_screen.dart';
+import 'package:food_delivery_app/screens/myorder_screen.dart';
 import 'package:food_delivery_app/screens/privacy_policy.dart';
 import 'package:food_delivery_app/screens/terms_condition.dart';
 import 'package:food_delivery_app/screens/wallet.dart';

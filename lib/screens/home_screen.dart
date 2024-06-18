@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.only(top: 220.0), 
+              padding:const EdgeInsets.only(top: 190.0), 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -41,8 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   buildTitleRow('Best Selling', actionText: 'See All', onSeeAllPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => BestSelling()));
                   }),
-                  const SizedBox(height: kCustomSizedBoxHeightA),
-                  buildImageRow(context),
+                  buildImageRow(),
                   const SizedBox(height: kCustomSizedBoxHeight),
                   buildTitleRow('Top Deals',actionText: 'See All', onSeeAllPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => TopDeals()));
@@ -86,6 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+        
           Positioned(
             top: 0,
             left: 0,

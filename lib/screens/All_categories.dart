@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/screens/home_screen.dart';
 import 'package:food_delivery_app/widget/build_category_items.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/food_item_card.dart';
 import 'package:food_delivery_app/utils/constant.dart';
-import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
@@ -12,26 +11,15 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
+       appBar: CustomAppBar(
+        title: 'All Categories',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 40, left: 20),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon:const Icon(Icons.arrow_back_ios),
-                ),
-                const SizedBox(width: kCustomSizedBoxWidthB),
-                const ReusableText(text: 'All Categories',fontSize: 20,fontWeight: FontWeight.bold,) // Adjust spacing between icon and text
-             
-              ],
-            ),
-          ),
-         const SizedBox(height:kCustomSizedBoxHeight),
           SizedBox(
             height: 33, 
             child: ListView(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
+import 'package:food_delivery_app/widget/custom_appbar.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class SelectLanguage extends StatefulWidget {
@@ -14,21 +15,11 @@ class _SelectLanguageState extends State<SelectLanguage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
-      appBar: AppBar(
-        backgroundColor: kWhite,
-        toolbarHeight: 100,
-        title: const ReusableText(
-          text: 'Language',
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-        ),
-        centerTitle: true,
-        leading: IconButton(
-          icon:const Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        appBar: CustomAppBar(
+        title: 'Language',
+        onLeadingPressed: () {
+          Navigator.pop(context);
+        },
       ),
       body: Column(
         children: <Widget>[
