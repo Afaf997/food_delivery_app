@@ -5,12 +5,14 @@ import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/reusable_button.dart';
 
 class CheckoutSummary extends StatelessWidget {
+  const CheckoutSummary({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10.0),
       decoration:const BoxDecoration(
-        color: Colors.white,
+        color:kWhite,
        
       ),
       child:const Column(
