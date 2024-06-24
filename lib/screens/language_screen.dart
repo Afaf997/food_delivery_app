@@ -10,7 +10,7 @@ class LanguageScreen extends StatefulWidget {
 }
 
 class _LanguageScreenState extends State<LanguageScreen> {
-  String? _selectedLanguage = 'en'; 
+  String? _selectedLanguage = 'en';
 
   void navigateToWelcomeScreen() {
     if (_selectedLanguage == 'en') {
@@ -18,7 +18,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
         context,
         MaterialPageRoute(builder: (context) => WelcomeScreen()),
       );
-    }else{
+    } else {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => WelcomeScreen()),
@@ -33,7 +33,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(bottom: 150),
-          child: Image.asset('assets/images/crispy-logo.png', width: 117, height: 160),
+          child: Image.asset('assets/images/crispy-logo.png',
+              width: 117, height: 160),
         ),
       ),
       bottomSheet: ClipRRect(
