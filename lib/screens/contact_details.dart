@@ -15,7 +15,7 @@ class ContactDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhite,
       appBar: AppBar(
-         backgroundColor: kWhite,
+        backgroundColor: kWhite,
         leading: IconButton(
           icon: kbackarrowIcon,
           onPressed: () {
@@ -30,79 +30,79 @@ class ContactDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Center(
-               child: ReusableText(text: 
-                  "Enter your details",
-                    fontSize:36,
-                    fontWeight: FontWeight.bold,
-                  textAlign: TextAlign.center,
-                ),
-             ),
-              
-            const SizedBox(height: kCustomSizedBoxHeightAb,),
-           const ReusableText(
-             text:  'First Name', fontSize: 14
-            ),
-            const SizedBox(height: 15.0), 
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Enter your First Name',
-                labelStyle:TextStyle(color: korgGrey,fontSize: 14), // Remove default label (optional)
-                fillColor:kGrayLogo, // Grey background
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.0), // Adjust border radius
-                  borderSide: BorderSide.none, // Remove border
-                ),
+              child: ReusableText(
+                text: "Enter your details",
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                textAlign: TextAlign.center,
               ),
             ),
-
-            const SizedBox(height: kCustomSizedBoxHeightG), // Adjust spacing
-
-           const ReusableText(
-             text:  'Last Name',fontSize: 14 
+            const SizedBox(height: kCustomSizedBoxHeightAb),
+            const ReusableLabelText(text: 'First Name'),
+            const SizedBox(height: 15.0),
+            const CustomTextField(
+              labelText: 'Enter your First Name',
             ),
-                        const SizedBox(height: 15.0),  // Add horizontal spacing
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Enter your last name',
-                labelStyle:TextStyle(color: korgGrey,fontSize: 14),  // Remove default label (optional)
-                fillColor:kGrayLogo, // Grey background
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.0), // Adjust border radius
-                  borderSide: BorderSide.none, // Remove border
-                ),
-              ),
+            const SizedBox(height: kCustomSizedBoxHeightG),
+            const ReusableLabelText(text: 'Last Name'),
+            const SizedBox(height: 15.0),
+            const CustomTextField(
+              labelText: 'Enter your last name',
             ),
-
-            const SizedBox(height: kCustomSizedBoxHeightG), // Adjust spacing
-
-            const ReusableText(
-             text:  'Email', fontSize: 14
-            ),
-                        const SizedBox(height: 15.0),  // Add horizontal spacing
-            TextField(
+            const SizedBox(height: kCustomSizedBoxHeightG),
+            const ReusableLabelText(text: 'Email'),
+            const SizedBox(height: 15.0),
+            const CustomTextField(
+              labelText: 'enter email',
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: 'enter email',
-                 labelStyle:TextStyle(color: korgGrey,fontSize: 14),
-                fillColor:kGrayLogo, // Grey background
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.0), // Adjust border radius
-                  borderSide: BorderSide.none, // Remove border
-                ),
-              ),
             ),
-            SizedBox(height: kCustomSizedBoxHeightH,),
+            const SizedBox(height: kCustomSizedBoxHeightH),
             ReusableNavigationButton(
-                navigationTarget: SelectLocationScreen(),
-                buttonText: 'Continue',
-                buttonColor:kOrangeColor,
-                textColor: Colors.white,
-                fontSize: 16,
-              ),
+              navigationTarget: SelectLocationScreen(),
+              buttonText: 'Continue',
+              buttonColor: kOrangeColor,
+              textColor: Colors.white,
+              fontSize: 16,
+            ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class ReusableLabelText extends StatelessWidget {
+  final String text;
+
+  const ReusableLabelText({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return ReusableText(
+      text: text,
+      fontSize: 14,
+    );
+  }
+}
+
+class CustomTextField extends StatelessWidget {
+  final String labelText;
+  final TextInputType? keyboardType;
+
+  const CustomTextField({required this.labelText, this.keyboardType});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      keyboardType: keyboardType,
+      decoration: InputDecoration(
+        labelText: labelText,
+        labelStyle: TextStyle(color: korgGrey, fontSize: 14),
+        fillColor: kGrayLogo,
+        filled: true,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12.0),
+          borderSide: BorderSide.none,
         ),
       ),
     );

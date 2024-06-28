@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/utils/constant.dart';
 import 'package:food_delivery_app/widget/custom_appbar.dart';
-import 'package:food_delivery_app/widget/reusable_text.dart';
 
 class SelectLanguage extends StatefulWidget {
   @override

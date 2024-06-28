@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/otp_screen.dart';
 import 'package:food_delivery_app/utils/constant.dart';
-import 'package:food_delivery_app/widget/reusable_button.dart';
+
 import 'package:food_delivery_app/widget/reusable_replasment_navigations.dart';
 import 'package:food_delivery_app/widget/reusable_text.dart';
 
